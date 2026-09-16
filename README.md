@@ -2,6 +2,6 @@
 Dette er er et prosjekt der vi skal lage en ny nettside for ØStfold Husflidslag 
 
 Medlemmer er 
-Maria, Filipe, Adnan, Naimo, Erlind 
+Maria, Filipe, Adan, Naimo, Erlind 
 
 # installasjon og kjøring
