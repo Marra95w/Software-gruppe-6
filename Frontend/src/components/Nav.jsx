@@ -1,13 +1,14 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
-
+import "./Nav.css"
+import "./Dropdown.css"
 export default function Nav() {
     const [open, setOpen] = useState(false)
     return (
 
         <>
-            <button onClick={() => setOpen(!open)}>
-                Dropdown
+            <button onClick={() => setOpen(!open)} className='dropdown-trigger'>
+                <img src="./public/menu.png" alt='Meny' className='menu-icon' />
             </button>
             {open && (
                 <ul className="dropdown">
