@@ -14,15 +14,19 @@ export default function Nav() {
             {open && (
                 <ul className="dropdown">
                     <li>
+                        <img className='meny-rose' src="../src/assets/bilde/rose.png" alt="rose" />
                         <Link to="./pages/OmOss">Om Oss</Link>
                     </li>
                     <li>
+                        <img className='meny-rose' src="../src/assets/bilde/rose.png" alt="rose" />
                         <Link to="./pages/Inspiration">Håndtverk og inspirasjon</Link>
                     </li>
                     <li>
+                        <img className='meny-rose' src="../src/assets/bilde/rose.png" alt="rose" />
                         <Link to="./pages/Team">Lokallag</Link>
                     </li>
                     <li>
+                        <img className='meny-rose' src="../src/assets/bilde/rose.png" alt="rose" />
                         <Link to="./pages/Courses">Kurs og aktiviteter</Link>
                     </li>
                 </ul>

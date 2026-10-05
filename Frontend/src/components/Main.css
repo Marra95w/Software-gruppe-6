@@ -57,3 +57,39 @@ main{
         height: auto;
     }
 }
+
+.category-list{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    li{
+        padding: 1rem;
+        border-radius: 1rem;
+        text-align: center;
+
+        h3{
+            margin: 0;
+        }
+        p{
+            margin: 0.5rem 0;
+        }
+    }
+    .course-card{
+        background-color: #BFCFBA;
+    }
+    .local-card{
+        background-color: #BBD3EE;
+    }
+    .craft-card{
+        background-color: #ECCB9A;
+    }
+    .about-card{
+        background-color: rgba(171, 61, 78, 0.5);
+    }
+
+}

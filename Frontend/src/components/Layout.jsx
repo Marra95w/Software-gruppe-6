@@ -17,19 +17,31 @@ const Layout = ({ }) => {
                 </nav>
             </header>
             <main>
-                    <img className="strikkebilde" src="../src/assets/bilde/strikk.png" alt="Strikking" />
-                <section className="intro">
-                    <h2>Østfold Husflidslag</h2>
-                    <p>Ivaretar og utvikler husflid og håndverk kulturelt, sosialt og økonomisk i Østfold</p>
-                </section>
-                <div className="image-design">
-                <img className="rose-design" src="../src/assets/bilde/rose.png" alt="rose" />
-                </div>
-
+            
                 {/* Outlet rendrer alle bane-elememnter (alt som skal være innenfor Route Layout i App.jsx) */}
                 <Outlet />
             </main>
-            <footer> Kontakt oss</footer>
+
+            <footer>
+               <h3>Kontakt oss</h3>
+               <p>Sentralbord:</p>
+               <p>22 00 87 00</p>
+               <p>Man-Tirs: 10:00-13:00</p>
+               <p>Ons: Stengt</p>
+               <p>To-Fre: 10:00-13:00</p>
+               <p>Stengt: 11:30-12:00</p>
+               <p>post@husflid.no</p>
+               <h3>Besøk oss</h3>
+               <p>Øvre slottsgate 2b,
+                0157 Oslo</p>
+                <h3>Snarveier</h3>
+                <h3>Følg oss</h3>
+                <p>Meld deg inn på nyhetsbrev</p>
+                <p>Instagram</p>
+                <p>Facebook</p>
+                <p>Youtube</p>
+
+            </footer>
 
         </>
     )
