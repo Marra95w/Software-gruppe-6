@@ -5,7 +5,7 @@ export default function ForisdeHoved() {
             <h1> Velkommen til Forsiden</h1>
 
             <section>
-                <h2>Alle kursene vi tilbyr</h2>
+                <h2></h2>
 
                 <article>
                     Kurs: {<Kurslist />}

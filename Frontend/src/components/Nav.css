@@ -1,3 +1,8 @@
+:root {
+    --burgunder: #AB3D4E;
+    --background: #FFF;
+}
+
 .dropdown-trigger {
     display: flex;
     align-items: center;
@@ -8,7 +13,112 @@
     padding: 0;
     font-size: 1.1rem;
     font-weight: 700;
-    max-width: 1rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    background:var(--background);
+   
 }
 
-.dropdown {}
+.menu-icon {
+    width: 1.5rem;
+    margin: 1.5rem;
+}
+
+
+header {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    background: var(--background);
+    
+    .logo {
+        width: 55px;
+        height: auto;
+        margin: 10px;
+    }
+    
+    nav {
+        display: flex;
+        align-items: center;
+        margin-left: auto;
+        position: relative;
+    
+        
+        p{
+            margin: 0;
+        }
+        
+        
+    }
+    .dropdown{
+        position: absolute;
+        top: 100%;
+        right: 0;
+
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .dropdown-trigger {
+        display: flex;
+        align-items: center;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 0;
+        margin: 0;
+    }
+
+    .menu-icon {
+        width: 1.5rem;
+        margin: 1.5rem;
+    }
+
+    header {
+        display: flex;
+        align-items: center;
+        padding: 20px;
+
+        .logo {
+            width: 55px;
+            height: auto;
+            margin: 10px;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            margin-left: auto;
+            position: relative;
+
+            p {
+                margin: 0;
+            }
+        }
+
+        .dropdown {
+            position: absolute;
+            top: 100%;
+            right: 0;
+
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+    }
+
+}
