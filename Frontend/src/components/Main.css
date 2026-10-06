@@ -99,3 +99,18 @@ main{
     }
 
 }
+
+@media (min-width: 600px) {
+    .category-list{
+   
+        grid-template-columns: repeat(3, 1fr);
+     
+        
+    }
+}
+
+@media (min-width: 800px){
+    .category-list{
+        grid-template-columns: repeat(4, 1fr);
+    }
+}

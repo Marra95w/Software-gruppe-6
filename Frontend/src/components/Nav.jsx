@@ -27,7 +27,7 @@ export default function Nav() {
                     </li>
                     <li>
                         <img className='meny-rose' src="../src/assets/bilde/rose.png" alt="rose" />
-                        <Link to="./pages/Courses">Kurs og aktiviteter</Link>
+                        <Link to="/courses">Kurs og aktiviteter</Link>
                     </li>
                      <li>
                         <img className='meny-rose' src="../src/assets/bilde/rose.png" alt="rose" />

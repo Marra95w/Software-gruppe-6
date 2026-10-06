@@ -7,10 +7,12 @@ const Layout = ({ }) => {
     return (
         <>
             <header>
+                <Link to="/" className="home-link">
                     <img class="logo" src="../src/assets/bilde/rose.png" alt="rose" /> 
                 <h1>
                     Østfold Husflidslag
                 </h1> 
+                </Link>
                 <nav>
                 <p>Meny</p>
                    <Nav />

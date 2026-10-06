@@ -25,6 +25,14 @@
     margin: 1.5rem;
 }
 
+.home-link {
+    text-decoration: none;
+    color: inherit;
+
+    display: flex;
+    align-items: center;
+}
+
 
 header {
     display: flex;
@@ -54,7 +62,7 @@ header {
     .dropdown{
         position: absolute;
         top: 100%;
-        right: 0;
+        right: -20px;
 
         display: flex;
         flex-direction: column;
@@ -122,7 +130,7 @@ header {
            .dropdown{
             position: absolute;
             top: 100%;
-            right: 0;
+            right: -20px;
 
             display: flex;
             flex-direction: column;
