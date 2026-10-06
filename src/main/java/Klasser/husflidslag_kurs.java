@@ -55,22 +55,22 @@ public class husflidslag_kurs implements Kurs {
 
     @Override
     public int getKursavholder() {
-        return 0;
+        return kursavholder;
     }
 
     @Override
     public double getPrisMedlem() {
-        return 0;
+        return prisMedlem;
     }
 
     @Override
     public double getPrisIkkeMedlem() {
-        return 0;
+        return prisIkkeMedlem;
     }
 
     @Override
     public String getBeskrivelse() {
-        return "";
+        return beskrivelse;
     }
 
     @Override
@@ -123,6 +123,6 @@ public class husflidslag_kurs implements Kurs {
         if (maksDeltagere<=0){
             System.err.println("Ingen påmeldt! Vær så snill legg antall påmeldte for kurset!");
         }
-        this.maksDeltagere = maksDeltagere;
+        this.maksDeltagere = deltakere;
     }
 }
