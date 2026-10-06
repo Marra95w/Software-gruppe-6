@@ -1,0 +1,116 @@
+:root {
+    --burgunder: #AB3D4E;
+    --background: #FFF;
+}
+
+
+
+    .intro{
+        color: var(--burgunder);
+        text-align: center;
+        -webkit-text-stroke-color: #F0F0F0;
+        font-family: Inter;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        padding: 35px;
+    }
+
+
+
+main{
+    .strikkebilde{
+        max-width: 100%;
+        height: auto;
+
+        border-radius: 3px;
+        background: linear-gradient(0deg, rgba(0, 0, 0, 0.00) 0%, rgba(0, 0, 0, 0.00) 100%), url(<path-to-image>) lightgray -0.938px 0.415px / 100.124% 100% no-repeat;
+        box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+    }
+}
+
+.rose-design{
+    display: flex;
+    
+    width: 39px;
+    height: 39px;
+    flex-shrink: 0;
+
+}
+
+.image-design {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    &::before,
+    &::after {
+        content: "";
+        flex: 1;
+        height: 1px;
+        background: #000;
+    }
+
+    .rose-design {
+        width: 80px;
+        height: auto;
+    }
+}
+
+.category-list{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    li{
+        padding: 1rem;
+        border-radius: 1rem;
+        text-align: center;
+
+        h3{
+            margin: 0;
+        }
+        p{
+            margin: 0.5rem 0;
+        }
+    }
+    .course-card{
+        background-color: #BFCFBA;
+        text-decoration: none;
+    }
+    .local-card{
+        background-color: #BBD3EE;
+    }
+    .craft-card{
+        background-color: #ECCB9A;
+    }
+    .about-card{
+        background-color: rgba(171, 61, 78, 0.5);
+    }
+    button{
+        background: none;
+        border: none;
+        cursor: pointer;
+    }
+
+}
+
+@media (min-width: 600px) {
+    .category-list{
+   
+        grid-template-columns: repeat(3, 1fr);
+     
+        
+    }
+}
+
+@media (min-width: 800px){
+    .category-list{
+        grid-template-columns: repeat(4, 1fr);
+    }
+}

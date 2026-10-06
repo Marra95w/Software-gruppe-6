@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import "./Nav.css"
+import "./Main.css"
 import "./Dropdown.css"
 export default function Nav() {
     const [open, setOpen] = useState(false)
@@ -13,16 +14,24 @@ export default function Nav() {
             {open && (
                 <ul className="dropdown">
                     <li>
+                        <img className='meny-rose' src="../src/assets/bilde/rose.png" alt="rose" />
                         <Link to="./pages/OmOss">Om Oss</Link>
                     </li>
                     <li>
+                        <img className='meny-rose' src="../src/assets/bilde/rose.png" alt="rose" />
                         <Link to="./pages/Inspiration">Håndtverk og inspirasjon</Link>
                     </li>
                     <li>
+                        <img className='meny-rose' src="../src/assets/bilde/rose.png" alt="rose" />
                         <Link to="./pages/Team">Lokallag</Link>
                     </li>
                     <li>
-                        <Link to="./pages/Courses">Kurs og aktiviteter</Link>
+                        <img className='meny-rose' src="../src/assets/bilde/rose.png" alt="rose" />
+                        <Link to="/courses">Kurs og aktiviteter</Link>
+                    </li>
+                     <li>
+                        <img className='meny-rose' src="../src/assets/bilde/rose.png" alt="rose" />
+                        <Link to="/">Hjem</Link>
                     </li>
                 </ul>
             )}
