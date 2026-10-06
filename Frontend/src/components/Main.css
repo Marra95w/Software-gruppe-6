@@ -81,6 +81,7 @@ main{
     }
     .course-card{
         background-color: #BFCFBA;
+        text-decoration: none;
     }
     .local-card{
         background-color: #BBD3EE;
