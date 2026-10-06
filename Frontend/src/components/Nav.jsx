@@ -29,6 +29,10 @@ export default function Nav() {
                         <img className='meny-rose' src="../src/assets/bilde/rose.png" alt="rose" />
                         <Link to="./pages/Courses">Kurs og aktiviteter</Link>
                     </li>
+                     <li>
+                        <img className='meny-rose' src="../src/assets/bilde/rose.png" alt="rose" />
+                        <Link to="/">Hjem</Link>
+                    </li>
                 </ul>
             )}
 

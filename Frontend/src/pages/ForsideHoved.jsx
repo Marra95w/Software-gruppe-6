@@ -1,5 +1,5 @@
 import Kurslist from '../components/KursList'
-export default function ForisdeHoved() {
+export default function ForsideHoved() {
     return (
         <>
         <main>
@@ -22,33 +22,38 @@ export default function ForisdeHoved() {
              </section>
              <section>
                 <ul className="category-list">
-                    <li className='course-card'>
-                        <img src="../src/assets/bilde/calendar.svg" alt="Calendar" />
-                        <h3>Kurs og aktiviteter</h3>
-                        <p>Se hva som skjer nær deg</p>
-                        <img src="../src/assets/bilde/arrow.svg" alt="Arrow" />
-                    </li>
-
-                    <li className='local-card'>
-                        <img src="../src/assets/bilde/people.svg" alt="Human" />
-                        <h3>Lokallag</h3>
-                        <p>Finn ditt lokallag i Østfold</p>
-                        <img src="../src/assets/bilde/arrow.svg" alt="Arrow" />
-                    </li>
-
-                    <li className='craft-card'>
-                        <img src="../src/assets/bilde/yarn.svg" alt="Yarn" />
-                        <h3>Håndverk og inspirasjon</h3>
-                        <p>Tips, ideer og artikler om håndverk</p>
-                        <img src="../src/assets/bilde/arrow.svg" alt="Arrow" />
-                    </li>
-
-                    <li className='about-card'>
-                        <img src="../src/assets/bilde/i.svg" alt="information" />
-                        <h3>Om oss</h3>
-                        <p>Hvem er vi og hva vi gjør</p>
-                        <img src="../src/assets/bilde/arrow.svg" alt="Arrow" />
-                    </li>
+                    <button>
+                        <li className='course-card'>
+                            <img src="../src/assets/bilde/calendar.svg" alt="Calendar" />
+                            <h3>Kurs og aktiviteter</h3>
+                            <p>Se hva som skjer nær deg</p>
+                            <img src="../src/assets/bilde/arrow.svg" alt="Arrow" />
+                        </li>
+                    </button>
+                    <button>
+                        <li className='local-card'>
+                            <img src="../src/assets/bilde/people.svg" alt="Human" />
+                            <h3>Lokallag</h3>
+                            <p>Finn ditt lokallag i Østfold</p>
+                            <img src="../src/assets/bilde/arrow.svg" alt="Arrow" />
+                        </li>
+                    </button>
+                    <button>
+                        <li className='craft-card'>
+                            <img src="../src/assets/bilde/yarn.svg" alt="Yarn" />
+                            <h3>Håndverk og inspirasjon</h3>
+                            <p>Tips, ideer og artikler om håndverk</p>
+                            <img src="../src/assets/bilde/arrow.svg" alt="Arrow" />
+                        </li>
+                    </button>
+                    <button>
+                        <li className='about-card'>
+                            <img src="../src/assets/bilde/i.svg" alt="information" />
+                            <h3>Om oss</h3>
+                            <p>Hvem er vi og hva vi gjør</p>
+                            <img src="../src/assets/bilde/arrow.svg" alt="Arrow" />
+                        </li>
+                    </button>
                 </ul>
              </section>
 

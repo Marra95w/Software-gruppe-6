@@ -91,5 +91,10 @@ main{
     .about-card{
         background-color: rgba(171, 61, 78, 0.5);
     }
+    button{
+        background: none;
+        border: none;
+        cursor: pointer;
+    }
 
 }
