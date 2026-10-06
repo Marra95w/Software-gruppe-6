@@ -19,7 +19,7 @@ public class Database_Kurs_Logikk {
              ResultSet rs = stmt.executeQuery()) {
 
             while (rs.next()) {
-                System.out.println("Fant et kurs");
+                //System.out.println("Fant et kurs"); Brukte dette får å teste 
                 husflidslag_kurs kurs = new husflidslag_kurs(
                         rs.getString("tittel"),
                         rs.getTimestamp("start_dato_tid").toLocalDateTime(),
