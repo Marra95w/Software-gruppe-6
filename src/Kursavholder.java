@@ -21,7 +21,7 @@ public class Kursavholder {
     @Override
     public String toString() {
         return "ID: " + kursavholderId +
-                " Navn: "   + navn;
+                " Navn: "  + navn;
     }
 }
 
