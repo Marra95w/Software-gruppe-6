@@ -12,23 +12,25 @@ public class Database_Kurs_Logikk {
     public List<husflidslag_kurs> hentAlleKurs() {
         List<husflidslag_kurs> kursListe = new ArrayList<>();
 
-        String sql = "SELECT * FROM Kurs";
+        String sql = "SELECT * FROM kurs_tabell";
 
         try (Connection conn = Database_Connection.getConnection();
              PreparedStatement stmt = conn.prepareStatement(sql);
              ResultSet rs = stmt.executeQuery()) {
 
             while (rs.next()) {
+                System.out.println("Fant et kurs");
                 husflidslag_kurs kurs = new husflidslag_kurs(
                         rs.getString("tittel"),
-                        rs.getTimestamp("startDatoTid").toLocalDateTime(),
-                        rs.getTimestamp("sluttDatoTid").toLocalDateTime(),
-                        rs.getInt("kursavholderId"),
-                        rs.getDouble("prisMedlem"),
-                        rs.getDouble("prisIkkeMedlem"),
+                        rs.getTimestamp("start_dato_tid").toLocalDateTime(),
+                        rs.getTimestamp("slutt_dato_tid").toLocalDateTime(),
+                        rs.getInt("kursavholder_id"),
+                        rs.getDouble("pris_medlem"),
+                        rs.getDouble("pris_ikke_medlem"),
                         rs.getString("beskrivelse"),
                         true,
-                        rs.getInt("maksDeltagere")
+                        0
+                        //rs.getInt("maksDeltagere") Dette kolumne finnes ikke i tabellen så jeg endret til en fast verdi. Måtte også endre navnet kolumnene til det som var i databasen.
                 );
                 kursListe.add(kurs);
             }

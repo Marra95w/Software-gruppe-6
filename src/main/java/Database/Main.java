@@ -8,14 +8,14 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-        Javalin app = Javalin.create().start(7000);
+        Javalin app = Javalin.create().start(7001);
 
-        app.get("/kurs", ctx -> {
+        app.get("/kurs_tabell", ctx -> { //java prøvde å finne en kurs tabell som ikke finnes
             Database_Kurs_Logikk logikk = new Database_Kurs_Logikk();
             List<husflidslag_kurs> alleKurs = logikk.hentAlleKurs();
             ctx.json(alleKurs);
         });
 
-        System.out.println("Server kjører på http://localhost:7000");
+        System.out.println("Server kjører på http://localhost:7001");
     }
 }

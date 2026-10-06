@@ -21,7 +21,7 @@
             <version>26.7.0</version>
             <scope>compile</scope>
         </dependency>
-        
+
         <!-- NEW DEPENDENCY FRA Claude  -->
     <dependency>
         <groupId>io.javalin</groupId>
@@ -33,6 +33,13 @@
         <artifactId>jackson-databind</artifactId>
         <version>2.17.0</version>
     </dependency>
+
+    <!-- NEW DEPENDENCY FRA CLAUDE for å kunne håndtere LocalDateTime -->
+    <dependency>
+    <groupId>com.fasterxml.jackson.datatype</groupId>
+    <artifactId>jackson-datatype-jsr310</artifactId>
+    <version>2.17.0</version>
+</dependency>
 
     <dependency>
             <groupId>io.github.cdimascio</groupId>

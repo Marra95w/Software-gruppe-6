@@ -108,7 +108,7 @@ public class husflidslag_kurs implements Kurs {
         this.beskrivelse = beskrivelse;
     }
 
-    public boolean erTilgjengelig() {
+    public boolean isTilgjengelig() { //Endret fra erTilgjengelig
         return tilgjengelig;
     }
 
