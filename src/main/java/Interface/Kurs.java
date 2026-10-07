@@ -7,7 +7,7 @@ public interface Kurs {
     String getTittel();
     LocalDateTime getStartDatoTid();
     LocalDateTime getSluttDatoTid();
-    int getKursavholder();
+    String getKursavholder();
     double getPrisMedlem();
     double getPrisIkkeMedlem();
     String getBeskrivelse();
@@ -16,7 +16,7 @@ public interface Kurs {
     void setTittel(String tittel);
     void setStartDatoTid(LocalDateTime startDatoTid );
     void setSluttDatoTid(LocalDateTime sluttDatoTid);
-    void setKursavholder(int kursavholder);
+    void setKursavholder(String kursavholder);
     void setPrisMedlem(double prisMedlem);
     void setPrisIkkeMedlem(double prisIkkeMedlem);
     void setBeskrivelse(String beskrivelse);

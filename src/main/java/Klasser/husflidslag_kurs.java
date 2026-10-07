@@ -11,14 +11,14 @@ public class husflidslag_kurs implements Kurs {
     private String tittel;
     private LocalDateTime startDatoTid;
     private LocalDateTime sluttDatoTid;
-    private int kursavholder;
+    private String kursavholder;
     private double prisMedlem;
     private double prisIkkeMedlem;
     private String beskrivelse;
     private boolean tilgjengelig;
     private int maksDeltagere;
 
-    public husflidslag_kurs( String tittel, LocalDateTime startDatoTid, LocalDateTime sluttDatoTid, int kursavholder,
+    public husflidslag_kurs( String tittel, LocalDateTime startDatoTid, LocalDateTime sluttDatoTid, String kursavholder,
                             double prisMedlem, double prisIkkeMedlem, String beskrivelse, boolean tilgjengelig,int maksDeltagere) {
 
         this.tittel = tittel;
@@ -54,7 +54,7 @@ public class husflidslag_kurs implements Kurs {
     }
 
     @Override
-    public int getKursavholder() {
+    public String getKursavholder() {
         return kursavholder;
     }
 
@@ -89,7 +89,7 @@ public class husflidslag_kurs implements Kurs {
     }
 
     @Override
-    public void setKursavholder(int kursavholder) {
+    public void setKursavholder(String kursavholder) {
         this.kursavholder =kursavholder;
     }
 

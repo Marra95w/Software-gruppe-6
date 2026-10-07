@@ -12,7 +12,7 @@ public class Database_Kurs_Logikk {
     public List<husflidslag_kurs> hentAlleKurs() {
         List<husflidslag_kurs> kursListe = new ArrayList<>();
 
-        String sql = "SELECT * FROM kurs_tabell";
+        String sql = " SELECT * FROM kurs_tabell LEFT JOIN kursavholder ON kurs_tabell.kursavholder_id = kursavholder.kursavholder_id LEFT JOIN adresse_husflidslag ON adresse_husflidslag.Adresse_Kursvavholder_Id = kursavholder.Kursavholder_id";
 
         try (Connection conn = Database_Connection.getConnection();
              PreparedStatement stmt = conn.prepareStatement(sql);
@@ -24,7 +24,7 @@ public class Database_Kurs_Logikk {
                         rs.getString("tittel"),
                         rs.getTimestamp("start_dato_tid").toLocalDateTime(),
                         rs.getTimestamp("slutt_dato_tid").toLocalDateTime(),
-                        rs.getInt("kursavholder_id"),
+                        rs.getString("Navn"),
                         rs.getDouble("pris_medlem"),
                         rs.getDouble("pris_ikke_medlem"),
                         rs.getString("beskrivelse"),
