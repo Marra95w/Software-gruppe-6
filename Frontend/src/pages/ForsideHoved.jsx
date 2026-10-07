@@ -1,5 +1,6 @@
 import Kurslist from '../components/KursList'
 import { Link } from 'react-router-dom'
+import '../components/ForsideHoved.css'
 export default function ForsideHoved() {
     return (
         <>

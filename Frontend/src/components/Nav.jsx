@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import "./Nav.css"
-import "./Main.css"
+import "./ForsideHoved.css"
 import "./Dropdown.css"
 export default function Nav() {
     const [open, setOpen] = useState(false)

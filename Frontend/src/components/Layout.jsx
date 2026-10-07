@@ -1,7 +1,6 @@
 import { Link, Outlet } from "react-router-dom";
 import { useEffect } from "react";
 import Nav from './Nav'
-import "./Main.css"
 const Layout = ({ }) => {
 
     return (
