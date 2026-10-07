@@ -1,33 +1,19 @@
 import { useState } from "react";
 import "../components/courses.css";
 import KursList from "../components/KursList";
-<<<<<<< HEAD
-export default function Courses() {
-=======
-
 export default function Course() {
-
-    //drop down meny på calendar, location
-    const [open, setOpen] = useState(false);
-
->>>>>>> mariau
     return (
         <main>
             <h2>Kurs og aktiviteter</h2>
 
             <p>
-                Her finner du kurs som hører til Østfold Husflidslag 
+                Her finner du kurs som hører til Østfold Husflidslag
                 og andre lokallag
             </p>
 
             <form className="search">
-<<<<<<< HEAD
-                <img src="../src/assets/bilde/search.svg" alt="Search" />
                 <input type="search"
-=======
-                <input 
-                    type="search"
->>>>>>> mariau
+                    img src="../src/assets/bilde/search.svg" alt="Search"
                     placeholder="Søk etter kurs..."
                 />
                 <button type="submit">Søk</button>
@@ -35,19 +21,19 @@ export default function Course() {
 
             <section className="filter">
 
-                <button 
+                <button
                     className="date"
                     onClick={() => setOpen(!open)}
                 >
-                    <img 
-                        src="../src/assets/bilde/calendar.svg" 
-                        alt="Kalender" 
+                    <img
+                        src="../src/assets/bilde/calendar.svg"
+                        alt="Kalender"
                     />
                     <p>Dato</p>
-                    <img 
+                    <img
                         className="arrow-down"
-                        src="../src/assets/bilde/arrow-down.svg" 
-                        alt="pil ned" 
+                        src="../src/assets/bilde/arrow-down.svg"
+                        alt="pil ned"
                     />
                 </button>
 
@@ -56,11 +42,11 @@ export default function Course() {
                         <label htmlFor="course-date">
                             Velg Dato
                         </label>
-                        <input 
-                            type="date" 
-                            id="course-date" 
-                            name="coursedate"  
-                          />
+                        <input
+                            type="date"
+                            id="course-date"
+                            name="coursedate"
+                        />
                         <button>
                             Velg dato
                         </button>
@@ -68,24 +54,24 @@ export default function Course() {
                 )}
 
                 <button className="locator">
-                    <img 
-                        src="../src/assets/bilde/locator.svg" 
-                        alt="Lokasjon" 
+                    <img
+                        src="../src/assets/bilde/locator.svg"
+                        alt="Lokasjon"
                     />
                     <p>Sted</p>
-                    <img 
+                    <img
                         className="arrow-down"
-                        src="../src/assets/bilde/arrow-down.svg" 
-                        alt="pil ned" 
+                        src="../src/assets/bilde/arrow-down.svg"
+                        alt="pil ned"
                     />
                 </button>
 
-                 <button className="category">
+                <button className="category">
                     <p>Kategori</p>
-                    <img 
+                    <img
                         className="arrow-down"
-                        src="../src/assets/bilde/arrow-down.svg" 
-                        alt="pil ned" 
+                        src="../src/assets/bilde/arrow-down.svg"
+                        alt="pil ned"
                     />
                 </button>
 
@@ -97,7 +83,7 @@ export default function Course() {
             </section>
 
             <section className="choose-course">
-                        <img className="course-img" src="../src/assets/bilde/strikk.png" alt="strikk" />
+                <img className="course-img" src="../src/assets/bilde/strikk.png" alt="strikk" />
                 <ul>
                     <li>
                         <img src="../src/assets/bilde/calendar.svg" alt="calender" />
@@ -114,10 +100,5 @@ export default function Course() {
                 </ul>
             </section>
         </main>
-<<<<<<< HEAD
-    )
-}
-=======
     );
 }
->>>>>>> mariau
