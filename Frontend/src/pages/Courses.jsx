@@ -2,6 +2,7 @@ import { useState } from "react";
 import "../components/courses.css";
 import KursList from "../components/KursList";
 export default function Course() {
+    const [open, setOpen] = useState(false);
     return (
         <main>
             <h2>Kurs og aktiviteter</h2>
@@ -22,6 +23,7 @@ export default function Course() {
             <section className="filter">
 
                 <button
+                    type="button"
                     className="date"
                     onClick={() => setOpen(!open)}
                 >
