@@ -44,7 +44,7 @@ main{
 
 .date-menu {
     position: absolute;
-    top: 70%;
+    top: 39%;
     left: 0;
 
     margin: 0;
@@ -90,6 +90,6 @@ main{
 .course-arrow {
     position: absolute;
     right: 2rem;
-    top: 101%;
+    top: 59%;
     width: 5%;
 }
