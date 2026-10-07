@@ -41,11 +41,11 @@ export default function KursList() {
                 <article key={kurs.tittel}> <h3>{kurs.tittel}</h3>
                     <p>Fra {kurs.startDatoTid} til {kurs.sluttDatoTid}</p>
                     <p>Hvor:{kurs.kursavholder} </p>
-                    <p>Pris:{kurs.prisMedlem}</p>
-                    <p>Pris hvis du ikke er medlem:{kurs.prisIkkeMedlem}</p>
-                    <p>beskrivelse:{kurs.beskrivelse}</p>
-                    <p>tilgjengelig? {kurs.tilgjengelig}</p>
-                    <p>maksDeltakere: {kurs.maksDeltakere}</p>
+                    <p>Pris:{kurs.prisMedlem}kr</p>
+                    <p>Pris hvis du ikke er medlem: {kurs.prisIkkeMedlem}kr</p>
+                    <p>Beskrivelse: {kurs.beskrivelse}</p>
+                    <p>Tilgjengelig? {kurs.tilgjengelig}</p>
+                    <p>MaksDeltakere: {kurs.maksDeltakere}</p>
                 </article>
             )}
 
