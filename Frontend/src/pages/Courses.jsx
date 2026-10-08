@@ -96,9 +96,6 @@ export default function Course() {
                     <li>
                         <p>Fredrikstad</p>
                     </li>
-                    <li>
-                        <img className="course-arrow" src="../src/assets/bilde/arrow-down.svg" alt="Pil" />
-                    </li>
                 </ul>
             </section>
         </main>
