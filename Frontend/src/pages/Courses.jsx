@@ -23,39 +23,40 @@ export default function Course() {
 
             <section className="filter">
 
-                <button
-                    type="button"
-                    className="date"
-                    onClick={() => setOpen(!open)}
-                >
-                    <img
-                        src="../src/assets/bilde/calendar.svg"
-                        alt="Kalender"
-                    />
-                    <p>Dato</p>
-                    <img
-                        className="arrow-down"
-                        src="../src/assets/bilde/arrow-down.svg"
-                        alt="pil ned"
-                    />
-                </button>
-
-                {open && (
-                    <div className="date-menu">
-                        <label htmlFor="course-date">
-                            Velg Dato
-                        </label>
-                        <input
-                            type="date"
-                            id="course-date"
-                            name="coursedate"
+                <div className="date-container">
+                    <button
+                        type="button"
+                        className="date"
+                        onClick={() => setOpen(!open)}
+                    >
+                        <img
+                            src="../src/assets/bilde/calendar.svg"
+                            alt="Kalender"
                         />
-                        <button>
-                            Velg dato
-                        </button>
-                    </div>
-                )}
+                        <p>Dato</p>
+                        <img
+                            className="arrow-down"
+                            src="../src/assets/bilde/arrow-down.svg"
+                            alt="pil ned"
+                        />
+                    </button>
 
+                    {open && (
+                        <div className="date-menu">
+                            <label htmlFor="course-date">
+                                Velg Dato
+                            </label>
+                            <input
+                                type="date"
+                                id="course-date"
+                                name="coursedate"
+                            />
+                            <button>
+                                Velg dato
+                            </button>
+                        </div>
+                    )}
+                </div>
                 <button className="locator">
                     <img
                         src="../src/assets/bilde/locator.svg"
