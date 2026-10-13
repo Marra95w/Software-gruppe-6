@@ -3,7 +3,7 @@
 main{
     .filter{
         display: flex;
-        
+        margin-bottom: 100px;
     }
     .date {
         display: flex;
@@ -28,11 +28,6 @@ main{
 }
 
 /*  Dropdown meny for dato */
-.date-dropdown {
-    position: relative;
-    display: inline-block;
-}
-
 
 .date img {
     width: 24px;

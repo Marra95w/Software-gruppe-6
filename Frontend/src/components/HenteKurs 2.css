@@ -1,0 +1,31 @@
+/* Kursoversikt */
+
+.choose-course{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #ccc;
+    padding: 1rem;
+    margin: 40px;
+    border-radius: 8px;
+
+    img{
+        width: 40px;
+    }
+}
+
+.choose-course ul {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+
+    margin: 0;
+    padding: 1rem;
+
+    width: 100%;
+}
+
+.course-img{
+    width: 200px;
+    list-style: none;
+}
+

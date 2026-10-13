@@ -1,7 +1,9 @@
 import { useState } from "react";
 import "../components/courses.css";
 import KursList from "../components/KursList";
+import BestilleKurs from "./BestilleKurs";
 export default function Course() {
+    const [open, setOpen] = useState(false);
     return (
         <main>
             <h2>Kurs og aktiviteter</h2>
@@ -22,6 +24,7 @@ export default function Course() {
             <section className="filter">
 
                 <button
+                    type="button"
                     className="date"
                     onClick={() => setOpen(!open)}
                 >
@@ -94,11 +97,9 @@ export default function Course() {
                     <li>
                         <p>Fredrikstad</p>
                     </li>
-                    <li>
-                        <img className="course-arrow" src="../src/assets/bilde/arrow-down.svg" alt="Pil" />
-                    </li>
                 </ul>
             </section>
+     
         </main>
     );
 }
