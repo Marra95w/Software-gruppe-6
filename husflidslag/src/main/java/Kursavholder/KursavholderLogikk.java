@@ -20,6 +20,7 @@ public class KursavholderLogikk {
 
 
 
+
         try(PreparedStatement pstmt = connection.prepareStatement(sql)){
 
             pstmt.setInt(1,Kursavholder_id);
