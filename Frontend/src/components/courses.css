@@ -1,9 +1,13 @@
 
 /* Generellt design av knapper */
 main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     .filter{
         display: flex;
-        margin-bottom: 100px;
+        justify-content: center;
+        margin-bottom: 200px;
     }
     .date {
         display: flex;
@@ -27,7 +31,10 @@ main{
     }
 }
 
+
+
 /*  Dropdown meny for dato */
+
 
 .date img {
     width: 24px;
@@ -37,24 +44,21 @@ main{
     transition: transform 0.2s;
 }
 
+.date-container {
+    position: relative;
+    z-index: 20;
+}
+
 .date-menu {
     position: absolute;
-    top: 39%;
+    top: 100%;
     left: 0;
-
-    margin: 0;
-    width: 20%;
-    box-sizing: border-box;
-
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-
+    width: 220px;
     background-color: white;
     padding: 1rem;
     border: 1px solid #ccc;
     border-radius: 8px;
-
+    z-index: 21;
 }
 
 /* Kursoversikt */
