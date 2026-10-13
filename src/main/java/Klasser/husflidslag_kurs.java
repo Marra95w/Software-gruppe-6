@@ -7,7 +7,7 @@ import java.time.LocalDateTime;
 
 public class husflidslag_kurs implements Kurs {
 
-
+    private int id;
     private String tittel;
     private LocalDateTime startDatoTid;
     private LocalDateTime sluttDatoTid;
@@ -18,9 +18,10 @@ public class husflidslag_kurs implements Kurs {
     private boolean tilgjengelig;
     private int maksDeltagere;
 
-    public husflidslag_kurs( String tittel, LocalDateTime startDatoTid, LocalDateTime sluttDatoTid, String kursavholder,
-                            double prisMedlem, double prisIkkeMedlem, String beskrivelse, boolean tilgjengelig,int maksDeltagere) {
-
+    public husflidslag_kurs(int id, String tittel, LocalDateTime startDatoTid, LocalDateTime sluttDatoTid,
+            String kursavholder,
+            double prisMedlem, double prisIkkeMedlem, String beskrivelse, boolean tilgjengelig, int maksDeltagere) {
+        this.id = id;
         this.tittel = tittel;
         this.startDatoTid = startDatoTid;
         this.sluttDatoTid = sluttDatoTid;
@@ -36,7 +37,10 @@ public class husflidslag_kurs implements Kurs {
         super();
     }
 
-
+    @Override
+    public int getId() {
+        return id;
+    }
 
     @Override
     public String getTittel() {
@@ -74,8 +78,13 @@ public class husflidslag_kurs implements Kurs {
     }
 
     @Override
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    @Override
     public void setTittel(String tittel) {
-        this.tittel =tittel;
+        this.tittel = tittel;
     }
 
     @Override
@@ -90,7 +99,7 @@ public class husflidslag_kurs implements Kurs {
 
     @Override
     public void setKursavholder(String kursavholder) {
-        this.kursavholder =kursavholder;
+        this.kursavholder = kursavholder;
     }
 
     @Override
@@ -108,10 +117,9 @@ public class husflidslag_kurs implements Kurs {
         this.beskrivelse = beskrivelse;
     }
 
-    public boolean isTilgjengelig() { //Endret fra erTilgjengelig
+    public boolean isTilgjengelig() { // Endret fra erTilgjengelig
         return tilgjengelig;
     }
-
 
     @Override
     public int getMaksDeltakere() {
@@ -120,7 +128,7 @@ public class husflidslag_kurs implements Kurs {
 
     @Override
     public void setMaksDeltakere(int deltakere) {
-        if (maksDeltagere<=0){
+        if (maksDeltagere <= 0) {
             System.err.println("Ingen påmeldt! Vær så snill legg antall påmeldte for kurset!");
         }
         this.maksDeltagere = deltakere;

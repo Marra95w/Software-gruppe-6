@@ -9,14 +9,14 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) {
         Javalin app = Javalin.create(config -> {
-    config.bundledPlugins.enableCors(cors -> {
-        cors.addRule(it -> {
-            it.anyHost();
-        });
-    });
-}).start(7001);
+            config.bundledPlugins.enableCors(cors -> {
+                cors.addRule(it -> {
+                    it.anyHost();
+                });
+            });
+        }).start(7001);
 
-        app.get("/kurs_tabell", ctx -> { //java prøvde å finne en kurs tabell som ikke finnes
+        app.get("/kurs_tabell", ctx -> { // java prøvde å finne en kurs tabell som ikke finnes
             Database_Kurs_Logikk logikk = new Database_Kurs_Logikk();
             List<husflidslag_kurs> alleKurs = logikk.hentAlleKurs();
             ctx.json(alleKurs);
@@ -24,4 +24,5 @@ public class Main {
 
         System.out.println("Server kjører på http://localhost:7001");
     }
+
 }
