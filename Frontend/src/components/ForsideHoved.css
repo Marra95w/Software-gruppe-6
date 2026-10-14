@@ -23,7 +23,7 @@ main{
         margin: 0 auto;
     }
 }
-    /* Tekst uner bilde */
+    /* Tekst under bilde */
     .intro{
         color: var(--burgunder);
         text-align: center;
@@ -49,6 +49,7 @@ main{
         display: flex;
         align-items: center;
         gap: 1rem;
+        width: 100%;
     
         &::before,
         &::after {

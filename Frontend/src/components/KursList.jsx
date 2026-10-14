@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import { hentAlleKurs } from "../Api/kursApi";
-import "./HenteKurs.css";
+
 export default function KursList() {
 
     const [kursList, setKursList] = useState([]);
@@ -39,16 +39,18 @@ export default function KursList() {
             {kursList.map((kurs) =>
 
                 <article className="choose-course" key={kurs.tittel}> 
-                    <img src="../src/assets/bilde/calendar.svg" alt="kalender" />
-                    <h3>{kurs.tittel}</h3>
-                    <p>Fra {kurs.startDatoTid} til {kurs.sluttDatoTid}</p>
-                    <p>Hvor: {kurs.kursavholder} </p>
-                    <p>Pris: {kurs.prisMedlem}kr</p>
-                    <p>Pris hvis du ikke er medlem: {kurs.prisIkkeMedlem}kr</p>
-                    <p>Beskrivelse: {kurs.beskrivelse}</p>
-                    <p>Tilgjengelig? {kurs.tilgjengelig}</p>
-                    <p>MaksDeltakere: {kurs.maksDeltakere}</p>
-                    <img className="arrow-down" src="../src/assets/bilde/arrow-down.svg" alt="Pil" />
+                        <img className="course-strikk" src="../src/assets/bilde/strikk.png" alt="srikk" />
+                    <div className="course-info">
+                        <h3>{kurs.tittel}</h3>
+                        <p>Fra {kurs.startDatoTid} til {kurs.sluttDatoTid}</p>
+                        <p>Hvor: {kurs.kursavholder} </p>
+                        <p>Pris: {kurs.prisMedlem}kr</p>
+                        <p>Pris hvis du ikke er medlem: {kurs.prisIkkeMedlem}kr</p>
+                        <p>Beskrivelse: {kurs.beskrivelse}</p>
+                        <p>Tilgjengelig? {kurs.tilgjengelig}</p>
+                        <p>MaksDeltakere: {kurs.maksDeltakere}</p>
+                    </div>
+                        <img className="arrow-down" src="../src/assets/bilde/arrow-down.svg" alt="Pil" />
                 </article>
             )}
 

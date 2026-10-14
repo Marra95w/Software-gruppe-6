@@ -36,7 +36,14 @@ main{
 /*  Dropdown meny for dato */
 
 
-.date img {
+.date-container {
+    position: relative;
+
+.date {
+
+}
+}
+.date-img {
     width: 24px;
 }
 
@@ -44,10 +51,6 @@ main{
     transition: transform 0.2s;
 }
 
-.date-container {
-    position: relative;
-    z-index: 20;
-}
 
 .date-menu {
     position: absolute;
@@ -61,34 +64,80 @@ main{
     z-index: 21;
 }
 
+
+/* søkefelt */
+
+.search{
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.search img {
+    width: 24px;
+    height: 24px;
+}
+
+.search input {
+    flex: 1;
+}
+
 /* Kursoversikt */
 
 .choose-course{
     display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 1.5rem;
+
     border: 1px solid #ccc;
-    padding: 1rem;
+    padding: 1.5rem;
     border-radius: 8px;
+
+    max-width: 900px;
+    width: 100%;
+    margin: 1rem auto;
 }
 
 .choose-course ul {
     display: flex;
     flex-direction: column;
+    gap: 0.5rem;
+
     list-style: none;
-
     margin: 0;
-    padding: 1rem;
+    padding: 0;
 
-    width: 100%;
+
 }
 
-.course-img{
-    width: 200px;
-    list-style: none;
+.choose-course li {
+    margin: 0;
+    padding: 0;
+}
+
+.choose-course h3, 
+.choose-course p {
+    margin: 0;
+}
+
+.course-info{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    flex: 1;
+}
+
+.course-strikk{
+    width: 192px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+ 
 }
 
 .course-arrow {
-    position: absolute;
-    right: 2rem;
-    top: 59%;
-    width: 5%;
+    width: 24px;
+    margin-left: auto;
 }
