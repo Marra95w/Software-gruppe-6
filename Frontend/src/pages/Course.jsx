@@ -36,7 +36,7 @@ export default function Course() {
     return (
 
 
-        <main className="choose_course">
+        <main className="choose-course">
             <h1>{kurs.tittel}</h1>
             <p>{kurs.beskrivelse}</p>
             <p>Sarter:{kurs.startDatoTid}</p>
