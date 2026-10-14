@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import { hentAlleKurs } from "../Api/kursApi";
+import { Link } from "react-router-dom";
 import "./HenteKurs.css";
 export default function KursList() {
 
@@ -37,19 +38,21 @@ export default function KursList() {
 
         <section>
             {kursList.map((kurs) =>
+                <Link to={`courses/${kurs.id}`} key={kurs.id}>
+                    <article className="choose-course" key={kurs.tittel}>
+                        <img src="../src/assets/bilde/calendar.svg" alt="kalender" />
+                        <h3>{kurs.tittel}</h3>
+                        <p>Fra {kurs.startDatoTid} til {kurs.sluttDatoTid}</p>
+                        <p>Hvor: {kurs.kursavholder} </p>
+                        <p>Pris: {kurs.prisMedlem}kr</p>
+                        <p>Pris hvis du ikke er medlem: {kurs.prisIkkeMedlem}kr</p>
+                        <p>Beskrivelse: {kurs.beskrivelse}</p>
+                        <p>Tilgjengelig? {kurs.tilgjengelig}</p>
+                        <p>MaksDeltakere: {kurs.maksDeltakere}</p>
+                        <img className="arrow-down" src="../src/assets/bilde/arrow-down.svg" alt="Pil" />
 
-                <article className="choose-course" key={kurs.tittel}>
-                    <img src="../src/assets/bilde/calendar.svg" alt="kalender" />
-                    <h3>{kurs.tittel}</h3>
-                    <p>Fra {kurs.startDatoTid} til {kurs.sluttDatoTid}</p>
-                    <p>Hvor: {kurs.kursavholder} </p>
-                    <p>Pris: {kurs.prisMedlem}kr</p>
-                    <p>Pris hvis du ikke er medlem: {kurs.prisIkkeMedlem}kr</p>
-                    <p>Beskrivelse: {kurs.beskrivelse}</p>
-                    <p>Tilgjengelig? {kurs.tilgjengelig}</p>
-                    <p>MaksDeltakere: {kurs.maksDeltakere}</p>
-                    <img className="arrow-down" src="../src/assets/bilde/arrow-down.svg" alt="Pil" />
-                </article>
+                    </article>
+                </Link>
             )}
 
         </section>

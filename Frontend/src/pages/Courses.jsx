@@ -100,7 +100,7 @@ export default function Course() {
                     </li>
                 </ul>
             </section>
-     
+
         </main>
     );
 }
