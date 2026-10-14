@@ -1,0 +1,94 @@
+
+/* Generellt design av knapper */
+main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .filter{
+        display: flex;
+        justify-content: center;
+        margin-bottom: 200px;
+    }
+    .date {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        margin: 30px;
+}
+
+    .locator{
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        margin: 30px;
+    }
+
+    .category{
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        margin: 30px;
+    }
+}
+
+
+
+/*  Dropdown meny for dato */
+
+
+.date img {
+    width: 24px;
+}
+
+.arrow-down {
+    transition: transform 0.2s;
+}
+
+.date-container {
+    position: relative;
+    z-index: 20;
+}
+
+.date-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 220px;
+    background-color: white;
+    padding: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    z-index: 21;
+}
+
+/* Kursoversikt */
+
+.choose-course{
+    display: flex;
+    border: 1px solid #ccc;
+    padding: 1rem;
+    border-radius: 8px;
+}
+
+.choose-course ul {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+
+    margin: 0;
+    padding: 1rem;
+
+    width: 100%;
+}
+
+.course-img{
+    width: 200px;
+    list-style: none;
+}
+
+.course-arrow {
+    position: absolute;
+    right: 2rem;
+    top: 59%;
+    width: 5%;
+}
