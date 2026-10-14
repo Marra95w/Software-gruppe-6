@@ -88,10 +88,7 @@ export default function Course() {
             <section>
 
                 <KursList />
-            </section>  
-     
-
-
+            </section>
         </main>
     );
 }
