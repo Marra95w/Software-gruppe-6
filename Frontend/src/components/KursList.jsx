@@ -38,7 +38,7 @@ export default function KursList() {
         <section>
             {kursList.map((kurs) =>
 
-                <article className="choose-course" key={kurs.tittel}> 
+                <article className="choose-course" key={kurs.tittel}>
                     <img src="../src/assets/bilde/calendar.svg" alt="kalender" />
                     <h3>{kurs.tittel}</h3>
                     <p>Fra {kurs.startDatoTid} til {kurs.sluttDatoTid}</p>

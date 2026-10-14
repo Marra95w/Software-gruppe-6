@@ -25,7 +25,7 @@ public class Main {
 
         // Fikk dette fra Kunstintelligens. Samme som det som står øverst, men den
         // bruker url og henter et spesific kurs.
-        app.get("/kurs/{id}", ctx -> {
+        app.get("/kurs_tabell/{id}", ctx -> {
             int id = Integer.parseInt(ctx.pathParam("id"));
             Database_Kurs_Logikk logikk = new Database_Kurs_Logikk();
             husflidslag_kurs kurs = logikk.hentKursById(id);
