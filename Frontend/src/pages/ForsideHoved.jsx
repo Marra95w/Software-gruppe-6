@@ -14,11 +14,9 @@ export default function ForsideHoved() {
                     <img className="rose-design" src="../src/assets/bilde/rose.png" alt="rose" />
                 </div>
 
-            <section>
-                <h2></h2>
-
+            <section className='courses-main'>
                 <article>
-                    <h3>Kurs: </h3>
+                    <h3 className='course-header'>Aktuelle kurs </h3>
                   {<Kurslist />} 
                 </article>
              </section>
