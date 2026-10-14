@@ -36,14 +36,52 @@ export default function Course() {
     return (
 
 
-        <main className="choose-course">
-            <h1>{kurs.tittel}</h1>
-            <p>{kurs.beskrivelse}</p>
-            <p>Sarter:{kurs.startDatoTid}</p>
-            <p>Avslutter:{kurs.sluttDatoTid}</p>
-            <p>Pris for medlemmer{kurs.prisMedlem}</p>
-            <p>Vanlig pris{kurs.prisIkkeMedlem}</p>
-            <Link to="/Courses">Tilbake til kursoversikt</Link>
+        <main className="course-details">
+            <section className="choose-course">
+                <img 
+                    className="course-strikk" 
+                    src="../src/assets/bilde/strikk.png" 
+                    alt="Strikke" 
+                />
+            <div className="course-info">
+                <h1>{kurs.tittel}</h1>
+                <p>{kurs.beskrivelse}</p>
+                <p>Sarter:{kurs.startDatoTid}</p>
+                <p>Avslutter: {kurs.sluttDatoTid}</p>
+                <p>Pris for medlemmer: {kurs.prisMedlem} kr</p>
+                <p>Vanlig pris: {kurs.prisIkkeMedlem} kr</p>
+            </div>
+            </section>
+
+            <section className="info-person">
+                <img src="../src/assets/bilde/person.svg" alt="Person" />
+                <h3>Dine opplysninger</h3>
+                <form>
+                    <img src="../src/assets/bilde/person.svg" alt="Person" />
+                    <label htmlFor="fname">Fornavn: </label>
+                    <input type="text" 
+                        placeholder="Rigmor Nordmann"
+                    />
+                </form>
+                <form>
+                    <img src="../src/assets/bilde/e-post.svg" alt="mailboks" />
+                    <label htmlFor="email"> E-post: </label>
+                    <input type="email" 
+                    placeholder="Rigmor@epost.no"
+                    />
+                </form>
+                 <form>
+                    <img src="../src/assets/bilde/phone.svg" alt="Telefon" />
+                    <label htmlFor="tel"> Telefon: </label>
+                    <input type="tel" 
+                    placeholder="123456789"
+                    />
+                </form>
+
+            <Link className="back-link" to="/Courses">Tilbake til kursoversikt</Link>
+
+
+            </section>
         </main>
     )
 
