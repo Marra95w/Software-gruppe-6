@@ -18,12 +18,6 @@ public class KursavholderLogikk {
                 "JOIN adresse_husflidslag ON kursavholder.kursavholder_id = adresse_husflidslag.id " +
                 "WHERE kursavholder.kursavholder_id = ?";
 
-        String sql1 = "UPDATE kursavholder SET Navn = ? WHERE  kursavholder.kursavholder_id = ?";
-        String sql2 = "UPDATE adresse_husflidslag SET Navn = ? WHERE  Adresse_Kursvavholder_Id = ?";
-
-
-
-
         try(PreparedStatement pstmt = connection.prepareStatement(sql)){
 
             pstmt.setInt(1,Kursavholder_id);
@@ -41,5 +35,9 @@ public class KursavholderLogikk {
             System.out.println("Feil ved henting av database:  " + ex.getMessage());
         }
         return  null;
+    }
+
+    public void leggTilKursavholder(Connection connection, String navn, String ){
+
     }
 }

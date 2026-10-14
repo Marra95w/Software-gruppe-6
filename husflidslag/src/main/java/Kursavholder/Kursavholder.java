@@ -48,7 +48,7 @@ public class Kursavholder {
     public String toString() {
         return "Kursavholder{" +
                 "Kursavholder_id=" + Kursavholder_id +
-                ", navn='" + navn + '\'' +
+                ", Navn ='" + navn + '\'' +
                 ", Adresse_Kursvavholder_Id=" + Adresse_Kursvavholder_Id +
                 ", Adresse_husflidslag='" + Adresse_husflidslag + '\'' +
                 '}';
