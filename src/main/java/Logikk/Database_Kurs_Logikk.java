@@ -4,6 +4,7 @@ import Database.Database_Connection;
 import Klasser.husflidslag_kurs;
 
 import java.sql.*;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -12,8 +13,9 @@ public class Database_Kurs_Logikk {
     public List<husflidslag_kurs> hentAlleKurs() {
         List<husflidslag_kurs> kursListe = new ArrayList<>();
 
-        String sql = " SELECT * FROM kurs_tabell LEFT JOIN kursavholder ON kurs_tabell.kursavholder_id = kursavholder.kursavholder_id LEFT JOIN adresse_husflidslag ON adresse_husflidslag.Adresse_Kursvavholder_Id = kursavholder.Kursavholder_id";
-
+        String sql = "SELECT * FROM kurs_tabell " +
+                "LEFT JOIN kursavholder ON kurs_tabell.kursavholder_id = kursavholder.Kursavholder_id " +
+                "LEFT JOIN adresse_husflidslag ON adresse_husflidslag.Adresse_Kursvavholder_Id = kursavholder.Kursavholder_id";
         try (Connection conn = Database_Connection.getConnection();
                 PreparedStatement stmt = conn.prepareStatement(sql);
                 ResultSet rs = stmt.executeQuery()) {
@@ -31,6 +33,7 @@ public class Database_Kurs_Logikk {
                         rs.getString("beskrivelse"),
                         true,
                         0
+
                 // rs.getInt("maksDeltagere") Dette kolumne finnes ikke i tabellen så jeg endret
                 // til en fast verdi. Måtte også endre navnet kolumnene til det som var i
                 // databasen.
@@ -49,8 +52,11 @@ public class Database_Kurs_Logikk {
     public husflidslag_kurs hentKursById(int id) {
         husflidslag_kurs kurs = null;
 
-        String sql = "SELECT * FROM kurs_tabell LEFT JOIN kursavholder on kurs_tabell.kursavholder_id = kursavholder.kursavholder_id LEFT JOIN adresse_husflidslag ON adresse_husflidslag.adresse_kursavholder_id = kursavholder.kursavholder_id WHERE kurs_tabell.id = ?";
-
+        String sql = "SELECT * FROM kurs_tabell " +
+                "LEFT JOIN kursavholder ON kurs_tabell.kursavholder_id = kursavholder.Kursavholder_id " +
+                "LEFT JOIN adresse_husflidslag ON adresse_husflidslag.Adresse_Kursvavholder_Id = kursavholder.Kursavholder_id "
+                +
+                "WHERE kurs_tabell.id = ?";
         try (Connection conn = Database_Connection.getConnection();
                 PreparedStatement stmt = conn.prepareStatement(sql)) {
 
