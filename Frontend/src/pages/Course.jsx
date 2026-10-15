@@ -2,6 +2,7 @@ import { useParams } from "react-router-dom";
 import { hentKursById } from "../Api/kursApi";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import "../components/Course.css"
 import '../components/courses.css';
 
 export default function Course() {
@@ -46,12 +47,23 @@ export default function Course() {
             <div className="course-info">
                 <h1>{kurs.tittel}</h1>
                 <p>{kurs.beskrivelse}</p>
-                <p>Sarter:{kurs.startDatoTid}</p>
+                <p>Starter: {kurs.startDatoTid}</p>
                 <p>Avslutter: {kurs.sluttDatoTid}</p>
-                <p>Pris for medlemmer: {kurs.prisMedlem} kr</p>
-                <p>Vanlig pris: {kurs.prisIkkeMedlem} kr</p>
             </div>
             </section>
+
+            <fieldset className="medlem-ikke-medlem">
+                <img src="../src/assets/bilde/price-tag.svg" alt="prislapp" />
+                <legend>Velg pris</legend>
+                <label>
+                    <input type="radio" name="pris" value="medlem" />
+                    Pris for medlemmer: {kurs.prisMedlem} kr
+                </label>
+                <label>
+                    <input type="radio" name="pris" value="ikke-medlem" />
+                    Vanlig pris: {kurs.prisIkkeMedlem} kr
+                </label>
+            </fieldset>
 
             <section className="info-person">
                 <img src="../src/assets/bilde/person.svg" alt="Person" />

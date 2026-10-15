@@ -120,22 +120,43 @@ main{
             }
         }
 
-
+        /* design på selve kortet */
         .course-card{
             background-color: #BFCFBA;
         }
+        .course-card:hover{
+            box-shadow: 2px 2px 50px grey;
+            transform: scale(1.05);
+        }
+
+
         .local-card{
             background-color: #BBD3EE;
-           
         }
+         .local-card:hover{
+            box-shadow: 2px 2px 50px grey;
+            transform: scale(1.05);
+        }
+
+
         .craft-card{
             background-color: #ECCB9A;
-            
         }
+         .craft-card:hover{
+            box-shadow: 2px 2px 50px grey;
+            transform: scale(1.05);
+        }
+
+
         .about-card{
             background-color: rgba(171, 61, 78, 0.5);
-           
         }
+         .about-card:hover{
+            box-shadow: 2px 2px 50px grey;
+            transform: scale(1.05);
+        }
+
+
         button{
             background: none;
             border: none;
