@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "../components/courses.css";
 import KursList from "../components/KursList";
-import BestilleKurs from "./BestilleKurs";
+
 export default function Course() {
     const [open, setOpen] = useState(false);
     return (
@@ -14,7 +14,7 @@ export default function Course() {
 
             {/* søkefelt */}
             <form className="search">
-                <img src="../src/assets/bilde/search.svg" alt="Search"/>
+                <img src="../src/assets/bilde/search.svg" alt="Search" />
                 <input type="search"
                     placeholder="Søk etter kurs..."
                 />

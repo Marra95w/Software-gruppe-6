@@ -2,6 +2,7 @@ import { useParams } from "react-router-dom";
 import { hentKursById } from "../Api/kursApi";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { formatDato, formatTid } from "../components/Dato";
 import "../components/Course.css"
 import '../components/courses.css';
 
@@ -39,17 +40,16 @@ export default function Course() {
 
         <main className="course-details">
             <section className="choose-course">
-                <img 
-                    className="course-strikk" 
-                    src="../src/assets/bilde/strikk.png" 
-                    alt="Strikke" 
+                <img
+                    className="course-strikk"
+                    src="../src/assets/bilde/strikk.png"
+                    alt="Strikke"
                 />
-            <div className="course-info">
-                <h1>{kurs.tittel}</h1>
-                <p>{kurs.beskrivelse}</p>
-                <p>Starter: {kurs.startDatoTid}</p>
-                <p>Avslutter: {kurs.sluttDatoTid}</p>
-            </div>
+                <div className="course-info">
+                    <h1>{kurs.tittel}</h1>
+                    <p>{kurs.beskrivelse}</p>
+                    <p>Dato: {formatDato(kurs.startDatoTid)} til {formatDato(kurs.sluttDatoTid)} fra: {formatTid(kurs.startDatoTid)} til {formatTid(kurs.sluttDatoTid)}</p>
+                </div>
             </section>
 
             <fieldset className="medlem-ikke-medlem">
@@ -66,14 +66,14 @@ export default function Course() {
             </fieldset>
 
             <section className="info-person">
-               <form>
+                <form>
                     <fieldset>
                         <legend>Dine opplysninger</legend>
 
                         <img src="../src/assets/bilde/person.svg" alt="Person" />
                         <label htmlFor="fname">Navn: </label>
-                        <input 
-                            type="text" 
+                        <input
+                            type="text"
                             id="fname"
                             name="fname"
                             placeholder="Rigmor Nordmann"
@@ -82,18 +82,17 @@ export default function Course() {
 
                         <img src="../src/assets/bilde/e-post.svg" alt="E-post" />
                         <label htmlFor="email">E-post: </label>
-                        <input 
-                            type="email" 
+                        <input
+                            type="email"
                             id="email"
                             name="email"
                             placeholder="Rigmor@epost.no"
                             required
                         />
-
                         <img src="../src/assets/bilde/phone.svg" alt="Telefon" />
                         <label htmlFor="tel">Telefon: </label>
-                        <input 
-                            type="tel" 
+                        <input
+                            type="tel"
                             id="tel"
                             name="tel"
                             placeholder="12345678"
@@ -101,7 +100,7 @@ export default function Course() {
                         />
 
                     </fieldset>
-               </form>
+                </form>
             </section>
             <Link className="back-link" to="/Courses">Tilbake til kursoversikt</Link>
         </main>
