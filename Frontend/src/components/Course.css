@@ -41,3 +41,26 @@
 .back-link:hover{
     background-color: #f5e9eb;
 }
+
+
+
+/* Design av input felt  */
+.info-person fieldset {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 420px;
+    margin-top: 2rem;
+}
+.info-person legend {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
+}
+.info-person input {
+    padding: 1rem;
+    font-size: 1rem;
+}
+.info-person img {
+    width: 24px;
+}

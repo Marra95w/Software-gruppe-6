@@ -66,34 +66,44 @@ export default function Course() {
             </fieldset>
 
             <section className="info-person">
-                <img src="../src/assets/bilde/person.svg" alt="Person" />
-                <h3>Dine opplysninger</h3>
-                <form>
-                    <img src="../src/assets/bilde/person.svg" alt="Person" />
-                    <label htmlFor="fname">Fornavn: </label>
-                    <input type="text" 
-                        placeholder="Rigmor Nordmann"
-                    />
-                </form>
-                <form>
-                    <img src="../src/assets/bilde/e-post.svg" alt="mailboks" />
-                    <label htmlFor="email"> E-post: </label>
-                    <input type="email" 
-                    placeholder="Rigmor@epost.no"
-                    />
-                </form>
-                 <form>
-                    <img src="../src/assets/bilde/phone.svg" alt="Telefon" />
-                    <label htmlFor="tel"> Telefon: </label>
-                    <input type="tel" 
-                    placeholder="123456789"
-                    />
-                </form>
+               <form>
+                    <fieldset>
+                        <legend>Dine opplysninger</legend>
 
-            <Link className="back-link" to="/Courses">Tilbake til kursoversikt</Link>
+                        <img src="../src/assets/bilde/person.svg" alt="Person" />
+                        <label htmlFor="fname">Navn: </label>
+                        <input 
+                            type="text" 
+                            id="fname"
+                            name="fname"
+                            placeholder="Rigmor Nordmann"
+                            required
+                        />
 
+                        <img src="../src/assets/bilde/e-post.svg" alt="E-post" />
+                        <label htmlFor="email">E-post: </label>
+                        <input 
+                            type="email" 
+                            id="email"
+                            name="email"
+                            placeholder="Rigmor@epost.no"
+                            required
+                        />
 
+                        <img src="../src/assets/bilde/phone.svg" alt="Telefon" />
+                        <label htmlFor="tel">Telefon: </label>
+                        <input 
+                            type="tel" 
+                            id="tel"
+                            name="tel"
+                            placeholder="12345678"
+                            required
+                        />
+
+                    </fieldset>
+               </form>
             </section>
+            <Link className="back-link" to="/Courses">Tilbake til kursoversikt</Link>
         </main>
     )
 
