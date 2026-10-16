@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom";
 import "../components/Course.css"
-import Course from "../pages/Course";
 
-export default function Registration() {
-    return(
-         <article className="course-container">
+
+export default function Registration({ kurs }) {
+    return (
+        <article className="course-container">
             <fieldset className="medlem-ikke-medlem">
                 <img src="../src/assets/bilde/price-tag.svg" alt="prislapp" />
                 <legend>Velg pris</legend>
@@ -19,14 +19,14 @@ export default function Registration() {
             </fieldset>
 
             <section className="info-person">
-               <form>
+                <form>
                     <fieldset>
                         <legend>Dine opplysninger</legend>
 
                         <img src="../src/assets/bilde/person.svg" alt="Person" />
                         <label htmlFor="fname">Navn: </label>
-                        <input 
-                            type="text" 
+                        <input
+                            type="text"
                             id="fname"
                             name="fname"
                             placeholder="Rigmor Nordmann"
@@ -35,8 +35,8 @@ export default function Registration() {
 
                         <img src="../src/assets/bilde/e-post.svg" alt="E-post" />
                         <label htmlFor="email">E-post: </label>
-                        <input 
-                            type="email" 
+                        <input
+                            type="email"
                             id="email"
                             name="email"
                             placeholder="Rigmor@epost.no"
@@ -45,8 +45,8 @@ export default function Registration() {
 
                         <img src="../src/assets/bilde/phone.svg" alt="Telefon" />
                         <label htmlFor="tel">Telefon: </label>
-                        <input 
-                            type="tel" 
+                        <input
+                            type="tel"
                             id="tel"
                             name="tel"
                             placeholder="12345678"
@@ -54,9 +54,9 @@ export default function Registration() {
                         />
 
                     </fieldset>
-               </form>
+                </form>
             </section>
             <Link className="back-link" to="/Courses">Tilbake til kursoversikt</Link>
-            </article>
+        </article>
     )
 }

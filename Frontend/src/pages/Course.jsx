@@ -39,24 +39,24 @@ export default function Course() {
     return (
         <main className="course-details">
             <section className="choose-course">
-                <img 
-                    className="course-strikk" 
-                    src="../src/assets/bilde/strikk.png" 
-                    alt="Strikke" 
+                <img
+                    className="course-strikk"
+                    src="../src/assets/bilde/strikk.png"
+                    alt="Strikke"
                 />
-            <div className="course-info">
-                <h1>{kurs.tittel}</h1>
-                <p>{kurs.kursavholder}</p>
-                <p>{kurs.beskrivelse}</p>
-                <p>Starter: {kurs.startDatoTid}</p>
-                <p>Avslutter: {kurs.sluttDatoTid}</p>
-                <p>Tilgjengelig? {kurs.tilgjengelig}</p>
-                <p>Plasser: {kurs.maksDeltakere}</p>
-            </div>
+                <div className="course-info">
+                    <h1>{kurs.tittel}</h1>
+                    <p>{kurs.kursavholder}</p>
+                    <p>{kurs.beskrivelse}</p>
+                    <p>Starter: {kurs.startDatoTid}</p>
+                    <p>Avslutter: {kurs.sluttDatoTid}</p>
+                    <p>Tilgjengelig? {kurs.tilgjengelig}</p>
+                    <p>Plasser: {kurs.maksDeltakere}</p>
+                </div>
             </section>
             <section>
-                { <Registration />}
-            </section> 
+                {<Registration kurs={kurs} />}
+            </section>
         </main>
     )
 
