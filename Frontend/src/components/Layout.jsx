@@ -24,7 +24,7 @@ const Layout = ({ }) => {
             </main>
 
             <footer>
-                <h3>Kontakt oss</h3>
+               
             </footer>
 
         </>

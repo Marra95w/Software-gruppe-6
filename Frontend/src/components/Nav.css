@@ -1,7 +1,15 @@
 :root {
     --burgunder: #AB3D4E;
     --background: #FFF;
+    --text: Arial, helvetica, sans-serif;
 }
+
+
+*{
+    font-family: var(--text);
+}
+
+/* etter trykk på dropdownmenu */
 
 .dropdown-trigger {
     display: flex;
@@ -37,6 +45,8 @@
     display: flex;
     align-items: center;
 }
+
+/* Design på header */
 
 
 header {
@@ -96,6 +106,7 @@ header {
     }
 }
 
+/* Skjemstørrelse  fra 600px og oppover */
 
 @media (max-width: 600px) {
 
