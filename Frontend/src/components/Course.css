@@ -1,4 +1,12 @@
+:root {
+    --border: none;
+}
 
+/* Course container */
+
+.course-container{
+    border: 1px solid #ccc ;
+}
 
 /* Bestille kurs side */
 
@@ -9,10 +17,11 @@
     width: 100%;
 }
 
-/* design av boks for valg av medlem */
+/* design av boks for valg av medlem */ 
 .medlem-ikke-medlem{
     display: flex;
     padding: 30px;
+    border: var(--border);
 }
 
 
@@ -29,12 +38,12 @@
 .back-link {
     display: block;
     margin: 2rem auto;
-    width: fit-content;
+    width: 120px;
     text-decoration: none;
-    font-size: 30px;
+    font-size: 12px;
     color: #000000;
     border: solid black;
-    padding: 2rem;
+    padding: 1rem;
     border-radius: 8px;
 }
 
@@ -51,6 +60,7 @@
     gap: 15px;
     width: 420px;
     margin-top: 2rem;
+    border: var(--border);
 }
 .info-person legend {
     font-size: 1.5rem;

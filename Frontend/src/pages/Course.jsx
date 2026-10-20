@@ -1,10 +1,12 @@
+import Registration from "../components/Registration";
 import { useParams } from "react-router-dom";
 import { hentKursById } from "../Api/kursApi";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { formatDato, formatTid } from "../components/Dato";
-import "../components/Course.css"
+
 import '../components/courses.css';
+
 
 export default function Course() {
 
@@ -36,8 +38,6 @@ export default function Course() {
     if (error) return <p>Kunne ikke hente kurset...</p>
 
     return (
-
-
         <main className="course-details">
             <section className="choose-course">
                 <img
@@ -48,7 +48,8 @@ export default function Course() {
                 <div className="course-info">
                     <h1>{kurs.tittel}</h1>
                     <p>{kurs.beskrivelse}</p>
-                    <p>Dato: {formatDato(kurs.startDatoTid)} til {formatDato(kurs.sluttDatoTid)} fra: {formatTid(kurs.startDatoTid)} til {formatTid(kurs.sluttDatoTid)}</p>
+                    <p>Starter: {kurs.startDatoTid}</p>
+                    <p>Avslutter: {kurs.sluttDatoTid}</p>
                 </div>
             </section>
 
@@ -89,6 +90,7 @@ export default function Course() {
                             placeholder="Rigmor@epost.no"
                             required
                         />
+
                         <img src="../src/assets/bilde/phone.svg" alt="Telefon" />
                         <label htmlFor="tel">Telefon: </label>
                         <input
@@ -102,7 +104,6 @@ export default function Course() {
                     </fieldset>
                 </form>
             </section>
-            <Link className="back-link" to="/Courses">Tilbake til kursoversikt</Link>
         </main>
     )
 

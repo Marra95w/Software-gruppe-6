@@ -6,6 +6,8 @@ import ForsideHoved from './pages/ForsideHoved'
 import Show404 from './components/show404'
 import Courses from './pages/Courses'
 import Course from './pages/Course'
+import Registration from './components/Registration'
+
 
 function App() {
   return (
@@ -16,6 +18,7 @@ function App() {
         <Route path="/Order" element />
         <Route path="/Courses/:id" element={<Course />} />
         <Route path="*" element={<Show404 />} />
+        <Route path="/Registration" element={<Registration />} />
       </Route>
     </Routes>
 
