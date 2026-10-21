@@ -8,6 +8,7 @@ import Courses from './pages/Courses'
 import BestilleKurs from './pages/BestilleKurs'
 import Course from './pages/Course'
 import Registration from './components/Registration'
+import Login from './components/Login'
 
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
         <Route path="/Courses/:id" element={<Course />} />
         <Route path="*" element={<Show404 />} />
         <Route path="/Registration" element={<Registration />} />
+        <Route path='/Login' element={<Login />} />
       </Route>
     </Routes>
 
