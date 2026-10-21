@@ -129,6 +129,7 @@ main{
     flex-direction: column;
     gap: 0.5rem;
     flex: 1;
+    border-radius: 8px;
 }
 
 
