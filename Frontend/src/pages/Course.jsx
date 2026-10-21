@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import { hentKursById } from "../Api/kursApi";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-
+import { formatDato, formatTid } from "../components/Dato";
 import '../components/courses.css';
 
 
@@ -48,8 +48,8 @@ export default function Course() {
                     <h1>{kurs.tittel}</h1>
                     <p>{kurs.kursavholder}</p>
                     <p>{kurs.beskrivelse}</p>
-                    <p>Starter: {kurs.startDatoTid}</p>
-                    <p>Avslutter: {kurs.sluttDatoTid}</p>
+                    <p>Dato {formatDato(kurs.startDatoTid)} til {formatDato(kurs.sluttDatoTid)}</p>
+                    <p>Fra {formatTid(kurs.startDatoTid)} til {formatTid(kurs.sluttDatoTid)}</p>
                     <p>Tilgjengelig? {kurs.tilgjengelig}</p>
                     <p>Plasser: {kurs.maksDeltakere}</p>
                 </div>

@@ -2,6 +2,7 @@ import { useEffect, useState } from "react"
 import { hentAlleKurs } from "../Api/kursApi";
 import { Link } from "react-router-dom";
 import "./courses.css"
+import { formatDato, formatTid } from "./Dato";
 export default function KursList() {
 
     const [kursList, setKursList] = useState([]);
@@ -34,15 +35,16 @@ export default function KursList() {
     if (error) return <p> Error:{error} </p>;
 
 
-   return (
-    <section>
-        {kursList.map((kurs) => (
-            <Link className="course-link" to={`/courses/${kurs.id}`} key={kurs.id}>
-                <article className="choose-course">
-                    <img className="course-strikk" src="../src/assets/bilde/strikk.png" alt="Strikke" />
+    return (
+        <section>
+            {kursList.map((kurs) => (
+                <Link className="course-link" to={`/courses/${kurs.id}`} key={kurs.id}>
+                    <article className="choose-course">
+                        <img className="course-strikk" src="../src/assets/bilde/strikk.png" alt="Strikke" />
                         <div className="course-info">
                             <h3>{kurs.tittel}</h3>
-                            <p>Fra {kurs.startDatoTid} til {kurs.sluttDatoTid}</p>
+                            <p>Dato {formatDato(kurs.startDatoTid)} til {formatDato(kurs.sluttDatoTid)}</p>
+                            <p>Fra {formatTid(kurs.startDatoTid)} til {formatTid(kurs.sluttDatoTid)}</p>
                             <p>Hvor: {kurs.kursavholder}</p>
                             <p>Pris: {kurs.prisMedlem} kr</p>
                             <p>Pris hvis du ikke er medlem: {kurs.prisIkkeMedlem} kr</p>
@@ -55,8 +57,9 @@ export default function KursList() {
                             src="../src/assets/bilde/arrow-down.svg"
                             alt="Pil"
                         />
-                </article>
-            </Link>
-        ))}
-    </section>
-)};
+                    </article>
+                </Link>
+            ))}
+        </section>
+    )
+};
