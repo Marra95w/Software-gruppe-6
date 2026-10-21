@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import "../components/Course.css"
 
 
+
 export default function Registration({ kurs }) {
     return (
         <article className="course-container">
@@ -56,7 +57,7 @@ export default function Registration({ kurs }) {
                                 required
                             />
                         </span>
-                        
+
                     </fieldset>
                 </form>
             </section>
