@@ -7,7 +7,7 @@ import java.time.LocalDateTime;
 
 public class husflidslag_kurs implements Kurs {
 
-
+    private int id;
     private String tittel;
     private LocalDateTime startDatoTid;
     private LocalDateTime sluttDatoTid;
@@ -36,7 +36,11 @@ public class husflidslag_kurs implements Kurs {
         super();
     }
 
+    @Override
+    public int getId() {return id;}
 
+    @Override
+    public void setId(int id) {this.id = id;}
 
     @Override
     public String getTittel() {
@@ -55,22 +59,22 @@ public class husflidslag_kurs implements Kurs {
 
     @Override
     public int getKursavholder() {
-        return 0;
+        return kursavholder;
     }
 
     @Override
     public double getPrisMedlem() {
-        return 0;
+        return prisMedlem;
     }
 
     @Override
     public double getPrisIkkeMedlem() {
-        return 0;
+        return prisIkkeMedlem;
     }
 
     @Override
     public String getBeskrivelse() {
-        return "";
+        return beskrivelse;
     }
 
     @Override
@@ -111,6 +115,7 @@ public class husflidslag_kurs implements Kurs {
     public boolean erTilgjengelig() {
         return tilgjengelig;
     }
+
 
 
     @Override
