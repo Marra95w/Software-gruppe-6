@@ -12,15 +12,28 @@ export default function Login(kurs) {
                         <legend>Dine opplysninger</legend>
                         <span className="input-group">
                             <img src="../src/assets/bilde/person.svg" alt="Person" />
-                            <label htmlFor="fname">Navn: </label>
+                            <label htmlFor="fname">Fornavn: </label>
                             <input
                                 type="text"
                                 id="fname"
                                 name="fname"
-                                placeholder="Rigmor Nordmann"
+                                placeholder="Rigmor"
                                 required
                             />
                         </span>
+
+                        <span className="input-group">
+                            <img src="../src/assets/bilde/person.svg" alt="Person" />
+                            <label htmlFor="fname">Etternavn: </label>
+                            <input
+                                type="text"
+                                id="fname"
+                                name="fname"
+                                placeholder="Nordmann"
+                                required
+                            />
+                        </span>
+                        
                         <span className="input-group">
                             <img src="../src/assets/bilde/e-post.svg" alt="E-post" />
                             <label htmlFor="email">E-post: </label>
