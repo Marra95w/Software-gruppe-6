@@ -9,6 +9,7 @@ import BestilleKurs from './pages/BestilleKurs'
 import Course from './pages/Course'
 import Registration from './components/Registration'
 import Login from './components/Login'
+import Register from './components/Register'
 
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
         <Route path="*" element={<Show404 />} />
         <Route path="/Registration" element={<Registration />} />
         <Route path='/Login' element={<Login />} />
+        <Route path="/Register" element={<Register />} />
       </Route>
     </Routes>
 
