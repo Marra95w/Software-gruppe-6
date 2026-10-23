@@ -43,14 +43,14 @@ export default function KursList() {
                         <img className="course-strikk" src="../src/assets/bilde/strikk.png" alt="Strikke" />
                         <div className="course-info">
                             <h3>{kurs.tittel}</h3>
+                            <p>Beskrivelse: {kurs.beskrivelse}</p>
                             <p>Dato {formatDato(kurs.startDatoTid)} til {formatDato(kurs.sluttDatoTid)}</p>
                             <p>Fra {formatTid(kurs.startDatoTid)} til {formatTid(kurs.sluttDatoTid)}</p>
                             <p>Hvor: {kurs.kursavholder}</p>
                             <p>Pris: {kurs.prisMedlem} kr</p>
                             <p>Pris hvis du ikke er medlem: {kurs.prisIkkeMedlem} kr</p>
-                            <p>Beskrivelse: {kurs.beskrivelse}</p>
-                            <p>Tilgjengelig? {kurs.tilgjengelig}</p>
-                            <p>MaksDeltakere: {kurs.maksDeltakere}</p>
+                            {/* <p>Tilgjengelig? {kurs.tilgjengelig}</p>
+                            <p>MaksDeltakere: {kurs.maksDeltakere}</p> */}
                         </div>
                         <img
                             className="course-arrow"
