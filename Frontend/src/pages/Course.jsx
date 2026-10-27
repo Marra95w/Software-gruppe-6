@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { hentKursById } from "../Api/kursApi";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { formatDato, formatTid } from "../components/Dato";
 
 import '../components/courses.css';
 
@@ -19,6 +20,7 @@ export default function Course() {
 
             try {
                 const result = await hentKursById(id);
+
                 if (!result) {
                     throw new Error("Kurset ble ikke funnet")
                 }
@@ -48,8 +50,8 @@ export default function Course() {
                     <h1>{kurs.tittel}</h1>
                     <p>{kurs.kursavholder}</p>
                     <p>{kurs.beskrivelse}</p>
-                    <p>Starter: {kurs.startDatoTid}</p>
-                    <p>Avslutter: {kurs.sluttDatoTid}</p>
+                    <p>Starter: {formatDato(kurs.startDatoTid)} kl.{formatTid(kurs.startDatoTid)} til {formatTid(kurs.sluttDatoTid)}</p>
+                    <p>Avslutter: {formatDato(kurs.sluttDatoTid)} kl.{formatTid(kurs.startDatoTid)} til {formatTid(kurs.sluttDatoTid)}</p>
                     <p>Tilgjengelig? {kurs.tilgjengelig}</p>
                     <p>Plasser: {kurs.maksDeltakere}</p>
                 </div>
