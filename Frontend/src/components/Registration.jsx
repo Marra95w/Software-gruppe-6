@@ -1,19 +1,22 @@
 import { Link } from "react-router-dom";
 import "../components/Course.css"
-
+import { useState } from "react";
 
 export default function Registration({ kurs }) {
+    const [showLogin, setShowlogin] = useState(false)
     return (
         <article className="course-container">
             <fieldset className="medlem-ikke-medlem">
-                <img src="../src/assets/bilde/price-tag.svg" alt="prislapp" />
-                <legend>Velg pris</legend>
+                <legend><img src="../src/assets/bilde/price-tag.svg" alt="prislapp" />Velg pris</legend>
                 <label>
-                    <input type="radio" name="pris" value="medlem" />
+                    <input type="radio" name="pris" value="medlem" onChange={() => setShowlogin(true)}/>
                     Pris for medlemmer: {kurs.prisMedlem} kr
                 </label>
+                {showLogin && (
+                    <Link className="login-link" to={"/Login"}>Logg inn som medlem</Link>
+                )}
                 <label>
-                    <input type="radio" name="pris" value="ikke-medlem" />
+                    <input type="radio" name="pris" value="ikke-medlem" onChange={() => setShowlogin(false)}/>
                     Vanlig pris: {kurs.prisIkkeMedlem} kr
                 </label>
             </fieldset>
