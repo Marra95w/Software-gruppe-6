@@ -45,7 +45,7 @@ export default function KursList() {
                             <h3>{kurs.tittel}</h3>
                             <p>Beskrivelse: {kurs.beskrivelse}</p>
                             <p>Fra {formatDato(kurs.startDatoTid)} til {formatDato(kurs.sluttDatoTid)}</p>
-                            <p>Kl.{formatTid(kurs.sluttDatoTid)} til {formatTid(kurs.sluttDatoTid)}</p>
+                            <p>Kl.{formatTid(kurs.startDatoTid)} til {formatTid(kurs.sluttDatoTid)}</p>
                             <p>Hvor: {kurs.kursavholder}</p>
                             <p>Pris: {kurs.prisMedlem} kr</p>
                             <p>Pris hvis du ikke er medlem: {kurs.prisIkkeMedlem} kr</p>
