@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="2b5698b5-3bdf-487f-8bb7-b8448741f26f" name="Changes" comment="Legger til medlem.java og medlemsregister.java">
+      <change afterPath="$PROJECT_DIR$/src/test/java/MedlemsregisterTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../Frontend/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Medlemsregister.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Medlemsregister.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/finnMedlemMedId.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Medlemslogikk.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/medlem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/medlem.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;naimofaisal&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Marra95w/Software-gruppe-6.git&quot;,
+    &quot;accountId&quot;: &quot;281097c6-c716-4a3d-bc5c-a092192359b6&quot;
+  }
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 4
+}</component>
+  <component name="ProjectId" id="3KMMqUIKjvOeW1ceZrNsRSYEeaO" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Main.executor": "Run",
+    "Application.main.executor": "Run",
+    "JUnit.MedlemsregisterTest.executor": "Run",
+    "JUnit.MedlemsregisterTest.testFinnMedlemMedIdIkkeFunnet.executor": "Run",
+    "JUnit.MedlemsregisterTest.testHentAlleMedlemmer.executor": "Run",
+    "JUnit.MedlemsregisterTest.testLeggTilOgFinnMedlem.executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "git-widget-placeholder": "naimo",
+    "kotlin-language-version-configured": "true",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RunManager" selected="JUnit.MedlemsregisterTest.testFinnMedlemMedIdIkkeFunnet">
+    <configuration name="MedlemsregisterTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Medlem" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="MedlemsregisterTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MedlemsregisterTest.testFinnMedlemMedIdIkkeFunnet" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Medlem" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="MedlemsregisterTest" />
+      <option name="METHOD_NAME" value="testFinnMedlemMedIdIkkeFunnet" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MedlemsregisterTest.testHentAlleMedlemmer" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Medlem" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="MedlemsregisterTest" />
+      <option name="METHOD_NAME" value="testHentAlleMedlemmer" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MedlemsregisterTest.testLeggTilOgFinnMedlem" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Medlem" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="MedlemsregisterTest" />
+      <option name="METHOD_NAME" value="testLeggTilOgFinnMedlem" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.MedlemsregisterTest.testFinnMedlemMedIdIkkeFunnet" />
+        <item itemvalue="JUnit.MedlemsregisterTest.testHentAlleMedlemmer" />
+        <item itemvalue="JUnit.MedlemsregisterTest.testLeggTilOgFinnMedlem" />
+        <item itemvalue="JUnit.MedlemsregisterTest" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-30f59d01ecdd-26cb7f24e5b0-intellij.indexing.shared.core-IU-253.29346.138" />
+        <option value="bundled-js-predefined-d6986cc7102b-9b0f141eb926-JavaScript-IU-253.29346.138" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="2b5698b5-3bdf-487f-8bb7-b8448741f26f" name="Changes" comment="" />
+      <created>1791363175413</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1791363175413</updated>
+      <workItem from="1791363179583" duration="2186000" />
+      <workItem from="1791371581777" duration="8880000" />
+      <workItem from="1791534826375" duration="2000" />
+      <workItem from="1791534838727" duration="1394000" />
+      <workItem from="1791828629911" duration="8624000" />
+      <workItem from="1792581153786" duration="114000" />
+      <workItem from="1792581293751" duration="14668000" />
+    </task>
+    <task id="LOCAL−00001" summary="Legger til medlem.java og medlemsregister.java">
+      <option name="closed" value="true" />
+      <created>1791363915250</created>
+      <option name="number" value="LOCAL−00001" />
+      <option name="presentableId" value="LOCAL−00001" />
+      <updated>1791363915250</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Legger til medlem.java og medlemsregister.java" />
+    <option name="LAST_COMMIT_MESSAGE" value="Legger til medlem.java og medlemsregister.java" />
+  </component>
+</project>
