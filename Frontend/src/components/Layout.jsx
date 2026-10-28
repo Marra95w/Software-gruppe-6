@@ -12,7 +12,6 @@ const Layout = ({ }) => {
                         Østfold Husflidslag
                     </h1>
                 </Link>
-
                 <nav>
                     <Link to="/Login" className='login-btn'>
                         Logg inn
