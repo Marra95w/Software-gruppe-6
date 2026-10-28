@@ -10,15 +10,13 @@ noe spesielt requests skulle dukke opp.*/
 public interface Kurs {
     int getId();
 
-    int getId();
-
     String getTittel();
 
     LocalDateTime getStartDatoTid();
 
     LocalDateTime getSluttDatoTid();
 
-    String getKursavholder();
+    int getKursavholder();
 
     double getPrisMedlem();
 
@@ -36,7 +34,7 @@ public interface Kurs {
 
     void setSluttDatoTid(LocalDateTime sluttDatoTid);
 
-    void setKursavholder(String kursavholder);
+    void setKursavholder(int kursavholder);
 
     void setPrisMedlem(double prisMedlem);
 

@@ -11,7 +11,7 @@ public class husflidslag_kurs implements Kurs {
     private String tittel;
     private LocalDateTime startDatoTid;
     private LocalDateTime sluttDatoTid;
-    private String kursavholder;
+    private int kursavholder;
     private double prisMedlem;
     private double prisIkkeMedlem;
     private String beskrivelse;
@@ -19,7 +19,7 @@ public class husflidslag_kurs implements Kurs {
     private int maksDeltagere;
 
     public husflidslag_kurs(int id, String tittel, LocalDateTime startDatoTid, LocalDateTime sluttDatoTid,
-            String kursavholder,
+            int kursavholder,
             double prisMedlem, double prisIkkeMedlem, String beskrivelse, boolean tilgjengelig, int maksDeltagere) {
         this.id = id;
         this.tittel = tittel;
@@ -98,7 +98,7 @@ public class husflidslag_kurs implements Kurs {
     }
 
     @Override
-    public void setKursavholder(String kursavholder) {
+    public void setKursavholder(int kursavholder) {
         this.kursavholder = kursavholder;
     }
 
