@@ -13,6 +13,9 @@ const Layout = ({ }) => {
                     </h1>
                 </Link>
                 <nav>
+                    <Link to="/Login" className='login-btn'>
+                        Logg inn
+                    </Link>
                     <p>Meny</p>
                     <Nav />
                 </nav>
