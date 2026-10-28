@@ -74,6 +74,18 @@ header {
         
         
     }
+     .login-btn{
+        background-color: var(--burgunder);
+        color: white;
+        padding: 10px 20px;
+        margin: 8px;
+        border-radius: 8px;
+        text-decoration: none;
+    }
+
+    .login-btn:hover {
+        background-color: #872D3D;
+    }
     .dropdown{
         position: absolute;
         top: 100%;
