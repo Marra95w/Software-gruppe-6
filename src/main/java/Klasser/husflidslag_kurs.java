@@ -43,6 +43,11 @@ public class husflidslag_kurs implements Kurs {
     }
 
     @Override
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    @Override
     public String getTittel() {
         return tittel;
     }
@@ -58,7 +63,7 @@ public class husflidslag_kurs implements Kurs {
     }
 
     @Override
-    public String getKursavholder() {
+    public int getKursavholder() {
         return kursavholder;
     }
 
@@ -75,11 +80,6 @@ public class husflidslag_kurs implements Kurs {
     @Override
     public String getBeskrivelse() {
         return beskrivelse;
-    }
-
-    @Override
-    public void setId(int id) {
-        this.id = id;
     }
 
     @Override
