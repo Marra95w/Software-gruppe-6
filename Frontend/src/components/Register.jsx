@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import "../components/Course.css"
 
-export default function Register(kurs) {
+export default function Register() {
     return (
         <>
             <article className="course-container">
@@ -24,11 +24,11 @@ export default function Register(kurs) {
 
                             <span className="input-group">
                                 <img src="../src/assets/bilde/person.svg" alt="Person" />
-                                <label htmlFor="fname">Etternavn: </label>
+                                <label htmlFor="lname">Etternavn: </label>
                                 <input
                                     type="text"
-                                    id="fname"
-                                    name="fname"
+                                    id="lname"
+                                    name="lname"
                                     placeholder="Nordmann"
                                     required
                                 />
