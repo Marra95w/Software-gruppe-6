@@ -13,7 +13,7 @@ export default function Course() {
 
             {/* søkefelt */}
             <form className="search">
-                <img src="../src/assets/bilde/search.svg" alt="Search"/>
+                <img src="../src/assets/bilde/search.svg" alt="Search" />
                 <input type="search"
                     placeholder="Søk etter kurs..."
                 />
