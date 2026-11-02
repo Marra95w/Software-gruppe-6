@@ -1,4 +1,8 @@
-package Klasser;
+package nettside.Klasser;
+
+/*Formålet med klassen er å gi muligheten til administartoren å endre, slette, oppdatere eller legge
+* ny adresse for en spesifikk husflidslag i Østfold. Dette kommer vi til å se i Databse_Kurs_Logikk klassen
+* med alle spesifikke funksjonene.*/
 
 public class adresse_husflidslag {
 

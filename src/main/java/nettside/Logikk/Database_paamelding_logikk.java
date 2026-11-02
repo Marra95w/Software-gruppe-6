@@ -1,5 +1,5 @@
-package Logikk;
-import Klasser.kurs_paamelding;
+package nettside.Logikk;
+import nettside.Klasser.kurs_paamelding;
 import io.github.cdimascio.dotenv.Dotenv;
 
 import java.sql.Connection;
@@ -29,43 +29,48 @@ public class Database_paamelding_logikk {
     //-----------------------------------------------------------------------------------------//
 
 
-    //METODER FOR Å REGISTRERE MEDLEMMER PÅ KURS
+    //FUNKSJONER FOR Å REGISTRERE MEDLEMMER PÅ KURS
 
 
     //-----------------------------------------------------------------------------------------//
 
-    //METODE FOR Å REGISTRERE EN MEDLEM I KURS
+    //FUNKSJON FOR Å REGISTRERE EN MEDLEM I KURS
     public kurs_paamelding registrer_kunde_i_kurs (int kundeId, int kursId,double pris_fakturert){
 
-        String sql = "INSERT INTO kurs_paamelding VALUES ( ?,?,?)";
+        String sql = "INSERT INTO kurs_paamelding(Kunde_id,Kurs_id,pris_fakturert) VALUES ( ?,?,?)";
 
-        try(Connection connection = DriverManager.getConnection(url,brukernavn,passord)){
 
-            PreparedStatement statement = connection.prepareStatement(sql);
+        try (Connection connection = DriverManager.getConnection(url, brukernavn, passord);
+             PreparedStatement statement = connection.prepareStatement(sql)) {
 
-            statement.setInt(1,kundeId);
-            statement.setInt(2,kursId);
-            statement.setDouble(3,pris_fakturert);
+            statement.setInt(1, kundeId);
+            statement.setInt(2, kursId);
+            statement.setDouble(3, pris_fakturert);
+
+            statement.executeUpdate();
+
+
 
         } catch (Exception e) {
             System.err.println(e.getMessage());
         }
-
         return null;
     }
 
 
 
-    //METODE FOR Å SLETTE  SPESIFIKK PÅMELDING
-    public kurs_paamelding slette_påmelding_i_db (int kursId){
+    //FUNKSJON FOR Å SLETTE  SPESIFIKK PÅMELDING
+    public kurs_paamelding slette_påmelding_i_db (int kursId, int kundeId){
 
-        String sql = "DELETE FROM kurs_paamelding WHERE kursId = ?";
+        String sql = "DELETE FROM kurs_paamelding WHERE kursId = ? AND kundeId = ?";
 
-        try(Connection connection = DriverManager.getConnection(url,brukernavn,passord)){
+        try (Connection connection = DriverManager.getConnection(url, brukernavn, passord);
+             PreparedStatement statement = connection.prepareStatement(sql)) {
 
-            PreparedStatement statement =connection.prepareStatement(sql);
+            statement.setInt(1, kursId);
+            statement.setInt(2,kundeId);
 
-            statement.setInt(1,kursId);
+            statement.executeUpdate();
 
         } catch (SQLException e) {
             System.err.println(e.getMessage());
@@ -73,17 +78,21 @@ public class Database_paamelding_logikk {
         return null;
     }
 
-    //METODE FOR Å SLETTE  SPESIFIKK PÅMELDING
-    public kurs_paamelding velge_påmelding_i_db (int kursId){
 
-        String sql = "SELECT * FROM kurs_paamelding WHERE kursId = ?";
 
-        try(Connection connection = DriverManager.getConnection(url,brukernavn,passord)){
+    //FUNKSJON FOR Å VELGE  SPESIFIKK PÅMELDING
+    public kurs_paamelding velge_påmelding_i_db (int kursId,int kundeId){
 
-            PreparedStatement statement =connection.prepareStatement(sql);
+        String sql = "SELECT * FROM kurs_paamelding WHERE kursId = ? AND kundeId = ?";
 
-            statement.setInt(1,kursId);
+        try (Connection connection = DriverManager.getConnection(url, brukernavn, passord);
+             PreparedStatement statement = connection.prepareStatement(sql)) {
 
+            statement.setInt(1, kursId);
+            statement.setInt(2,kundeId);
+
+
+            statement.executeQuery();
 
         } catch (SQLException e) {
             System.err.println(e.getMessage());

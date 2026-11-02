@@ -1,4 +1,10 @@
-package Klasser;
+package nettside.Klasser;
+
+/*Denne klassen, benyttes for kunden å kunde melde seg på kurs
+* akkurat her er det ikke så mye som skjer men ved å sjekke Database_paamelding_logikk
+* kan man se noen av funksjonene som vi ønsker at kunden skal bruke for å melde seg
+* OBS!!!:Database_paamelding_logikk ikke alle funskjonene er tatt med i Frontend grunnen lite tid
+* men er planlagt for å gjøre alle disse funskjonene tilgjengelig på et senere tidspunk */
 
 public class kurs_paamelding {
 
