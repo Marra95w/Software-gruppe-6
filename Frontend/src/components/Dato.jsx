@@ -1,19 +1,15 @@
-export function formatDato(datoTidArray) {
-    if (!Array.isArray(datoTidArray)) return "Ukjent dato";
-    const [år, måned, dag] = datoTidArray;
-    const dato = new Date(år, måned - 1, dag);
-    return dato.toLocaleDateString("no-NO", {
+export function formatDato(iso) {
+    if (!iso) return "";
+    return new Date(iso).toLocaleString("nb-NO", {
         day: "numeric",
-        month: "long",
+        month: "numeric",
         year: "numeric",
+
     });
 }
-
-export function formatTid(datoTidArray) {
-    if (!Array.isArray(datoTidArray)) return "";
-    const [år, måned, dag, time, minutt] = datoTidArray;
-    const dato = new Date(år, måned - 1, dag, time, minutt);
-    return dato.toLocaleTimeString("no-NO", {
+export function formatTid(iso) {
+    if (!iso) return "";
+    return new Date(iso).toLocaleTimeString("nb-NO", {
         hour: "2-digit",
         minute: "2-digit",
     });
