@@ -21,6 +21,7 @@ public interface Kurs {
     String getAdresse();
     String getStartDatoTidString();
     String getSluttDatoTidString();
+    String getKursavholderNavn();
 
 
     void setId(int id);
@@ -33,6 +34,7 @@ public interface Kurs {
     void setBeskrivelse(String beskrivelse);
     void setMaksDeltakere(int deltakere);
     void setAdresse(String adresse);
+    void setKursavholderNavn(String kursavholderNavn);
 
 
 }

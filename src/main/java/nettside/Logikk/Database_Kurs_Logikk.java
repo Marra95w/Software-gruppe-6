@@ -43,7 +43,7 @@ public class Database_Kurs_Logikk {
     //--------------------------------------------------------------------------------------------//
 
 
-
+    //henter alle kurs og setter dem i en liste
     public List<husflidslag_kurs> hent_alle_kurs_fra_db() {
         List<husflidslag_kurs> alle_kurs = new ArrayList<>();
 
@@ -61,22 +61,22 @@ public class Database_Kurs_Logikk {
                     //henter alle kurs og  setter dem i husflidslag_kurs tabellen slik blir disse synlig
                     husflidslag_kurs kurs = new husflidslag_kurs();
 
-
-                    kurs.setTittel(rs.getString("tittel"));
+                    kurs.setId(rs.getInt("id"));
+                    kurs.setTittel(rs.getString("Tittel"));
                     kurs.setStartDatoTid(rs.getTimestamp("Start_dato_tid").toLocalDateTime());
                     kurs.setSluttDatoTid(rs.getTimestamp("Slutt_dato_tid").toLocalDateTime());
                     kurs.setKursavholder(rs.getInt("Kursavholder_Id"));
-                    kurs.setPrisIkkeMedlem(rs.getDouble("pris_ikke_medlem"));
-                    kurs.setPrisMedlem(rs.getDouble("pris_medlem"));
+                    kurs.setPrisIkkeMedlem(rs.getDouble("Pris_ikke_medlem"));
+                    kurs.setPrisMedlem(rs.getDouble("Pris_medlem"));
                     kurs.setBeskrivelse(rs.getString("Beskrivelse"));
-
                     kurs.setAdresse(rs.getString("Adresse_husflidslag"));
+                    kurs.setKursavholderNavn(rs.getString("Navn"));
 
                     alle_kurs.add(kurs);
                 }
             }
         } catch (Exception e) {
-            System.err.println("Databasefeil: " + e.getMessage());
+            System.err.println( e.getMessage());
         }
 
         return alle_kurs;
@@ -105,7 +105,7 @@ public class Database_Kurs_Logikk {
                     //her ønsker vi også å gjøre synlig enkelte kurser man velger i frontenden
                     husflidslag_kurs en_kurs = new husflidslag_kurs();
 
-
+                    en_kurs.setId(rs.getInt("id"));
                     en_kurs.setTittel(rs.getString("Tittel"));
                     en_kurs.setStartDatoTid(rs.getTimestamp("Start_dato_tid").toLocalDateTime());
                     en_kurs.setSluttDatoTid(rs.getTimestamp("Slutt_dato_tid").toLocalDateTime());
@@ -114,6 +114,7 @@ public class Database_Kurs_Logikk {
                     en_kurs.setPrisMedlem(rs.getDouble("Pris_medlem"));
                     en_kurs.setBeskrivelse(rs.getString("Beskrivelse"));
                     en_kurs.setAdresse(rs.getString("Adresse_husflidslag"));
+                    en_kurs.setKursavholderNavn(rs.getString("Navn"));
 
                     //viktig  med return kurs for å få faktisk disse verdiene opp, ellers vil det alltid returnere null
                     return en_kurs;

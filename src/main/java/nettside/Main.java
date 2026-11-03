@@ -2,6 +2,8 @@ package nettside;
 
 import nettside.Klasser.husflidslag_kurs;
 import nettside.Logikk.Database_Kurs_Logikk;
+
+import java.util.List;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
