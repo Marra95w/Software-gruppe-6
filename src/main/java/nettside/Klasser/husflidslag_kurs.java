@@ -22,9 +22,10 @@ public class husflidslag_kurs implements Kurs {
     private boolean tilgjengelig;
     private int maksDeltagere;
     private String adresse;
+    private String kursavholderNavn;
 
     public husflidslag_kurs( String tittel, LocalDateTime startDatoTid, LocalDateTime sluttDatoTid, int kursavholder,
-                            double prisMedlem, double prisIkkeMedlem, String beskrivelse, boolean tilgjengelig,int maksDeltagere, String adresse) {
+                            double prisMedlem, double prisIkkeMedlem, String beskrivelse, boolean tilgjengelig,int maksDeltagere, String adresse,String kursavholderNavn) {
 
         this.tittel = tittel;
         this.startDatoTid = startDatoTid;
@@ -36,6 +37,7 @@ public class husflidslag_kurs implements Kurs {
         this.tilgjengelig = tilgjengelig;
         this.maksDeltagere = maksDeltagere;
         this.adresse = adresse;
+        this.kursavholderNavn = kursavholderNavn;
     }
 
     public husflidslag_kurs() {
@@ -165,6 +167,21 @@ public class husflidslag_kurs implements Kurs {
     @Override
     public void setAdresse(String adresse) {
         this.adresse = adresse;
+    }
+
+    @Override
+    public int hashCode() {
+        return super.hashCode();
+    }
+
+    @Override
+    public String getKursavholderNavn() {
+        return kursavholderNavn;
+    }
+
+    @Override
+    public void setKursavholderNavn(String kursavholderNavn) {
+        this.kursavholderNavn = kursavholderNavn;
     }
 }
 
