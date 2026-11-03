@@ -38,7 +38,7 @@ export default function KursList() {
     return (
         <section>
             {kursList.map((kurs) => (
-                <Link className="course-link" to={`/courses/${kurs.id}`} key={kurs.id}>
+                <Link className="course-link" to={`/Courses/${kurs.id}`} key={kurs.id}>
                     <article className="choose-course">
                         <img className="course-strikk" src="../src/assets/bilde/strikk.png" alt="Strikke" />
                         <div className="course-info">
@@ -46,7 +46,7 @@ export default function KursList() {
                             <p>Beskrivelse: {kurs.beskrivelse}</p>
                             <p>Fra {formatDato(kurs.startDatoTid)} til {formatDato(kurs.sluttDatoTid)}</p>
                             <p>Kl.{formatTid(kurs.startDatoTid)} til {formatTid(kurs.sluttDatoTid)}</p>
-                            <p>Hvor: {kurs.kursavholder}</p>
+                            <p>Hvor: {kurs.kursavholderNavn}</p>
                             <p>Pris: {kurs.prisMedlem} kr</p>
                             <p>Pris hvis du ikke er medlem: {kurs.prisIkkeMedlem} kr</p>
 

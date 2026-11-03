@@ -48,10 +48,11 @@ export default function Course() {
                 />
                 <div className="course-info">
                     <h1>{kurs.tittel}</h1>
-                    <p>{kurs.kursavholder}</p>
                     <p>{kurs.beskrivelse}</p>
                     <p>Starter: {formatDato(kurs.startDatoTid)} kl.{formatTid(kurs.startDatoTid)} til {formatTid(kurs.sluttDatoTid)}</p>
                     <p>Avslutter: {formatDato(kurs.sluttDatoTid)} kl.{formatTid(kurs.startDatoTid)} til {formatTid(kurs.sluttDatoTid)}</p>
+                    <p>Adresse: {kurs.adresse}</p>
+                    <p>Lag: {kurs.kursavholderNavn}</p>
                     {/* <p>Tilgjengelig? {kurs.tilgjengelig}</p>
                     <p>Plasser: {kurs.maksDeltakere}</p> */}
                 </div>

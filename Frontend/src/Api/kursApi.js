@@ -21,3 +21,19 @@ export async function hentKursById(id) {
     return response.json();
 
 }
+
+
+export async function registerBruker(bruker) {
+    const response = await fetch("http://localhost:8080/Registrere_ny_bruker", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(bruker)
+    });
+    const tekst = await response.text();
+    if (!response.ok) {
+        throw new Error(tekst || "Kunne ikke registrere bruker");
+    }
+    return tekst ? JSON.parse(tekst) : null;
+}
