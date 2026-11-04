@@ -13,6 +13,8 @@ export default function KursList() {
 
     useEffect(() => {
 
+
+        // Henter alle kurs fra databasen, og setter dem i kursList state
         const fetchData = async () => {
 
             try {
@@ -30,13 +32,15 @@ export default function KursList() {
         };
         fetchData();
     }, []);
-
+    //Mens de venter på svar fra APIet
     if (loading) return <p> Vi henter kursene...</p>;
+    //Hvis det oppstår en feil
     if (error) return <p> Error:{error} </p>;
 
 
     return (
         <section>
+            {/* Henter alle kurs fra databasen og mapper dem til komponenter */}
             {kursList.map((kurs) => (
                 <Link className="course-link" to={`/Courses/${kurs.id}`} key={kurs.id}>
                     <article className="choose-course">

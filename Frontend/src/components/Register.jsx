@@ -13,6 +13,7 @@ export default function Register() {
     const [error, setError] = useState("");
     const [message, setMessage] = useState("");
 
+    //Endringer forsvinner når komponenten oppdateres
     const handleChange = (e) => {
         const { name, value } = e.target;
         setBruker((prev) => ({ ...prev, [name]: value }));
@@ -20,29 +21,34 @@ export default function Register() {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-
+        //Hvis fornavn er tomt
         if (!bruker.fname.trim()) {
             setError("Fornavn er påkrevd");
             return;
         }
+        //Hvis etternavn er tomt
         if (!bruker.lname.trim()) {
             setError("Etternavn er påkrevd");
             return;
         }
+        //Hvis e-post er tom
         if (!bruker.email.trim()) {
             setError("E-post er påkrevd");
             return;
         }
+        //hvis passord er mindre enn 6 tegn
         if (bruker.password.length < 6) {
             setError("Passord må være minst 6 tegn");
             return;
         }
+        //Hvis telefonnummer ikke er 8 siffer
         if (!/^\d{8}$/.test(bruker.tel)) {
             setError("Telefonnummer må være 8 siffer");
             return;
         }
 
         try {
+            //Venter på registrering av bruker
             await registerBruker({
                 navn: bruker.fname.trim(),
                 etternavn: bruker.lname.trim(),
@@ -51,9 +57,11 @@ export default function Register() {
                 passord: bruker.password,
                 medlem: 0,
             });
+            //Lagrer den nye brukeren i state
             setBruker({ fname: "", lname: "", email: "", password: "", tel: "" });
             setError("");
             setMessage("Registrering vellykket!");
+            //Hvis det oppstår en feil
         } catch (err) {
             setMessage("");
             setError(err.message);

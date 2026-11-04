@@ -1,3 +1,5 @@
+
+//funksjon som endrer datoformatet
 export function formatDato(iso) {
     if (!iso) return "";
     return new Date(iso).toLocaleString("nb-NO", {
@@ -7,6 +9,8 @@ export function formatDato(iso) {
 
     });
 }
+
+//funksjon som endrer tidsformatet
 export function formatTid(iso) {
     if (!iso) return "";
     return new Date(iso).toLocaleTimeString("nb-NO", {

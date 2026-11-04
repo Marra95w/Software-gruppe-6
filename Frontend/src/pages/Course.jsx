@@ -18,6 +18,7 @@ export default function Course() {
     useEffect(() => {
         const fetch = async () => {
 
+            //Henter et kurs basert på ID
             try {
                 const result = await hentKursById(id);
 
@@ -33,14 +34,15 @@ export default function Course() {
         };
 
         fetch();
+        //Refresher hver gang iden endres
     }, [id]);
 
     if (loading) return <p>Henting kurset...</p>
     if (error) return <p>Kunne ikke hente kurset...</p>
 
     return (
-        <main className="course-details">
-            <section className="choose-course">
+        <section className="course-details">
+            <article className="choose-course">
                 <img
                     className="course-strikk"
                     src="../src/assets/bilde/strikk.png"
@@ -56,11 +58,11 @@ export default function Course() {
                     {/* <p>Tilgjengelig? {kurs.tilgjengelig}</p>
                     <p>Plasser: {kurs.maksDeltakere}</p> */}
                 </div>
-            </section>
-            <section>
+            </article>
+            <article>
                 {<Registration kurs={kurs} />}
-            </section>
-        </main>
+            </article>
+        </section >
     )
 
 }

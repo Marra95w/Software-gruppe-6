@@ -19,10 +19,9 @@ export async function hentKursById(id) {
         throw new Error("Kurs ikke funnet");
     }
     return response.json();
-
 }
 
-
+// Async funtion for å lagre ny bruker i databasen
 export async function registerBruker(bruker) {
     const response = await fetch("http://localhost:8080/Registrere_ny_bruker", {
         method: "POST",
