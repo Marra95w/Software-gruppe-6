@@ -66,7 +66,6 @@ header {
         align-items: center;
         margin-left: auto;
         position: relative;
-        gap: 1rem;
     
         
         p{
@@ -75,12 +74,11 @@ header {
         
         
     }
-
-    /* Logg inn knapp */
-    .login-btn{
-        background-color: #AB3D4E;
+     .login-btn{
+        background-color: var(--burgunder);
         color: white;
         padding: 10px 20px;
+        margin: 8px;
         border-radius: 8px;
         text-decoration: none;
     }
@@ -160,11 +158,6 @@ header {
                 margin: 0;
             }
         }
-
-        .login-btn {
-            padding: 8px 12px;
-            font-size: 0.9rem;
-    }
 
            .dropdown{
             position: absolute;
