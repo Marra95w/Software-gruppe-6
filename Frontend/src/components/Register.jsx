@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { registerBruker } from "../Api/kursApi";
-import "../components/Course.css";
+import "../css/Course.css";
 
 export default function Register() {
     const [bruker, setBruker] = useState({

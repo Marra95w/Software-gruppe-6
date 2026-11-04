@@ -4,8 +4,7 @@ import { hentKursById } from "../Api/kursApi";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { formatDato, formatTid } from "../components/Dato";
-
-import '../components/courses.css';
+import '../css/courses.css';
 
 
 export default function Course() {

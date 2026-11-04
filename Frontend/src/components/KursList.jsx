@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import { hentAlleKurs } from "../Api/kursApi";
 import { Link } from "react-router-dom";
-import "./courses.css"
+import "../css/courses.css"
 import { formatDato, formatTid } from "./Dato";
 export default function KursList() {
 

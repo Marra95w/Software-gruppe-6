@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import "../components/Course.css"
+import "../css/Course.css"
 import { useState } from "react";
 
 export default function Registration({ kurs }) {
