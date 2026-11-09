@@ -49,7 +49,7 @@ export default function ForsideHoved() {
                         </li>
                     </Link>
 
-                    <Link to="./pages/OmOss">
+                    <Link to="/OmOss">
                         <li className='about-card'>
                             <img src="../src/assets/bilde/i.svg" alt="information" />
                             <h3>Om oss</h3>

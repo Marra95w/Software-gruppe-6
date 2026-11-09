@@ -8,6 +8,7 @@ import Courses from './pages/Courses'
 import Course from './pages/Course'
 import Login from './components/Login'
 import Register from './components/Register'
+import OmOss from './pages/OmOss'
 
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
         <Route path="*" element={<Show404 />} />
         <Route path='/Login' element={<Login />} />
         <Route path="/Register" element={<Register />} />
+        <Route path="/OmOss" element={<OmOss />} />
       </Route>
     </Routes>
 

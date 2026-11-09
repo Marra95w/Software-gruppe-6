@@ -15,7 +15,7 @@ export default function Nav() {
                 <ul className="dropdown">
                     <li>
                         <img className='meny-rose' src="../src/assets/bilde/rose.png" alt="rose" />
-                        <Link to="./pages/OmOss">Om Oss</Link>
+                        <Link to="./OmOss">Om oss</Link>
                     </li>
                     <li>
                         <img className='meny-rose' src="../src/assets/bilde/rose.png" alt="rose" />

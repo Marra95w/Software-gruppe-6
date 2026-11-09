@@ -27,7 +27,22 @@ const Layout = ({ }) => {
             </main>
 
             <footer>
-               
+                <div className="image-design">
+                    <img className="rose-design" src="../src/assets/bilde/rose.png" alt="rose" />
+                </div>
+                <section>
+                    <h3>Kontakt oss</h3>
+                    <p>Hjemmeside: fredrikstadhusflidslag.no</p>
+                    <p>E-post: fredrikstad.husflidslag@gmail.com</p>
+               </section>
+               <section>
+                    <h3>Besøk oss</h3>
+                    <p>Emil Mørchs vei 25, 3. etg. (heis) på Sellebakk. Lett tilgjengelig med ferge over Glomma.</p>
+               </section>
+               <section>
+                    <h3>Følg oss</h3>
+                    <p>Facebook/Instagram: @fredrikstadhusflidslag</p>
+               </section>
             </footer>
 
         </>
