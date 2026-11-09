@@ -13,7 +13,7 @@ export default function Register() {
     const [error, setError] = useState("");
     const [message, setMessage] = useState("");
 
-    //Endringer forsvinner når komponenten oppdateres
+
     const handleChange = (e) => {
         const { name, value } = e.target;
         setBruker((prev) => ({ ...prev, [name]: value }));
