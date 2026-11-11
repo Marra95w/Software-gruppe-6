@@ -1,5 +1,6 @@
 package Kursavholder;
 
+
 public class Kursavholder {
 
     private final int Kursavholder_id;
