@@ -36,3 +36,11 @@ export async function registerBruker(bruker) {
     }
     return tekst ? JSON.parse(tekst) : null;
 }
+//Async function for å hente ansatte
+export async function hentAnsatte() {
+    const response = await fetch("http://localhost:8080/ansatt/hente_ansatte");
+    if (!response.ok) {
+        throw new Error("Kunne ikke hente ansatte");
+    }
+    return response.json();
+}
