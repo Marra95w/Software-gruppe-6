@@ -45,17 +45,17 @@ public class Main {
             System.out.println("Tilkoblet databasen");
             System.out.println("Bruker denne URL-en: " + url);
 
-            List<Kursavholder>  alleAvholdere = logikk.hentAlleKursavholdere(connection);
+            List<KursavholderDTO>  alleAvholdere = logikk.hentAlleKursavholdere();
             System.out.println("----------Oversikt over alle kursavholdere----------");
 
             if (alleAvholdere.isEmpty()) {
                 System.out.println("Det har ikke blitt funnet kursavholdere i databasen");
             }
             else {
-                for (Kursavholder kursavholder : alleAvholdere) {
-                    System.out.println("ID: " + kursavholder.Kursavholder_id() +
+                for (KursavholderDTO kursavholder : alleAvholdere) {
+                    System.out.println("ID: " + kursavholder.getId() +
                             "| Navn: " + kursavholder.getNavn() +
-                            "| Adresse: " + kursavholder.getAdresse_husflidslag());
+                            "| Adresse: " + kursavholder.getAdresse());
                 }
             }
         }

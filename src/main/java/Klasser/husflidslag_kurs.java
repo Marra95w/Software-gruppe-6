@@ -29,7 +29,7 @@ public class husflidslag_kurs implements Kurs {
         this.prisMedlem = prisMedlem;
         this.prisIkkeMedlem = prisIkkeMedlem;
         this.beskrivelse = beskrivelse;
-        this.tilgjengelig = tilgjengelig;
+        this.tilgjengelig = tilgjengelig;n
         this.maksDeltagere = maksDeltagere;
     }
 

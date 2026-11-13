@@ -1,47 +1,86 @@
 package Kursavholder;
 
+import org.springframework.stereotype.Service;
+
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-
+@Service
 public class KursavholderLogikk {
 
-    //Metode for å hente enkelte kursavholdere
-    public Kursavholder hentKursavholder(Connection connection, int Kursavholder_id) {
 
+    //Metode for å hente enkelte kursavholdere
+    public KursavholderDTO hentKursavholder( int Kursavholder_id) {
         String sql = "SELECT kursavholder.kursavholder_id, kursavholder.Navn, " +
                 "adresse_husflidslag.id, adresse_husflidslag.Adresse_Kursvavholder_Id, " +
                 "adresse_husflidslag.Adresse_husflidslag " +
                 "FROM kursavholder " +
                 "JOIN adresse_husflidslag ON kursavholder.kursavholder_id = adresse_husflidslag.Adresse_Kursvavholder_Id " +
                 "WHERE kursavholder.kursavholder_id = ?";
+       try (Connection connection = DatabaseKobling.FaaTilkoblingen())  {
 
-        try (PreparedStatement pstmt = connection.prepareStatement(sql)) {
+           PreparedStatement pstmt = connection.prepareStatement(sql);
 
-            pstmt.setInt(1, Kursavholder_id);
-            try (ResultSet rs = pstmt.executeQuery()) {
-                if (rs.next()) {
-                    int hentKursavholder_id = rs.getInt("Kursavholder_id");
-                    String hentNavn = rs.getString("Navn");
-                    int hentAdresse_Kursvavholder_Id = rs.getInt("Adresse_Kursvavholder_Id");
-                    String hentAdresse_husflidslag = rs.getString("Adresse_husflidslag");
+           pstmt.setInt(1, Kursavholder_id);
+           try (ResultSet rs = pstmt.executeQuery()) {
+               if (rs.next()) {
+                   int hentKursavholder_id = rs.getInt("Kursavholder_id");
+                   String hentNavn = rs.getString("Navn");
+                   int hentAdresse_Kursvavholder_Id = rs.getInt("Adresse_Kursvavholder_Id");
+                   String hentAdresse_husflidslag = rs.getString("Adresse_husflidslag");
 
-                    return new Kursavholder(hentKursavholder_id, hentNavn, hentAdresse_Kursvavholder_Id, hentAdresse_husflidslag);
-                }
-            }
-        } catch (SQLException ex) {
+                   return new KursavholderDTO(hentKursavholder_id, hentNavn, hentAdresse_husflidslag, hentAdresse_Kursvavholder_Id );
+               }
+           }
+       }
+      catch (SQLException ex) {
             System.out.println("Feil ved henting av database:  " + ex.getMessage());
+        }
+        return null;
+    }
+    //Metode som henter ut alle kursavholdere
+    public List<KursavholderDTO> hentAlleKursavholdere() {
+        List<KursavholderDTO> alleKursavholdere = new ArrayList<>();
+
+        String sqlHentAlleKursavholdere = "SELECT kursavholder.kursavholder_id, kursavholder.Navn, " +
+                "adresse_husflidslag.id, adresse_husflidslag.Adresse_Kursvavholder_Id, " +
+                "adresse_husflidslag.Adresse_husflidslag " +
+                "FROM kursavholder " +
+                "JOIN adresse_husflidslag ON kursavholder.kursavholder_id = adresse_husflidslag.Adresse_Kursvavholder_Id ";
+
+        try (Connection connection = DatabaseKobling.FaaTilkoblingen()){
+            PreparedStatement pstmt = connection.prepareStatement(sqlHentAlleKursavholdere);
+            ResultSet rs = pstmt.executeQuery();
+
+            {
+                while (rs.next()){
+                    int id = rs.getInt("kursavholder_id");
+                    String navn = rs.getString("Navn");
+                    int addresseID = rs.getInt("Adresse_Kursvavholder_Id");
+                    String adresse = rs.getString("Adresse_husflidslag");
+
+                    //Lager kursavholder-objektet for hver rad og legger det til i listen vår.
+                    //Det som skjer er at for hver runde i loopen henter vi ut dataen fra kolonnene,
+                    //også deretter lager vi et ferdig Kursavholder- objekt som vi dytter inn i liste arrayen våres
+                    KursavholderDTO dto = new KursavholderDTO(id, navn, adresse,addresseID);
+                    alleKursavholdere.add(dto);
+                }
+                return alleKursavholdere;
+        }
+
+        } catch (SQLException ex) {
+            System.out.println("Feil ved henting av kursavholdere:  " + ex.getMessage());
         }
         return null;
     }
 
     //Metode for å kunne legge til nye kursavholdere
-    public void leggTilKursavholder(Connection connection, String navn, String adresse) {
+    public void leggTilKursavholder( String navn, String adresse) {
         String sqlNyKursavholder = "INSERT INTO kursavholder (Navn) VALUES (?) ";
         String sqlAdresse = "INSERT INTO adresse_husflidslag (Adresse_Kursvavholder_Id, Adresse_husflidslag) VALUES (?, ?)";
 
-        try {
+        try { Connection connection = DatabaseKobling.FaaTilkoblingen();
             connection.setAutoCommit(false);
             int nyKursavholder_id = -1; // start ID som vi bruker for å vente den ekte ID fra databasen,
             // dersom alt går bra og vi får en generet ID og da kan vi oppdatere -1 med den nye kursavholder ID-en
@@ -66,11 +105,11 @@ public class KursavholderLogikk {
                 }
             }
             connection.commit();
-            System.out.println("Ny kursavholder " + navn + " ble lagret");
+            System.out.println("Ny kursavholder: " + navn + " ble lagret");
         } catch (SQLException ex) {
 
             //hvis noe feiler, så vil vi angre alt med Rollback
-            try {
+            try {Connection connection = DatabaseKobling.FaaTilkoblingen();
                 connection.rollback();
                 System.out.println("Det her gått noe galt, ruller tilbake endringen: " + ex.getMessage());
             } catch (SQLException exRollback) {
@@ -78,7 +117,7 @@ public class KursavholderLogikk {
             }
         } finally {
             //Set tilkoblingen tilbake til standard
-            try {
+            try {Connection connection = DatabaseKobling.FaaTilkoblingen();
                 connection.setAutoCommit(true);
             } catch (SQLException ex) {
                 System.out.println("Feil ved tilbakebestilling av autoCommit: " + ex.getMessage());
@@ -86,42 +125,15 @@ public class KursavholderLogikk {
         }
     }
 
-    //Metode som henter ut alle kursavholdere
-    public List<Kursavholder> hentAlleKursavholdere(Connection connection) {
-        List<Kursavholder> alleKursavholdere = new ArrayList<>();
 
-        String sqlHentAlleKursavholdere = "SELECT kursavholder.kursavholder_id, kursavholder.Navn, " +
-                "adresse_husflidslag.id, adresse_husflidslag.Adresse_Kursvavholder_Id, " +
-                "adresse_husflidslag.Adresse_husflidslag " +
-                "FROM kursavholder " +
-                "JOIN adresse_husflidslag ON kursavholder.kursavholder_id = adresse_husflidslag.Adresse_Kursvavholder_Id ";
-
-        try (PreparedStatement pstmt = connection.prepareStatement(sqlHentAlleKursavholdere);
-        ResultSet rs = pstmt.executeQuery()) {
-            while (rs.next()){
-                int id = rs.getInt("kursavholder_id");
-                String navn = rs.getString("Navn");
-                int addresseID = rs.getInt("Adresse_Kursvavholder_Id");
-                String adresse = rs.getString("Adresse_husflidslag");
-
-                //Lager kursavholder-objektet for hver rad og legger det til i listen vår.
-                //Det som skjer er at for hver runde i loopen henter vi ut dataen fra kolonnene,
-                //også deretter lager vi et ferdig Kursavholder- objekt som vi dytter inn i liste arrayen våres
-                Kursavholder kursavholder = new Kursavholder(id, navn, addresseID, adresse);
-                alleKursavholdere.add(kursavholder);
-            }
-        } catch (SQLException ex) {
-            System.out.println("Feil ved henting av kursavholdere:  " + ex.getMessage());
-        }
-        return alleKursavholdere;
-    }
 
     //Metode for å kunne Oppdatere
-    public void oppdaterKursavholder(Connection connection, int kursavholder_id, String nyttNavn, String nyAdresse) {
+    public void oppdaterKursavholder( int kursavholder_id, String nyttNavn, String nyAdresse) {
         String sqlNavn = "UPDATE kursavholder SET Navn = ? WHERE kursavholder_id = ?";
         String sqlAdresse = "UPDATE adresse_husflidslag SET Adresse_husflidslag = ? WHERE Adresse_Kursvavholder_Id = ?";
 
-        try{connection.setAutoCommit(false);
+        try{Connection connection = DatabaseKobling.FaaTilkoblingen();
+            connection.setAutoCommit(false);
         try(PreparedStatement pstmtNavn = connection.prepareStatement(sqlNavn)){
             pstmtNavn.setString(1, nyttNavn);
             pstmtNavn.setInt(2, kursavholder_id);
@@ -133,19 +145,19 @@ public class KursavholderLogikk {
             pstmtAdresse.executeUpdate();
         }
         connection.commit();
-            System.out.println("Kursavholder med ID " + kursavholder_id + "ble oppdatert");
+            System.out.println("Kursavholder med ID " + kursavholder_id + " ble oppdatert");
         }
         catch (SQLException ex) {
             System.out.println("Feil ved oppdatering av kursavholder, ruller tilbake: " + ex.getMessage());
 
-            try {
+            try {Connection connection = DatabaseKobling.FaaTilkoblingen();
                 connection.rollback();
             } catch (SQLException rollbackEX) {
                 System.out.println("Feil ved Rollback" + rollbackEX.getMessage());
             }
         }
         finally {
-            try {
+            try {Connection connection = DatabaseKobling.FaaTilkoblingen();
                 connection.setAutoCommit(true);
             } catch (SQLException ex) {
                 System.out.println("Feil ved autoCommit: " + ex.getMessage());
@@ -154,11 +166,12 @@ public class KursavholderLogikk {
     }
 
     //Metode for sletting av kursavholdere og tilhørende adresse
-    public void deleteKursavholder(Connection connection, int kursavholder_id) {
+    public void deleteKursavholder(int kursavholder_id) {
         String sqlDeleteAdresse = "DELETE FROM  adresse_husflidslag WHERE Adresse_Kursvavholder_Id = ?";
         String sqlDeleteKursavholder = "DELETE FROM kursavholder WHERE kursavholder_id = ?";
 
-        try{connection.setAutoCommit(false);
+        try{Connection connection = DatabaseKobling.FaaTilkoblingen();
+            connection.setAutoCommit(false);
 
             try(PreparedStatement ptsmtAdresse = connection.prepareStatement(sqlDeleteAdresse)){
                 ptsmtAdresse.setInt(1,kursavholder_id);
@@ -171,10 +184,10 @@ public class KursavholderLogikk {
             }
 
             connection.commit();
-            System.out.println("Kursavholder med ID " + kursavholder_id + "Og tilhørende adresse ble slettet");
+            System.out.println("Kursavholder med ID " + kursavholder_id + " Og tilhørende adresse ble slettet");
         }
         catch (SQLException ex) {
-            try{
+            try{Connection connection = DatabaseKobling.FaaTilkoblingen();
                 connection.rollback();
                 System.out.println("Feil under sletting, ruller tilbake endringen: " + ex.getMessage());
             }catch (SQLException exRollback) {
@@ -182,18 +195,93 @@ public class KursavholderLogikk {
             }
         }finally {
             try {
+                Connection connection = DatabaseKobling.FaaTilkoblingen();
                 connection.setAutoCommit(true);
             } catch (SQLException ex) {
                 System.out.println("Feil under autoCommit: " + ex.getMessage());
             }
         }
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+
     //_________________________________________________________________
     //NY METODE: Henter alle kursavholdere ferdig mappet til DTO
     //_________________________________________________________________
-    public List<KursavholderDTO> hentAlleKursavholdereDto(Connection connection) {
-        List<Kursavholder> raaData = hentAlleKursavholdere(connection);
-        return raaData.stream().map(k -> new KursavholderDTO(k.Kursavholder_id(), k.getNavn(), k.getAdresse_husflidslag())).toList();
+    public List<KursavholderDTO> hentAlleKursavholdereDto() {
+        List<Kursavholder> raaData = hentAlleKursavholdere();
+        return raaData.stream().map(k -> new KursavholderDTO
+                (k.Kursavholder_id(), k.getNavn(), k.getNavn(), k.getAdresse_Kursvavholder_Id())).toList();
+    }
+    // Metode for å hente én enkelt kursavholder ferdig mappet til DTO
+    public KursavholderDTO hentKursavholderDto(Connection connection, int kursavholderId) {
+        KursavholderDTO k = hentKursavholder(kursavholderId);
+        if (k != null) {
+            return new KursavholderDTO(k.getId(), k.getNavn(), k.getAdresse(), k.getAddressId());
+        }
+        return null; // Returnerer null hvis den ikke finnes
+    }
+
+*/
+
+    //_________________________________________________________________________________
+    //    Metode for validering av ugyldig input som tomme navn, adresse eller negative ID-er
+    //_________________________________________________________________________________
+
+    //Dette er for operasjoner som ikke trenger ID ved oppretting enda, siden databasen lager id automatisk
+    public void validerKursavholder( String navn, String adresse) {
+        if (navn == null ||navn.isBlank()) {
+            throw new IllegalArgumentException("Navnet kan ikke være tomt");
+        }if (adresse == null || adresse.isBlank()) {
+            throw new IllegalArgumentException("Adressen kan ikke være tomt");
+        }
+    }
+    //Dette er for operasjoner som krever gyldig ID som sletting, henting og oppdatering
+    public void validerID(int id) {
+        if (id <= 0) {
+            throw new IllegalArgumentException("ID må være et positivt tall");
+        }
     }
 }
 

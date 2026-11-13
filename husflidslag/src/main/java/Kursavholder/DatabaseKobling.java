@@ -7,6 +7,7 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import io.github.cdimascio.dotenv.Dotenv;
 
+
 public class DatabaseKobling {
 
     Dotenv dotenv = Dotenv.configure().ignoreIfMissing().ignoreIfMalformed().load();

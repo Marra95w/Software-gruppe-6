@@ -6,13 +6,12 @@
   <component name="ChangeListManager">
     <list default="true" id="93dd9d12-e1a5-4f6a-a96a-670dda802be7" name="Changes" comment="La til Kursavholder.java og Main.java">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/src/components/HenteKurs 2.css" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/src/components/HenteKurs 2.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/src/pages/Aktuelt.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/src/pages/Aktuelt.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/husflidslag/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/husflidslag/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/husflidslag/src/main/java/Kursavholder/Kursavholder.java" beforeDir="false" afterPath="$PROJECT_DIR$/husflidslag/src/main/java/Kursavholder/Kursavholder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/husflidslag/src/main/java/Kursavholder/DatabaseKobling.java" beforeDir="false" afterPath="$PROJECT_DIR$/husflidslag/src/main/java/Kursavholder/DatabaseKobling.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/husflidslag/src/main/java/Kursavholder/KursavholderLogikk.java" beforeDir="false" afterPath="$PROJECT_DIR$/husflidslag/src/main/java/Kursavholder/KursavholderLogikk.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/husflidslag/src/main/java/Kursavholder/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/husflidslag/src/main/java/Kursavholder/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Klasser/husflidslag_kurs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Klasser/husflidslag_kurs.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -137,6 +136,8 @@
       <workItem from="1792578886812" duration="2466000" />
       <workItem from="1793902263820" duration="2432000" />
       <workItem from="1794397505612" duration="451000" />
+      <workItem from="1794404033192" duration="162000" />
+      <workItem from="1794572377981" duration="180000" />
     </task>
     <task id="LOCAL−00001" summary="d">
       <option name="closed" value="true" />
