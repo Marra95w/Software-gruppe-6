@@ -88,5 +88,6 @@ public class Kursavholder_Controller {
         catch (Exception e) {
             return ResponseEntity.internalServerError().body("Feil ved sletting av kursavhodler: " + e.getMessage());
         }
+
     }
     }
