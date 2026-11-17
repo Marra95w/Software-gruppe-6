@@ -44,11 +44,11 @@ public class Kursavholder_Controller {
     }
 
     //Legger til (Post /Api/kursavholder)
-    @GetMapping
-    public ResponseEntity<String> leggTilKursavholder(@RequestBody  Kursavholder nyDTO) {
+    @PostMapping
+    public ResponseEntity<String> leggTilKursavholder(@RequestBody  KursavholderDTO nyDTO) {
         try{
-            kursavholderLogikk.validerKursavholder(nyDTO.getNavn(), nyDTO.getAdresse_husflidslag());
-            kursavholderLogikk.leggTilKursavholder(nyDTO.getNavn(), nyDTO.getAdresse_husflidslag());
+            kursavholderLogikk.validerKursavholder(nyDTO.getNavn(), nyDTO.getAdresse());
+            kursavholderLogikk.leggTilKursavholder(nyDTO.getNavn(), nyDTO.getAdresse());
             return ResponseEntity.ok("Suksess: Kursavholder ble lagret");
         }
         catch (IllegalArgumentException e ){
