@@ -1,4 +1,10 @@
-package Klasser;
+package nettside.Modell;
+
+/*Denne klassen, benyttes for kunden å kunde melde seg på kurs
+* akkurat her er det ikke så mye som skjer men ved å sjekke Database_paamelding_logikk
+* kan man se noen av funksjonene som vi ønsker at kunden skal bruke for å melde seg
+* OBS!!!:Database_paamelding_logikk ikke alle funskjonene er tatt med i Frontend grunnen lite tid
+* men er planlagt for å gjøre alle disse funskjonene tilgjengelig på et senere tidspunk */
 
 public class kurs_paamelding {
 
@@ -7,12 +13,13 @@ public class kurs_paamelding {
     private int kursId;
     private double pris_fakturert;
 
-    public kurs_paamelding(int id, int kundeId, int kursId, double pris_fakturert) {
+    public kurs_paamelding( int kundeId, int kursId, double pris_fakturert) {
         this.id = id;
         this.kundeId = kundeId;
         this.kursId = kursId;
         this.pris_fakturert = pris_fakturert;
     }
+
 
     public int getId() {
         return id;
