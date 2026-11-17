@@ -1,4 +1,5 @@
 package no.hiof.controllers;
+
 import DTO.AnsattDTO;
 import services.Ansattlogikk;
 import config.Databasekobling; // <-- Nå henter vi den fra config-pakken

@@ -1,0 +1,3 @@
+### Hent alle ansatte
+GET http://localhost:8080/ansatt/hente_ansatte
+Accept: application/json
