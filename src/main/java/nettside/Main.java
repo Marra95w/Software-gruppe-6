@@ -16,8 +16,8 @@ public class Main {
 
         /*Logikk_Kunde_Registrering_og_Innlogging registrering = new Logikk_Kunde_Registrering_og_Innlogging();
         Logikk_Kunde_Registrering_og_Innlogging registrering1 = new Logikk_Kunde_Registrering_og_Innlogging();
-        Logikk_Kunde_Registrering_og_Innlogging registrering2 = new Logikk_Kunde_Registrering_og_Innlogging();
-        Logikk_Kunde_Registrering_og_Innlogging registrering3 = new Logikk_Kunde_Registrering_og_Innlogging();
+        Logikk_Kunde_Registrering_og_Innlogging regitrering2 = new Logikk_Kunde_Registrering_og_Innlogging();
+        Logikk_Kunde_Registrering_og_Innlogging registrerinsg3 = new Logikk_Kunde_Registrering_og_Innlogging();
         Logikk_Kunde_Registrering_og_Innlogging registrering4 = new Logikk_Kunde_Registrering_og_Innlogging();
         Logikk_Kunde_Registrering_og_Innlogging registrering5 = new Logikk_Kunde_Registrering_og_Innlogging();
         Logikk_Kunde_Registrering_og_Innlogging registrering6 = new Logikk_Kunde_Registrering_og_Innlogging();*/
@@ -35,13 +35,6 @@ public class Main {
         registrering4.leggTilMedlem("Jonas","Lie","jonas.lie@bedrift.no",0,90000005,"test002");
         registrering5.leggTilMedlem("Kari","Mortensen","kari89@proton.com",1,90000001,"test003");
         registrering6.leggTilMedlem("Admin", "System", "admin@prosjekt.no", 2, 00000000, "Admin1");*/
-
-
-
-
-
-
-
 
 
     }

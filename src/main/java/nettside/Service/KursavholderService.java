@@ -20,7 +20,7 @@ public class KursavholderService {
                 "FROM kursavholder " +
                 "JOIN adresse_husflidslag ON kursavholder.kursavholder_id = adresse_husflidslag.Adresse_Kursvavholder_Id " +
                 "WHERE kursavholder.kursavholder_id = ?";
-       try (Connection connection = DatabaseKobling.FaaTilkoblingen())  {
+       try (Connection connection = DatabaseKobling.getConnection())  {
 
            PreparedStatement pstmt = connection.prepareStatement(sql);
 
@@ -51,7 +51,7 @@ public class KursavholderService {
                 "FROM kursavholder " +
                 "JOIN adresse_husflidslag ON kursavholder.kursavholder_id = adresse_husflidslag.Adresse_Kursvavholder_Id ";
 
-        try (Connection connection = DatabaseKobling.FaaTilkoblingen()){
+        try (Connection connection = DatabaseKobling.getConnection()){
             PreparedStatement pstmt = connection.prepareStatement(sqlHentAlleKursavholdere);
             ResultSet rs = pstmt.executeQuery();
 
@@ -82,7 +82,7 @@ public class KursavholderService {
         String sqlNyKursavholder = "INSERT INTO kursavholder (Navn) VALUES (?) ";
         String sqlAdresse = "INSERT INTO adresse_husflidslag (Adresse_Kursvavholder_Id, Adresse_husflidslag) VALUES (?, ?)";
 
-        try { Connection connection = DatabaseKobling.FaaTilkoblingen();
+        try { Connection connection = DatabaseKobling.getConnection();
             connection.setAutoCommit(false);
             int nyKursavholder_id = -1; // start ID som vi bruker for å vente den ekte ID fra databasen,
             // dersom alt går bra og vi får en generet ID og da kan vi oppdatere -1 med den nye kursavholder ID-en
@@ -111,7 +111,7 @@ public class KursavholderService {
         } catch (SQLException ex) {
 
             //hvis noe feiler, så vil vi angre alt med Rollback
-            try {Connection connection = DatabaseKobling.FaaTilkoblingen();
+            try {Connection connection = DatabaseKobling.getConnection();
                 connection.rollback();
                 System.out.println("Det her gått noe galt, ruller tilbake endringen: " + ex.getMessage());
             } catch (SQLException exRollback) {
@@ -119,7 +119,7 @@ public class KursavholderService {
             }
         } finally {
             //Set tilkoblingen tilbake til standard
-            try {Connection connection = DatabaseKobling.FaaTilkoblingen();
+            try {Connection connection = DatabaseKobling.getConnection();
                 connection.setAutoCommit(true);
             } catch (SQLException ex) {
                 System.out.println("Feil ved tilbakebestilling av autoCommit: " + ex.getMessage());
@@ -133,7 +133,7 @@ public class KursavholderService {
         String sqlNavn = "UPDATE kursavholder SET Navn = ? WHERE kursavholder_id = ?";
         String sqlAdresse = "UPDATE adresse_husflidslag SET Adresse_husflidslag = ? WHERE Adresse_Kursvavholder_Id = ?";
 
-        try{Connection connection = DatabaseKobling.FaaTilkoblingen();
+        try{Connection connection = DatabaseKobling.getConnection();
             connection.setAutoCommit(false);
         try(PreparedStatement pstmtNavn = connection.prepareStatement(sqlNavn)){
             pstmtNavn.setString(1, nyttNavn);
@@ -151,14 +151,14 @@ public class KursavholderService {
         catch (SQLException ex) {
             System.out.println("Feil ved oppdatering av kursavholder, ruller tilbake: " + ex.getMessage());
 
-            try {Connection connection = DatabaseKobling.FaaTilkoblingen();
+            try {Connection connection = DatabaseKobling.getConnection();
                 connection.rollback();
             } catch (SQLException rollbackEX) {
                 System.out.println("Feil ved Rollback" + rollbackEX.getMessage());
             }
         }
         finally {
-            try {Connection connection = DatabaseKobling.FaaTilkoblingen();
+            try {Connection connection = DatabaseKobling.getConnection();
                 connection.setAutoCommit(true);
             } catch (SQLException ex) {
                 System.out.println("Feil ved autoCommit: " + ex.getMessage());
@@ -171,7 +171,7 @@ public class KursavholderService {
         String sqlDeleteAdresse = "DELETE FROM  adresse_husflidslag WHERE Adresse_Kursvavholder_Id = ?";
         String sqlDeleteKursavholder = "DELETE FROM kursavholder WHERE kursavholder_id = ?";
 
-        try{Connection connection = DatabaseKobling.FaaTilkoblingen();
+        try{Connection connection = DatabaseKobling.getConnection();
             connection.setAutoCommit(false);
 
             try(PreparedStatement ptsmtAdresse = connection.prepareStatement(sqlDeleteAdresse)){
@@ -188,7 +188,7 @@ public class KursavholderService {
             System.out.println("Kursavholder med ID " + kursavholder_id + " Og tilhørende adresse ble slettet");
         }
         catch (SQLException ex) {
-            try{Connection connection = DatabaseKobling.FaaTilkoblingen();
+            try{Connection connection = DatabaseKobling.getConnection();
                 connection.rollback();
                 System.out.println("Feil under sletting, ruller tilbake endringen: " + ex.getMessage());
             }catch (SQLException exRollback) {
@@ -196,7 +196,7 @@ public class KursavholderService {
             }
         }finally {
             try {
-                Connection connection = DatabaseKobling.FaaTilkoblingen();
+                Connection connection = DatabaseKobling.getConnection();
                 connection.setAutoCommit(true);
             } catch (SQLException ex) {
                 System.out.println("Feil under autoCommit: " + ex.getMessage());
