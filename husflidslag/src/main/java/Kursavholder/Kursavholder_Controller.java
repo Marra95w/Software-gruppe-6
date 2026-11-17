@@ -80,7 +80,7 @@ public class Kursavholder_Controller {
         try {
             kursavholderLogikk.validerID(id);
             kursavholderLogikk.deleteKursavholder(id);
-            return ResponseEntity.ok("Kursavholder med ID " + id + " ble slett");
+            return ResponseEntity.ok("Kursavholder med ID " + id + " ble slettet");
         }
         catch (IllegalArgumentException e ){
             return ResponseEntity.badRequest().body(e.getMessage());
