@@ -5,6 +5,9 @@ import nettside.Modell.medlem;
 import nettside.Logikk.Logikk_Kunde_Registrering_og_Innlogging;
 import org.springframework.web.bind.annotation.*;
 
+/* Bruker Spring Boot sin API-url for å opprette en koblingspunkt mllom backend og frontend
+ * frontend må bare fetche disse for å kunne bruke registreringen og innloggings tjenesten */
+
 @RestController
 @CrossOrigin(origins ="http://localhost:5173")
 public class Kunde_Controller {

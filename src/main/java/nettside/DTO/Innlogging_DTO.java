@@ -1,5 +1,8 @@
 package nettside.DTO;
 
+/* Vi bruker DTO for å for å begrense info vi ønsker å motta i tillegg skiller vi fra det interne modellen. Derfor har vi bare
+* epost og passord som sjekkes mot databasen. medlemstatus er bare internt for å kunne vise kurs basert på hvem som er innlogget
+* altså sjekker om personen er medlem eller ikke.*/
 
 public class Innlogging_DTO {
 
