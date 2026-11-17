@@ -1,7 +1,7 @@
 package nettside.Controller;
 
 import nettside.DTO.Innlogging_DTO;
-import nettside.Klasser.medlem;
+import nettside.Modell.medlem;
 import nettside.Logikk.Logikk_Kunde_Registrering_og_Innlogging;
 import org.springframework.web.bind.annotation.*;
 

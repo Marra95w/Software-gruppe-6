@@ -1,4 +1,4 @@
-package nettside.Klasser;
+package nettside.Modell;
 
 /*Denne klassen, benyttes for kunden å kunde melde seg på kurs
 * akkurat her er det ikke så mye som skjer men ved å sjekke Database_paamelding_logikk
@@ -13,12 +13,13 @@ public class kurs_paamelding {
     private int kursId;
     private double pris_fakturert;
 
-    public kurs_paamelding(int id, int kundeId, int kursId, double pris_fakturert) {
+    public kurs_paamelding( int kundeId, int kursId, double pris_fakturert) {
         this.id = id;
         this.kundeId = kundeId;
         this.kursId = kursId;
         this.pris_fakturert = pris_fakturert;
     }
+
 
     public int getId() {
         return id;

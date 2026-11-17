@@ -1,5 +1,5 @@
 package nettside.Logikk;
-import nettside.Klasser.kurs_paamelding;
+import nettside.Modell.kurs_paamelding;
 import io.github.cdimascio.dotenv.Dotenv;
 
 import java.sql.Connection;
@@ -48,6 +48,10 @@ public class Database_paamelding_logikk {
             statement.setDouble(3, pris_fakturert);
 
             statement.executeUpdate();
+
+            kurs_paamelding paamelding = new kurs_paamelding(kundeId,kursId,pris_fakturert);
+
+            return paamelding;
 
 
 

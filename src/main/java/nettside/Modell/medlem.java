@@ -1,4 +1,4 @@
-package nettside.Klasser;
+package nettside.Modell;
 
 import nettside.Interface.Medlem;
 
@@ -21,6 +21,15 @@ public class medlem implements Medlem {
 
     public medlem(int idMedlem, String navn, String etternavn, String epost, int medlem, int telefonnummer) {
         this.idMedlem = idMedlem;
+        this.navn = navn;
+        this.etternavn = etternavn;
+        this.epost = epost;
+        this.medlem = medlem;
+        this.telefonnummer = telefonnummer;
+    }
+
+    public medlem( String navn, String etternavn, String epost, int medlem, int telefonnummer) {
+
         this.navn = navn;
         this.etternavn = etternavn;
         this.epost = epost;

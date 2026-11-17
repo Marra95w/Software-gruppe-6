@@ -1,4 +1,4 @@
-package nettside.Klasser;
+package nettside.Modell;
 
 import nettside.Interface.Kurs;
 

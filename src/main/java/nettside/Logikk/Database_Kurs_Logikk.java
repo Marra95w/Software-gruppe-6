@@ -1,17 +1,15 @@
 package nettside.Logikk;
 
-import nettside.Klasser.husflidslag_kurs;
-import nettside.Klasser.adresse_husflidslag;
+import nettside.Modell.husflidslag_kurs;
+import nettside.Modell.adresse_husflidslag;
 import io.github.cdimascio.dotenv.Dotenv;
 
 import java.sql.SQLException;
 
 import java.sql.*;
 import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Locale;
 //import java.util.List;
 
 /*OBS DENNE KODEN ER MENT FOR BRUK AV ADMIN I ØSTFOLDS HUDSFLISLAG, MEN VED HJELP AV FRONTEND
@@ -160,7 +158,7 @@ public class Database_Kurs_Logikk {
 
     //FUNKSJON SOM SETTER KURS I DATABASEN VÆR FORSIKTIG, IKKE BRUK HVIS DETTE BLIR FORVIRRENDE
     public husflidslag_kurs sett_kurs_i_db(String tittel, LocalDateTime startDatoTid,LocalDateTime sluttDatoTid, int kursavholder, double prisMedlem, double prisIkkeMedlem, String beskrivelse) {
-        String sql ="INSERT INTO kurs_tabell (tittel, startDatoTid, sluttDatoTid, Kursavholder_Id, pris_medlem, pris_ikke_medlem, Beskrivelse) VALUES (?, ?, ?, ?, ?, ?, ?)";
+        String sql ="INSERT INTO kurs_tabell (tittel, start_Dato_Tid, slutt_Dato_Tid, Kursavholder_Id, pris_medlem, pris_ikke_medlem, Beskrivelse) VALUES (?, ?, ?, ?, ?, ?, ?)";
 
 
         try (Connection conn = DriverManager.getConnection(url, brukernavn, passord);
@@ -175,6 +173,22 @@ public class Database_Kurs_Logikk {
             stmt.setDouble(6,prisIkkeMedlem);
             stmt.setString(7,beskrivelse);
             stmt.executeUpdate();
+
+            /* basert på integrasjonstestingen jeg fikk feilmedling for å ikke returnere kurs selv om kurset ble registrert i db,
+             sånn som jeg har forstått så må vi returnere ny opprettet kurs for at den skal være synlig i frontend.*/
+
+            husflidslag_kurs kurs_opprettet = new husflidslag_kurs();
+
+            kurs_opprettet.setTittel(tittel);
+            kurs_opprettet.setStartDatoTid(startDatoTid);
+            kurs_opprettet.setSluttDatoTid(sluttDatoTid);
+            kurs_opprettet.setKursavholder(kursavholder);
+            kurs_opprettet.setPrisMedlem(prisMedlem);
+            kurs_opprettet.setPrisIkkeMedlem(prisIkkeMedlem);
+            kurs_opprettet.setBeskrivelse(beskrivelse);
+
+            return kurs_opprettet;
+
 
 
         } catch (SQLException e) {
@@ -219,7 +233,7 @@ public class Database_Kurs_Logikk {
     //FUNKSJON SOM OPPDATERER KURS
     public husflidslag_kurs oppdatere_kurs_i_db(String tittel, LocalDateTime startDatoTid, LocalDateTime sluttDatoTid, int kursavholder, double prisMedlem, double prisIkkeMedlem, String beskrivelse,int id) {
 
-        String sql = "UPDATE kurs_tabell SET tittel = ?, startDatoTid = ?, sluttDatoTid = ?, Kursavholder_Id = ?, pris_Medlem = ?," +
+        String sql = "UPDATE kurs_tabell SET tittel = ?, start_Dato_Tid = ?, slutt_Dato_Tid = ?, Kursavholder_Id = ?, pris_Medlem = ?," +
                 "pris_Ikke_Medlem = ?, beskrivelse = ? WHERE id = ?";
 
 

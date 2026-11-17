@@ -1,7 +1,7 @@
 package nettside.Logikk;
 
 import nettside.DTO.Innlogging_DTO;
-import nettside.Klasser.medlem;
+import nettside.Modell.medlem;
 import io.github.cdimascio.dotenv.Dotenv;
 import org.mindrot.jbcrypt.BCrypt;
 
@@ -41,6 +41,7 @@ public class Logikk_Kunde_Registrering_og_Innlogging {
 
         String sql = "INSERT INTO kunde_tabell (Navn, Etternavn, e_post, Medlem, telefonnummer,passord) VALUES (?, ?, ?, ?, ?, ?)";
 
+
         try (Connection conn = DriverManager.getConnection(url, brukernavn, passord);
              PreparedStatement stmt = conn.prepareStatement(sql)) {
 
@@ -52,6 +53,12 @@ public class Logikk_Kunde_Registrering_og_Innlogging {
             stmt.setString(6,passord_hash);
 
             stmt.executeUpdate();
+
+            medlem nymedlem = new medlem(navn,etternavn,epost,medlem,telefonnummer);
+
+            return nymedlem;
+
+
 
         } catch (SQLException e) {
             System.err.println(e.getMessage());

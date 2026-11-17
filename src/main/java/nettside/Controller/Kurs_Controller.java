@@ -1,7 +1,7 @@
 package nettside.Controller;
 
-import nettside.Klasser.husflidslag_kurs;
-import nettside.Klasser.kurs_paamelding;
+import nettside.Modell.husflidslag_kurs;
+import nettside.Modell.kurs_paamelding;
 import nettside.Logikk.Database_Kurs_Logikk;
 import nettside.Logikk.Database_paamelding_logikk;
 import org.springframework.web.bind.annotation.*;
