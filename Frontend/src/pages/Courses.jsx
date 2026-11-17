@@ -1,26 +1,26 @@
 import { useState } from "react";
 import "../components/courses.css";
 import KursList from "../components/KursList";
-import BestilleKurs from "./BestilleKurs";
 export default function Course() {
     const [open, setOpen] = useState(false);
     return (
         <main>
             <h2>Kurs og aktiviteter</h2>
-
             <p>
                 Her finner du kurs som hører til Østfold Husflidslag
                 og andre lokallag
             </p>
 
+            {/* søkefelt */}
             <form className="search">
+                <img src="../src/assets/bilde/search.svg" alt="Search" />
                 <input type="search"
-                    img src="../src/assets/bilde/search.svg" alt="Search"
                     placeholder="Søk etter kurs..."
                 />
                 <button type="submit">Søk</button>
             </form>
 
+            {/* Datofiltrering */}
             <section className="filter">
 
                 <div className="date-container">
@@ -70,6 +70,8 @@ export default function Course() {
                     />
                 </button>
 
+
+                {/* kategori felt */}
                 <button className="category">
                     <p>Kategori</p>
                     <img
@@ -78,29 +80,14 @@ export default function Course() {
                         alt="pil ned"
                     />
                 </button>
-
             </section>
 
+
+            {/* Viser kurs */}
             <section>
 
                 <KursList />
             </section>
-
-            <section className="choose-course">
-                <img className="course-img" src="../src/assets/bilde/strikk.png" alt="strikk" />
-                <ul>
-                    <li>
-                        <img src="../src/assets/bilde/calendar.svg" alt="calender" />
-                    </li>
-                    <li>
-                        <h3>Kurs i strikking</h3>
-                    </li>
-                    <li>
-                        <p>Fredrikstad</p>
-                    </li>
-                </ul>
-            </section>
-
         </main>
     );
 }

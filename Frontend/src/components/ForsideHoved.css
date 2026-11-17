@@ -23,7 +23,7 @@ main{
         margin: 0 auto;
     }
 }
-    /* Tekst uner bilde */
+    /* Tekst under bilde */
     .intro{
         color: var(--burgunder);
         text-align: center;
@@ -49,6 +49,7 @@ main{
         display: flex;
         align-items: center;
         gap: 1rem;
+        width: 100%;
     
         &::before,
         &::after {
@@ -64,6 +65,18 @@ main{
         }
     }
 
+    
+    .course-header{
+        display: flex;
+        justify-content: center;
+        padding: 30px;
+        font-size: 40px;
+    }
+
+    .courses-main{
+        padding-bottom: 100px;
+    }
+    
     /* Bokser under aktuelle kurs */
     .category-list a{
         text-decoration: none;
@@ -107,22 +120,43 @@ main{
             }
         }
 
-
+        /* design på selve kortet */
         .course-card{
             background-color: #BFCFBA;
         }
+        .course-card:hover{
+            box-shadow: 2px 2px 50px grey;
+            transform: scale(1.05);
+        }
+
+
         .local-card{
             background-color: #BBD3EE;
-           
         }
+         .local-card:hover{
+            box-shadow: 2px 2px 50px grey;
+            transform: scale(1.05);
+        }
+
+
         .craft-card{
             background-color: #ECCB9A;
-            
         }
+         .craft-card:hover{
+            box-shadow: 2px 2px 50px grey;
+            transform: scale(1.05);
+        }
+
+
         .about-card{
             background-color: rgba(171, 61, 78, 0.5);
-           
         }
+         .about-card:hover{
+            box-shadow: 2px 2px 50px grey;
+            transform: scale(1.05);
+        }
+
+
         button{
             background: none;
             border: none;

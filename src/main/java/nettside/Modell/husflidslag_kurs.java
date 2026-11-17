@@ -1,13 +1,9 @@
-package nettside.Modell;
+package Klasser;
 
-import nettside.Interface.Kurs;
+import Interface.Kurs;
 
+import java.security.InvalidParameterException;
 import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
-import java.util.Locale;
-
-/* Denne klassen bruker vi for å kunne fremvise kurs for kunden. Ved å gå til Databse_Kurs_Logikk,
-* kan man se at det finnes funksjoner som gjør det lett å redigere og velge kurs */
 
 public class husflidslag_kurs implements Kurs {
 
@@ -21,12 +17,11 @@ public class husflidslag_kurs implements Kurs {
     private String beskrivelse;
     private boolean tilgjengelig;
     private int maksDeltagere;
-    private String adresse;
-    private String kursavholderNavn;
 
-    public husflidslag_kurs( String tittel, LocalDateTime startDatoTid, LocalDateTime sluttDatoTid, int kursavholder,
-                            double prisMedlem, double prisIkkeMedlem, String beskrivelse, boolean tilgjengelig,int maksDeltagere, String adresse,String kursavholderNavn) {
-
+    public husflidslag_kurs(int id, String tittel, LocalDateTime startDatoTid, LocalDateTime sluttDatoTid,
+            int kursavholder,
+            double prisMedlem, double prisIkkeMedlem, String beskrivelse, boolean tilgjengelig, int maksDeltagere) {
+        this.id = id;
         this.tittel = tittel;
         this.startDatoTid = startDatoTid;
         this.sluttDatoTid = sluttDatoTid;
@@ -36,8 +31,6 @@ public class husflidslag_kurs implements Kurs {
         this.beskrivelse = beskrivelse;
         this.tilgjengelig = tilgjengelig;
         this.maksDeltagere = maksDeltagere;
-        this.adresse = adresse;
-        this.kursavholderNavn = kursavholderNavn;
     }
 
     public husflidslag_kurs() {
@@ -45,10 +38,14 @@ public class husflidslag_kurs implements Kurs {
     }
 
     @Override
-    public int getId() {return id;}
+    public int getId() {
+        return id;
+    }
 
     @Override
-    public void setId(int id) {this.id = id;}
+    public void setId(int id) {
+        this.id = id;
+    }
 
     @Override
     public String getTittel() {
@@ -61,27 +58,9 @@ public class husflidslag_kurs implements Kurs {
     }
 
     @Override
-    //Local Date Time formaten var for uoversiktig så vi bytte til en mer oversektlig som kan vises for brukeren
-    //Gjennom oracle sin dokumentasjon for JAVA klarte jeg å finne formatteringen for norsk språket
-    public String getStartDatoTidString(){
-
-        DateTimeFormatter norsk_Formatter = DateTimeFormatter.ofPattern("d. MMMM yyyy 'kl.' HH:mm", Locale.forLanguageTag("no-NO"));
-
-        return startDatoTid.format(norsk_Formatter);}
-
-    @Override
     public LocalDateTime getSluttDatoTid() {
         return sluttDatoTid;
     }
-
-    @Override
-    //Local Date Time formaten var for uoversiktig så vi bytte til en mer oversektlig som kan vises for brukeren
-    //Gjennom oracle sin dokumentasjon for JAVA klarte jeg å finne formatteringen for norsk språket
-    public String getSluttDatoTidString(){
-
-        DateTimeFormatter norsk_Formatter = DateTimeFormatter.ofPattern("d. MMMM yyyy 'kl.' HH:mm", Locale.forLanguageTag("no-NO"));
-
-        return sluttDatoTid.format(norsk_Formatter);}
 
     @Override
     public int getKursavholder() {
@@ -105,7 +84,7 @@ public class husflidslag_kurs implements Kurs {
 
     @Override
     public void setTittel(String tittel) {
-        this.tittel =tittel;
+        this.tittel = tittel;
     }
 
     @Override
@@ -120,7 +99,7 @@ public class husflidslag_kurs implements Kurs {
 
     @Override
     public void setKursavholder(int kursavholder) {
-        this.kursavholder =kursavholder;
+        this.kursavholder = kursavholder;
     }
 
     @Override
@@ -138,12 +117,9 @@ public class husflidslag_kurs implements Kurs {
         this.beskrivelse = beskrivelse;
     }
 
-    /* Desverre på grunn av dårlig plannlegging og lite tid, denne funksjonenn må vi fikse senere*/
-    public boolean erTilgjengelig() {
+    public boolean isTilgjengelig() { // Endret fra erTilgjengelig
         return tilgjengelig;
     }
-
-
 
     @Override
     public int getMaksDeltakere() {
@@ -152,38 +128,9 @@ public class husflidslag_kurs implements Kurs {
 
     @Override
     public void setMaksDeltakere(int deltakere) {
-        if (deltakere<=0){
+        if (maksDeltagere <= 0) {
             System.err.println("Ingen påmeldt! Vær så snill legg antall påmeldte for kurset!");
         }
         this.maksDeltagere = deltakere;
     }
-
-    @Override
-    public String getAdresse() {
-        return adresse;
-    }
-
-    /* Desverre på grunn av dårlig plannlegging og lite tid, denne funksjonenn må vi fikse senere*/
-    @Override
-    public void setAdresse(String adresse) {
-        this.adresse = adresse;
-    }
-
-    @Override
-    public int hashCode() {
-        return super.hashCode();
-    }
-
-    @Override
-    public String getKursavholderNavn() {
-        return kursavholderNavn;
-    }
-
-    @Override
-    public void setKursavholderNavn(String kursavholderNavn) {
-        this.kursavholderNavn = kursavholderNavn;
-    }
 }
-
-
-

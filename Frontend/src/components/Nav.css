@@ -1,7 +1,15 @@
 :root {
     --burgunder: #AB3D4E;
     --background: #FFF;
+    --text: Arial, helvetica, sans-serif;
 }
+
+
+*{
+    font-family: var(--text);
+}
+
+/* etter trykk på dropdownmenu */
 
 .dropdown-trigger {
     display: flex;
@@ -38,6 +46,8 @@
     align-items: center;
 }
 
+/* Design på header */
+
 
 header {
     display: flex;
@@ -63,6 +73,18 @@ header {
         }
         
         
+    }
+     .login-btn{
+        background-color: var(--burgunder);
+        color: white;
+        padding: 10px 20px;
+        margin: 8px;
+        border-radius: 8px;
+        text-decoration: none;
+    }
+
+    .login-btn:hover {
+        background-color: #872D3D;
     }
     .dropdown{
         position: absolute;
@@ -96,6 +118,7 @@ header {
     }
 }
 
+/* Skjemstørrelse  fra 600px og oppover */
 
 @media (max-width: 600px) {
 

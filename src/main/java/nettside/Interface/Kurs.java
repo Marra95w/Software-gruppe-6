@@ -1,4 +1,4 @@
-package nettside.Interface;
+package Interface;
 
 import java.time.LocalDateTime;
 
@@ -8,33 +8,40 @@ derfor har vi bestemt å bruke metodene som er relevant for alle og da kan helle
 noe spesielt requests skulle dukke opp.*/
 
 public interface Kurs {
-
     int getId();
-    String getTittel();
-    LocalDateTime getStartDatoTid();
-    LocalDateTime getSluttDatoTid();
-    int getKursavholder();
-    double getPrisMedlem();
-    double getPrisIkkeMedlem();
-    String getBeskrivelse();
-    int getMaksDeltakere();
-    String getAdresse();
-    String getStartDatoTidString();
-    String getSluttDatoTidString();
-    String getKursavholderNavn();
 
+    String getTittel();
+
+    LocalDateTime getStartDatoTid();
+
+    LocalDateTime getSluttDatoTid();
+
+    int getKursavholder();
+
+    double getPrisMedlem();
+
+    double getPrisIkkeMedlem();
+
+    String getBeskrivelse();
+
+    int getMaksDeltakere();
 
     void setId(int id);
-    void setTittel(String tittel);
-    void setStartDatoTid(LocalDateTime startDatoTid );
-    void setSluttDatoTid(LocalDateTime sluttDatoTid);
-    void setKursavholder(int kursavholder);
-    void setPrisMedlem(double prisMedlem);
-    void setPrisIkkeMedlem(double prisIkkeMedlem);
-    void setBeskrivelse(String beskrivelse);
-    void setMaksDeltakere(int deltakere);
-    void setAdresse(String adresse);
-    void setKursavholderNavn(String kursavholderNavn);
 
+    void setTittel(String tittel);
+
+    void setStartDatoTid(LocalDateTime startDatoTid);
+
+    void setSluttDatoTid(LocalDateTime sluttDatoTid);
+
+    void setKursavholder(int kursavholder);
+
+    void setPrisMedlem(double prisMedlem);
+
+    void setPrisIkkeMedlem(double prisIkkeMedlem);
+
+    void setBeskrivelse(String beskrivelse);
+
+    void setMaksDeltakere(int deltakere);
 
 }
