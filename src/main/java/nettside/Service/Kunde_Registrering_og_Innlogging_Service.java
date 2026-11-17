@@ -1,4 +1,4 @@
-package nettside.Logikk;
+package nettside.Service;
 
 import nettside.DTO.Innlogging_DTO;
 import nettside.Modell.medlem;
@@ -7,7 +7,7 @@ import org.mindrot.jbcrypt.BCrypt;
 
 import java.sql.*;
 
-public class Logikk_Kunde_Registrering_og_Innlogging {
+public class Kunde_Registrering_og_Innlogging_Service {
 
 
     //dette er passord, brukernavn og serveradresse for databsen vår, som vi henter fra .env filen vår

@@ -1,4 +1,4 @@
-package Kursavholder;
+package nettside.Modell;
 
 
 public class Kursavholder {

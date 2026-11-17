@@ -1,4 +1,4 @@
-package nettside.Logikk;
+package nettside.Service;
 
 import nettside.Modell.husflidslag_kurs;
 import nettside.Modell.adresse_husflidslag;
@@ -20,7 +20,7 @@ Geeks for Geeks og Programmering 2 koden var en fin kilde for oss å lære disse
 Det som følger er enkel spørringer som oppdaterer, velger, sletter og oppretter kurs
 Denne klasssen hådterer logikken for spørringer mellom databasen og mysql spørringer*/
 
-public class Database_Kurs_Logikk {
+public class Database_Kurs_Service {
 
     //dette er passord, brukernavn og serveradresse for databasen vår, som vi henter fra .env filen vår
     //for å beskytte disse mot uautorisert tilgang, selv om vårt github repo er privat

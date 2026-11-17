@@ -1,29 +1,27 @@
-package Kursavholder;
+package nettside.Controller;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
-import java.sql.SQLException;
-import java.sql.Connection;
+import nettside.DTO.KursavholderDTO;
+import nettside.Service.KursavholderService;
 
-import Kursavholder.KursavholderDTO;
-import Kursavholder.KursavholderLogikk;
 
 @RestController
 @RequestMapping("/api/kursavholder")
-@CrossOrigin(origins = " \"http://localhost:5173\"")
+@CrossOrigin(origins =  "http://localhost:5173")
 public class Kursavholder_Controller {
 
-    private final KursavholderLogikk kursavholderLogikk;
+    private final KursavholderService kursavholderService;
 
 
-    public Kursavholder_Controller(KursavholderLogikk kursavholderLogikk) {
-        this.kursavholderLogikk = kursavholderLogikk;
+    public Kursavholder_Controller(KursavholderService kursavholderService) {
+        this.kursavholderService = kursavholderService;
     }
 
     //Henter alle kursavholdere (GET /Api/kursavholder)
 @GetMapping
     public ResponseEntity<List<KursavholderDTO>> hentAlleKursavholder() {
-        List<KursavholderDTO> list = kursavholderLogikk.hentAlleKursavholdere();
+        List<KursavholderDTO> list = kursavholderService.hentAlleKursavholdere();
         return ResponseEntity.ok(list);
 }
 
@@ -31,8 +29,8 @@ public class Kursavholder_Controller {
     @GetMapping("/{id}")
     public ResponseEntity<KursavholderDTO> hentAlleKursavholderById(@PathVariable int id ) {
         try {
-            kursavholderLogikk.validerID(id);
-            KursavholderDTO dto = kursavholderLogikk.hentKursavholder(id);
+            kursavholderService.validerID(id);
+            KursavholderDTO dto = kursavholderService.hentKursavholder(id);
             if(dto != null) {
                 return ResponseEntity.ok(dto);//200 OK
             }
@@ -47,8 +45,8 @@ public class Kursavholder_Controller {
     @PostMapping
     public ResponseEntity<String> leggTilKursavholder(@RequestBody  KursavholderDTO nyDTO) {
         try{
-            kursavholderLogikk.validerKursavholder(nyDTO.getNavn(), nyDTO.getAdresse());
-            kursavholderLogikk.leggTilKursavholder(nyDTO.getNavn(), nyDTO.getAdresse());
+            kursavholderService.validerKursavholder(nyDTO.getNavn(), nyDTO.getAdresse());
+            kursavholderService.leggTilKursavholder(nyDTO.getNavn(), nyDTO.getAdresse());
             return ResponseEntity.ok("Suksess: Kursavholder ble lagret");
         }
         catch (IllegalArgumentException e ){
@@ -62,9 +60,9 @@ public class Kursavholder_Controller {
     @PutMapping("/{id}")
     public ResponseEntity<String> oppdatereKursavholder(@PathVariable int id, @RequestBody  KursavholderDTO oppdatertDTO) {
         try {
-            kursavholderLogikk.validerID(id);
-            kursavholderLogikk.validerKursavholder(oppdatertDTO.getNavn(), oppdatertDTO.getAdresse());
-            kursavholderLogikk.oppdaterKursavholder(id,oppdatertDTO.getNavn(), oppdatertDTO.getAdresse());
+            kursavholderService.validerID(id);
+            kursavholderService.validerKursavholder(oppdatertDTO.getNavn(), oppdatertDTO.getAdresse());
+            kursavholderService.oppdaterKursavholder(id,oppdatertDTO.getNavn(), oppdatertDTO.getAdresse());
             return ResponseEntity.ok("Kursavholder med ID " + id + " ble oppdatert");
         }
         catch (IllegalArgumentException e ){
@@ -78,8 +76,8 @@ public class Kursavholder_Controller {
     @DeleteMapping("/{id}")
     public ResponseEntity<String> slettKursavholder(@PathVariable int id) {
         try {
-            kursavholderLogikk.validerID(id);
-            kursavholderLogikk.deleteKursavholder(id);
+            kursavholderService.validerID(id);
+            kursavholderService.deleteKursavholder(id);
             return ResponseEntity.ok("Kursavholder med ID " + id + " ble slettet");
         }
         catch (IllegalArgumentException e ){

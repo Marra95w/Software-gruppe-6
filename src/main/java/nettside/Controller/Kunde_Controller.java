@@ -2,14 +2,14 @@ package nettside.Controller;
 
 import nettside.DTO.Innlogging_DTO;
 import nettside.Modell.medlem;
-import nettside.Logikk.Logikk_Kunde_Registrering_og_Innlogging;
+import nettside.Service.Kunde_Registrering_og_Innlogging_Service;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 @CrossOrigin(origins ="http://localhost:5173")
 public class Kunde_Controller {
 
-    private  Logikk_Kunde_Registrering_og_Innlogging kunde_logikk = new Logikk_Kunde_Registrering_og_Innlogging();
+    private Kunde_Registrering_og_Innlogging_Service kunde_logikk = new Kunde_Registrering_og_Innlogging_Service();
 
 
     @PostMapping("innlogging")

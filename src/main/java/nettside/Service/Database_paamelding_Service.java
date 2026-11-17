@@ -1,4 +1,4 @@
-package nettside.Logikk;
+package nettside.Service;
 import nettside.Modell.kurs_paamelding;
 import io.github.cdimascio.dotenv.Dotenv;
 
@@ -13,7 +13,7 @@ import java.sql.SQLException;
 //Det som følger er enkel spørringer som sletter,velger og oppretter påmelding
 //Denne klasssen hådterer logikken for spørringer mellom databasen og mysql spørringer
 
-public class Database_paamelding_logikk {
+public class Database_paamelding_Service {
 
     //dette er passord, brukernavn og serveradresse for databsen vår, som vi henter fra .env filen vår
     //for å beskytte disse mot uautorisert tilgang, selv om vårt github repo er privat

@@ -1,6 +1,8 @@
-package Kursavholder;
+package Enhetstesting;
 
 import io.github.cdimascio.dotenv.Dotenv;
+import nettside.DTO.KursavholderDTO;
+import nettside.Service.KursavholderService;
 import org.junit.jupiter.api.*;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -9,9 +11,9 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-public class KursavholderLogikkTest {
+public class KursavholderServiceTest {
     private Connection connection;
-    private KursavholderLogikk kursavholderLogikk;
+    private KursavholderService kursavholderService;
 
     @BeforeEach
     public void setup() throws SQLException {
@@ -26,7 +28,7 @@ public class KursavholderLogikkTest {
         //Viktig!! Her så skrur vi av auto-commit slik at vi kan angre endringene etter testen
         connection.setAutoCommit(false);
 
-        kursavholderLogikk = new KursavholderLogikk();
+        kursavholderService = new KursavholderService();
     }
     @AfterEach
     public void tearDown() throws SQLException {
@@ -44,7 +46,7 @@ public class KursavholderLogikkTest {
     }
     @Test
     public void tesHentAlleKursavholdere(){
-        List<KursavholderDTO> alleKursavholdere = kursavholderLogikk.hentAlleKursavholdere();
+        List<KursavholderDTO> alleKursavholdere = kursavholderService.hentAlleKursavholdere();
 
         // Assert: sjekker om at vi fikk et resultat og at listen ikke er tom
         assertNotNull(alleKursavholdere, "Listen skal ikke være null");
@@ -55,7 +57,7 @@ public class KursavholderLogikkTest {
 
     @Test
     public void testHentKursavholder(){
-        List<KursavholderDTO> alleKursavholdere = kursavholderLogikk.hentAlleKursavholdere();
+        List<KursavholderDTO> alleKursavholdere = kursavholderService.hentAlleKursavholdere();
         assertFalse(alleKursavholdere.isEmpty(), "Må ha minst en kursavholder for å teste");
 
         //int id = alleKursavholdere.get(0).Kursavholder_id();
@@ -63,7 +65,7 @@ public class KursavholderLogikkTest {
         String navn = alleKursavholdere.get(0).getNavn();
 
         // Her så henter vi den spesifikke kursavholderen vi vil hente.
-        KursavholderDTO hentedeKursavholderDTO = kursavholderLogikk.hentKursavholder(id);
+        KursavholderDTO hentedeKursavholderDTO = kursavholderService.hentKursavholder(id);
 
 
         assertNotNull(hentedeKursavholderDTO, "Kursavholder skal ikke være null");
@@ -78,10 +80,10 @@ public class KursavholderLogikkTest {
         String testNavn = "Husflid Test";
         String testAdresse = "Test 123";
 
-        kursavholderLogikk.leggTilKursavholder(testNavn, testAdresse);
+        kursavholderService.leggTilKursavholder(testNavn, testAdresse);
 
         //Henter ut fra via DTO-metoden siden det er dette kontrollen bruker
-        boolean sjekkerOmDetFinnes = kursavholderLogikk.hentAlleKursavholdere().stream().anyMatch(kursavholderDTO -> kursavholderDTO.getNavn().equals(testNavn) && kursavholderDTO.getAdresse().equals(testAdresse));
+        boolean sjekkerOmDetFinnes = kursavholderService.hentAlleKursavholdere().stream().anyMatch(kursavholderDTO -> kursavholderDTO.getNavn().equals(testNavn) && kursavholderDTO.getAdresse().equals(testAdresse));
         assertTrue(sjekkerOmDetFinnes, "Her så sjekker vi den raden vi har laggt finnes");
     }
 
@@ -91,18 +93,18 @@ public class KursavholderLogikkTest {
         String testAdresse = "Test: lønneve123";
 
         //Her så legger vi legger vi til en kursavholder som vi kan da teste på om vi kan slette de
-        kursavholderLogikk.leggTilKursavholder(testNavn, testAdresse);
+        kursavholderService.leggTilKursavholder(testNavn, testAdresse);
 
         //Sjekker: finner id-en til den lagte kursavholderen som vi skulle teste sletting på ved å sjekke listen
-        List<KursavholderDTO> alleDtoer = kursavholderLogikk.hentAlleKursavholdere();
+        List<KursavholderDTO> alleDtoer = kursavholderService.hentAlleKursavholdere();
         KursavholderDTO opprettetKursavholderDTO = alleDtoer.stream().filter(kursavholderDTO -> kursavholderDTO.getNavn().equals(testNavn)).findFirst().orElse(null);
 
         assertNotNull(opprettetKursavholderDTO, "Kursavholderen må finnes i listen før vi sletter den");
-        int idSomSkalSlettes = opprettetKursavholderDTO.id;
+        int idSomSkalSlettes = opprettetKursavholderDTO.getId();
 
         //Utfører slettingen
-        kursavholderLogikk.deleteKursavholder(idSomSkalSlettes);
-        boolean sjekkerOmDenFinnes = kursavholderLogikk.hentAlleKursavholdere().stream().anyMatch(kursavholderDTO -> kursavholderDTO.id ==idSomSkalSlettes);
+        kursavholderService.deleteKursavholder(idSomSkalSlettes);
+        boolean sjekkerOmDenFinnes = kursavholderService.hentAlleKursavholdere().stream().anyMatch(kursavholderDTO -> kursavholderDTO.getId() ==idSomSkalSlettes);
         assertFalse(sjekkerOmDenFinnes, "kursavholderen skal være slettet og finnes ikke lenger");
         System.out.println("Testen er fullført! slettet kursavholder med ID: " +  idSomSkalSlettes);
     }
@@ -112,19 +114,19 @@ public class KursavholderLogikkTest {
         String gammeltNavn = "Gammelt Husflid";
         String gammeltAdresse = "gammeltAdresse123";
         //Legger til en rad først for å ha noe å oppdatere
-        kursavholderLogikk.leggTilKursavholder( gammeltNavn, gammeltAdresse);
+        kursavholderService.leggTilKursavholder( gammeltNavn, gammeltAdresse);
         //Finner Id-en til den raden vi nettop la til ved å sjekke DTO-listen
-        List<KursavholderDTO> alleDtoer = kursavholderLogikk.hentAlleKursavholdere();
+        List<KursavholderDTO> alleDtoer = kursavholderService.hentAlleKursavholdere();
         KursavholderDTO opprettetKursavholderDTO = alleDtoer.stream().filter(kursavholderDTO -> kursavholderDTO.getNavn().equals(gammeltNavn)).findFirst().orElse(null);
         assertNotNull(opprettetKursavholderDTO, "Kursavholderen må finnes i listen før vi sletter den");
-        int idSomSkalOppdateres = opprettetKursavholderDTO.id;
+        int idSomSkalOppdateres = opprettetKursavholderDTO.getId();
 
         //kjører metoden som vil teste. oppdatere navn og adresse
         String nyttNavn = "Nytt Oppdatert Husflid";
         String nyttAdresse = "nyttAdresse123";
-        kursavholderLogikk.oppdaterKursavholder(idSomSkalOppdateres, nyttNavn, nyttAdresse);
+        kursavholderService.oppdaterKursavholder(idSomSkalOppdateres, nyttNavn, nyttAdresse);
         //Henter ut den oppdaterte kursavholder raden via DTO-en deretter sjekker om den har endret seg ved oppdateringen vi har gjort
-        KursavholderDTO oppdatertKursavholder = kursavholderLogikk.hentKursavholder(idSomSkalOppdateres);
+        KursavholderDTO oppdatertKursavholder = kursavholderService.hentKursavholder(idSomSkalOppdateres);
         assertNotNull(oppdatertKursavholder, "Kursavholderen skal finnes i databasen");
         assertEquals(nyttNavn, oppdatertKursavholder.getNavn(), "Navnet skal være oppdatert til den nye");
         assertEquals(nyttAdresse, oppdatertKursavholder.getAdresse(), "Adressen skal være oppdattert til den nye");
@@ -136,7 +138,8 @@ public class KursavholderLogikkTest {
     public void testLeggTilKursavholder_tomNavn() {
         String tomtNavn = "    ";
         String tomtAdresse = "    ";
-        assertThrows(IllegalArgumentException.class, () -> {kursavholderLogikk.validerKursavholder(tomtNavn, tomtAdresse);
+        assertThrows(IllegalArgumentException.class, () -> {
+            kursavholderService.validerKursavholder(tomtNavn, tomtAdresse);
         }, "skal kaste feil ved tomt navn");
     }
     @Test
@@ -144,7 +147,8 @@ public class KursavholderLogikkTest {
     public void testVedOperasjonerSomTrengerI(){
         int ugyldigId = -1;
 
-        assertThrows(IllegalArgumentException.class, ()->{kursavholderLogikk.validerID(ugyldigId);}
+        assertThrows(IllegalArgumentException.class, ()->{
+                    kursavholderService.validerID(ugyldigId);}
                 , "Skal kaste feil ved negativ ID ");
 
     }

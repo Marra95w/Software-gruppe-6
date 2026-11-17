@@ -2,8 +2,8 @@ package nettside.Controller;
 
 import nettside.Modell.husflidslag_kurs;
 import nettside.Modell.kurs_paamelding;
-import nettside.Logikk.Database_Kurs_Logikk;
-import nettside.Logikk.Database_paamelding_logikk;
+import nettside.Service.Database_Kurs_Service;
+import nettside.Service.Database_paamelding_Service;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
@@ -16,8 +16,8 @@ import java.util.List;
 @CrossOrigin(origins = "http://localhost:5173")
 public class Kurs_Controller {
 
-private  Database_Kurs_Logikk kursLogikk = new Database_Kurs_Logikk();
-private Database_paamelding_logikk paameldingLogikk = new Database_paamelding_logikk();
+private Database_Kurs_Service kursLogikk = new Database_Kurs_Service();
+private Database_paamelding_Service paameldingLogikk = new Database_paamelding_Service();
 
 
 @GetMapping("Henter_spesifikk_kurs_fra_databasen/{id}")

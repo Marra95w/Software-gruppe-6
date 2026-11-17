@@ -1,5 +1,7 @@
-package Kursavholder;
+package nettside.Service;
 
+import nettside.DTO.KursavholderDTO;
+import nettside.Database.DatabaseKobling;
 import org.springframework.stereotype.Service;
 
 import java.sql.*;
@@ -7,11 +9,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Service
-public class KursavholderLogikk {
+public class KursavholderService {
 
 
     //Metode for å hente enkelte kursavholdere
-    public KursavholderDTO hentKursavholder( int Kursavholder_id) {
+    public KursavholderDTO hentKursavholder(int Kursavholder_id) {
         String sql = "SELECT kursavholder.kursavholder_id, kursavholder.Navn, " +
                 "adresse_husflidslag.id, adresse_husflidslag.Adresse_Kursvavholder_Id, " +
                 "adresse_husflidslag.Adresse_husflidslag " +
@@ -124,7 +126,6 @@ public class KursavholderLogikk {
             }
         }
     }
-
 
 
     //Metode for å kunne Oppdatere

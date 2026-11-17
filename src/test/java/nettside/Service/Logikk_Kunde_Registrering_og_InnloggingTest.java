@@ -1,4 +1,4 @@
-package nettside.Logikk;
+package nettside.Service;
 
 import nettside.DTO.Innlogging_DTO;
 import nettside.Modell.medlem;
@@ -14,7 +14,7 @@ public class Logikk_Kunde_Registrering_og_InnloggingTest {
     @Test
     public void teste_legg_medlem(){
 
-        Logikk_Kunde_Registrering_og_Innlogging testing = new Logikk_Kunde_Registrering_og_Innlogging();
+        Kunde_Registrering_og_Innlogging_Service testing = new Kunde_Registrering_og_Innlogging_Service();
 
         medlem variabel_testing = testing.leggTilMedlem("Johan","Granch","johangra@me.no",2,93051804,"passord12!");
 
@@ -30,7 +30,7 @@ public class Logikk_Kunde_Registrering_og_InnloggingTest {
     @Test
     public void teste_sjekk_opplysninger(){
 
-        Logikk_Kunde_Registrering_og_Innlogging testing = new Logikk_Kunde_Registrering_og_Innlogging();
+        Kunde_Registrering_og_Innlogging_Service testing = new Kunde_Registrering_og_Innlogging_Service();
 
         Innlogging_DTO variabel_testing = testing.sjekk_opplysninger("johangra@me.no","passord12!");
 

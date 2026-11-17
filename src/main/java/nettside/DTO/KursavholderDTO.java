@@ -1,10 +1,10 @@
-package Kursavholder;
+package nettside.DTO;
 
 public class KursavholderDTO {
-    int id;
-    String navn;
-    String adresse;
-    int addressId;
+    private int id;
+    private String navn;
+    private String adresse;
+    private int addressId;
 
     public KursavholderDTO(int id, String navn, String adresse, int addressId) {
         this.id = id;
