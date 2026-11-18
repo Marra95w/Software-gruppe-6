@@ -146,5 +146,4 @@ public class husflidslag_kurs implements Kurs {
         this.kursavholderNavn = kursavholderNavn;
     }
 
-
 }
