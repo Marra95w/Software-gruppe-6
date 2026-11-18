@@ -3,6 +3,8 @@ package no.hiof;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import config.Databasekobling;
+import repositories.Ansattregister;
+
 import java.sql.Connection;
 import java.sql.SQLException;
 
