@@ -27,7 +27,7 @@ private Database_paamelding_Service paameldingLogikk = new Database_paamelding_S
 }
 
 
-@GetMapping
+@GetMapping("/hent_alle_kurs")
 public List<husflidslag_kurs> hent_all_kurs(){
 
     return kursLogikk.hent_alle_kurs_fra_db();
