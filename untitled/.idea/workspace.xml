@@ -4,15 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2b5698b5-3bdf-487f-8bb7-b8448741f26f" name="Changes" comment="Legger til medlem.java og medlemsregister.java">
-      <change afterPath="$PROJECT_DIR$/src/test/java/MedlemsregisterTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../Frontend/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Medlemsregister.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Medlemsregister.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/finnMedlemMedId.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Medlemslogikk.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/medlem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/medlem.java" afterDir="false" />
+    <list default="true" id="2b5698b5-3bdf-487f-8bb7-b8448741f26f" name="Changes" comment="oppdatert koder">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,26 +42,89 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.Main.executor": "Run",
-    "Application.main.executor": "Run",
-    "JUnit.MedlemsregisterTest.executor": "Run",
-    "JUnit.MedlemsregisterTest.testFinnMedlemMedIdIkkeFunnet.executor": "Run",
-    "JUnit.MedlemsregisterTest.testHentAlleMedlemmer.executor": "Run",
-    "JUnit.MedlemsregisterTest.testLeggTilOgFinnMedlem.executor": "Run",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
-    "git-widget-placeholder": "naimo",
-    "kotlin-language-version-configured": "true",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Application.main.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.All in fil.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.All in test.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.test | #1.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.AnsattlogikkTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.AnsattlogikkTest.testLeggTilAnsatt.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.DatabaseKoblingTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.DatabaseKoblingTest.testDatabaseKobling.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.MedlemslogikkTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.MedlemslogikkTest.testDatabaseTilkobling.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.MedlemslogikkTest.testLeggTilOgFinnMedlemIDatabasen.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.MedlemslogikkTest.testOppdaterMedlem.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.MedlemsregisterTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.MedlemsregisterTest.testFinnMedlemIkkeFunnet.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.MedlemsregisterTest.testFinnMedlemMedId.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.MedlemsregisterTest.testFinnMedlemMedIdIkkeFunnet.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.MedlemsregisterTest.testHentAlleMedlemmer.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.MedlemsregisterTest.testHentIkkeMedlem.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.MedlemsregisterTest.testHentIkkeMedlemmer.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.MedlemsregisterTest.testLeggTilMedlem.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.MedlemsregisterTest.testLeggTilOgFinnMedlem.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.MedlemsregisterTest.testMedlemsregisterDatabaseOperasjoner.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.MedlemsregisterTest.testOppdaterMedlem.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.MedlemsregisterTest.testSlettMedlem.executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;Spring Boot.Main.executor&quot;: &quot;Run&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Development-Naimo&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_directory_selection&quot;: &quot;C:/Users/naimo/Documents/Softwear/Software-gruppe-6/untitled/src/main/java/config&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
-  <component name="RunManager" selected="JUnit.MedlemsregisterTest.testFinnMedlemMedIdIkkeFunnet">
+}</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\naimo\Documents\Softwear\Software-gruppe-6\untitled\src\main" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="config" />
+      <recent name="repositories" />
+      <recent name="DTO" />
+      <recent name="services" />
+      <recent name="controller" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="configurationStatuses">
+      <map>
+        <entry key="HttpClient.HttpRequestRunConfigurationType">
+          <value>
+            <map>
+              <entry key="All in fil" value="STOPPED" />
+              <entry key="All in test" value="STOPPED" />
+              <entry key="test | #1" value="STOPPED" />
+            </map>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="RunManager" selected="HTTP Request.All in fil">
+    <configuration name="All in fil" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" path="$PROJECT_DIR$/src/fil.http">
+      <method v="2" />
+    </configuration>
+    <configuration name="All in test" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" path="$PROJECT_DIR$/src/test.http">
+      <method v="2" />
+    </configuration>
+    <configuration name="test | #1" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/src/test.http" executionIdentifier="#1" runType="Run single request">
+      <method v="2" />
+    </configuration>
     <configuration name="MedlemsregisterTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Medlem" />
       <option name="PACKAGE_NAME" value="" />
@@ -78,41 +134,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MedlemsregisterTest.testFinnMedlemMedIdIkkeFunnet" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="Main" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <module name="Medlem" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="MedlemsregisterTest" />
-      <option name="METHOD_NAME" value="testFinnMedlemMedIdIkkeFunnet" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="MedlemsregisterTest.testHentAlleMedlemmer" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Medlem" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="MedlemsregisterTest" />
-      <option name="METHOD_NAME" value="testHentAlleMedlemmer" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="MedlemsregisterTest.testLeggTilOgFinnMedlem" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Medlem" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="MedlemsregisterTest" />
-      <option name="METHOD_NAME" value="testLeggTilOgFinnMedlem" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="no.hiof.Main" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.MedlemsregisterTest.testFinnMedlemMedIdIkkeFunnet" />
-        <item itemvalue="JUnit.MedlemsregisterTest.testHentAlleMedlemmer" />
-        <item itemvalue="JUnit.MedlemsregisterTest.testLeggTilOgFinnMedlem" />
+        <item itemvalue="HTTP Request.All in fil" />
+        <item itemvalue="HTTP Request.All in test" />
+        <item itemvalue="HTTP Request.test | #1" />
+        <item itemvalue="Spring Boot.Main" />
         <item itemvalue="JUnit.MedlemsregisterTest" />
       </list>
     </recent_temporary>
@@ -138,7 +172,14 @@
       <workItem from="1791534838727" duration="1394000" />
       <workItem from="1791828629911" duration="8624000" />
       <workItem from="1792581153786" duration="114000" />
-      <workItem from="1792581293751" duration="14668000" />
+      <workItem from="1792581293751" duration="28221000" />
+      <workItem from="1793898834300" duration="14479000" />
+      <workItem from="1794252801095" duration="2749000" />
+      <workItem from="1794255936323" duration="2572000" />
+      <workItem from="1794258539199" duration="623000" />
+      <workItem from="1794392362756" duration="18249000" />
+      <workItem from="1794993716806" duration="2769000" />
+      <workItem from="1795006649230" duration="497000" />
     </task>
     <task id="LOCAL−00001" summary="Legger til medlem.java og medlemsregister.java">
       <option name="closed" value="true" />
@@ -147,7 +188,28 @@
       <option name="presentableId" value="LOCAL−00001" />
       <updated>1791363915250</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL−00002" summary="Legger til medlem.java og medlemsregister.java">
+      <option name="closed" value="true" />
+      <created>1793188895155</created>
+      <option name="number" value="LOCAL−00002" />
+      <option name="presentableId" value="LOCAL−00002" />
+      <updated>1793188895155</updated>
+    </task>
+    <task id="LOCAL−00003" summary="Lagt til ansatt-filer og endepunkt">
+      <option name="closed" value="true" />
+      <created>1794257863942</created>
+      <option name="number" value="LOCAL−00003" />
+      <option name="presentableId" value="LOCAL−00003" />
+      <updated>1794257863942</updated>
+    </task>
+    <task id="LOCAL−00004" summary="oppdatert koder">
+      <option name="closed" value="true" />
+      <created>1794397445466</created>
+      <option name="number" value="LOCAL−00004" />
+      <option name="presentableId" value="LOCAL−00004" />
+      <updated>1794397445466</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -166,6 +228,19 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Legger til medlem.java og medlemsregister.java" />
-    <option name="LAST_COMMIT_MESSAGE" value="Legger til medlem.java og medlemsregister.java" />
+    <MESSAGE value="Lagt til ansatt-filer og endepunkt" />
+    <MESSAGE value="oppdatert koder" />
+    <option name="LAST_COMMIT_MESSAGE" value="oppdatert koder" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/AnsattlogikkTest.java</url>
+          <line>45</line>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
