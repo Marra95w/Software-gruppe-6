@@ -147,4 +147,17 @@ public class husflidslag_kurs implements Kurs {
     }
 
 
+    @Override
+    public String getAdresse() {
+        return adresse;
+    }
+
+
+    @Override
+    public String getKursavholderNavn() {
+        return kursavholderNavn;
+    }
+
+
+
 }

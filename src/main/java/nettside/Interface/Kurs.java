@@ -26,6 +26,9 @@ public interface Kurs {
 
     int getMaksDeltakere();
 
+    String getAdresse();
+    String getKursavholderNavn();
+
     void setId(int id);
 
     void setTittel(String tittel);
