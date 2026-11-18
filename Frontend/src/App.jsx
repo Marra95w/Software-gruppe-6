@@ -6,9 +6,9 @@ import ForsideHoved from './pages/ForsideHoved'
 import Show404 from './components/show404'
 import Courses from './pages/Courses'
 import Course from './pages/Course'
-import Registration from './components/Registration'
 import Login from './components/Login'
 import Register from './components/Register'
+import OmOss from './pages/OmOss'
 
 
 function App() {
@@ -20,9 +20,9 @@ function App() {
         <Route path="/Order" element />
         <Route path="/Courses/:id" element={<Course />} />
         <Route path="*" element={<Show404 />} />
-        <Route path="/Registration" element={<Registration />} />
         <Route path='/Login' element={<Login />} />
-         <Route path="/Register" element={<Register />} />
+        <Route path="/Register" element={<Register />} />
+        <Route path="/OmOss" element={<OmOss />} />
       </Route>
     </Routes>
 

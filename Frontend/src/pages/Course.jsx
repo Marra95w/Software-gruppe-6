@@ -4,8 +4,7 @@ import { hentKursById } from "../Api/kursApi";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { formatDato, formatTid } from "../components/Dato";
-
-import '../components/courses.css';
+import '../css/courses.css';
 
 
 export default function Course() {
@@ -18,8 +17,10 @@ export default function Course() {
     useEffect(() => {
         const fetch = async () => {
 
+            //Henter et kurs basert på ID
             try {
                 const result = await hentKursById(id);
+
                 if (!result) {
                     throw new Error("Kurset ble ikke funnet")
                 }
@@ -32,14 +33,15 @@ export default function Course() {
         };
 
         fetch();
+        //Refresher hver gang iden endres
     }, [id]);
 
     if (loading) return <p>Henting kurset...</p>
     if (error) return <p>Kunne ikke hente kurset...</p>
 
     return (
-        <main className="course-details">
-            <section className="choose-course">
+        <section className="course-details">
+            <article className="choose-course">
                 <img
                     className="course-strikk"
                     src="../src/assets/bilde/strikk.png"
@@ -48,63 +50,18 @@ export default function Course() {
                 <div className="course-info">
                     <h1>{kurs.tittel}</h1>
                     <p>{kurs.beskrivelse}</p>
-                    <p>Starter: {kurs.startDatoTid}</p>
-                    <p>Avslutter: {kurs.sluttDatoTid}</p>
+                    <p>Starter: {formatDato(kurs.startDatoTid)} kl.{formatTid(kurs.startDatoTid)} til {formatTid(kurs.sluttDatoTid)}</p>
+                    <p>Avslutter: {formatDato(kurs.sluttDatoTid)} kl.{formatTid(kurs.startDatoTid)} til {formatTid(kurs.sluttDatoTid)}</p>
+                    <p>Adresse: {kurs.adresse}</p>
+                    <p>Lokallag: {kurs.kursavholderNavn}</p>
+                    {/* <p>Tilgjengelig? {kurs.tilgjengelig}</p>
+                    <p>Plasser: {kurs.maksDeltakere}</p> */}
                 </div>
-            </section>
-
-            <fieldset className="medlem-ikke-medlem">
-                <img src="../src/assets/bilde/price-tag.svg" alt="prislapp" />
-                <legend>Velg pris</legend>
-                <label>
-                    <input type="radio" name="pris" value="medlem" />
-                    Pris for medlemmer: {kurs.prisMedlem} kr
-                </label>
-                <label>
-                    <input type="radio" name="pris" value="ikke-medlem" />
-                    Vanlig pris: {kurs.prisIkkeMedlem} kr
-                </label>
-            </fieldset>
-
-            <section className="info-person">
-                <form>
-                    <fieldset>
-                        <legend>Dine opplysninger</legend>
-
-                        <img src="../src/assets/bilde/person.svg" alt="Person" />
-                        <label htmlFor="fname">Navn: </label>
-                        <input
-                            type="text"
-                            id="fname"
-                            name="fname"
-                            placeholder="Rigmor Nordmann"
-                            required
-                        />
-
-                        <img src="../src/assets/bilde/e-post.svg" alt="E-post" />
-                        <label htmlFor="email">E-post: </label>
-                        <input
-                            type="email"
-                            id="email"
-                            name="email"
-                            placeholder="Rigmor@epost.no"
-                            required
-                        />
-
-                        <img src="../src/assets/bilde/phone.svg" alt="Telefon" />
-                        <label htmlFor="tel">Telefon: </label>
-                        <input
-                            type="tel"
-                            id="tel"
-                            name="tel"
-                            placeholder="12345678"
-                            required
-                        />
-
-                    </fieldset>
-                </form>
-            </section>
-        </main>
+            </article>
+            <article>
+                {<Registration kurs={kurs} />}
+            </article>
+        </section >
     )
 
 }

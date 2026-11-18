@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
-import "./Nav.css"
-import "./ForsideHoved.css"
+import "../css/Nav.css"
+import "../css/ForsideHoved.css"
 
 export default function Nav() {
     const [open, setOpen] = useState(false)
@@ -15,7 +15,7 @@ export default function Nav() {
                 <ul className="dropdown">
                     <li>
                         <img className='meny-rose' src="../src/assets/bilde/rose.png" alt="rose" />
-                        <Link to="./pages/OmOss">Om Oss</Link>
+                        <Link to="./OmOss">Om oss</Link>
                     </li>
                     <li>
                         <img className='meny-rose' src="../src/assets/bilde/rose.png" alt="rose" />

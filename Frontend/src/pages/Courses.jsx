@@ -1,10 +1,10 @@
 import { useState } from "react";
-import "../components/courses.css";
+import "../css/courses.css";
 import KursList from "../components/KursList";
 export default function Course() {
     const [open, setOpen] = useState(false);
     return (
-        <main>
+        <>
             <h2>Kurs og aktiviteter</h2>
             <p>
                 Her finner du kurs som hører til Østfold Husflidslag
@@ -88,6 +88,6 @@ export default function Course() {
 
                 <KursList />
             </section>
-        </main>
+        </>
     );
 }

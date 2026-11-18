@@ -1,0 +1,90 @@
+
+:root{
+    --burgunder: #AB3D4E;
+}
+
+/* Informasjonstekst */
+.intro-about{
+    width: 60rem;
+}
+
+@media (max-width: 1237px){
+    .intro-about{
+        width: 40rem;
+    }
+
+    .employee-card {
+            grid-template-columns: 80px auto auto;
+            gap: 1rem;
+            width: fit-content;
+        }
+}
+@media (max-width: 800px){
+    .intro-about{
+        width: 20rem;
+    }
+
+    
+}
+
+/* Rose design kommer fra Nav.css */
+
+
+/* design av employee artikkelkort */
+
+.employees{
+    width: 900px;
+    margin: 2rem auto;
+    padding: 1rem;
+
+
+}
+
+.employee-card{
+    display: grid;
+    grid-template-columns: 120px 1fr 1fr;
+    align-items: center;
+    gap: 1rem;
+
+    padding: 1rem;
+    border: 2px solid var(--burgunder);
+    border-radius: 8px;
+}
+
+.employee-image{
+    width: 120px;
+    height: 120px;
+    border: 1px solid black;
+    border-radius: 100%;
+}
+
+.employee-info{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+
+    h3, p{
+        margin: 0;
+    }
+}
+
+.employee-contact{
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    font-style: normal;
+
+    a{
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        color: black;
+        text-decoration: none;
+    }
+
+    img{
+        width: 30px;
+        height: 30px;
+    }
+}
+

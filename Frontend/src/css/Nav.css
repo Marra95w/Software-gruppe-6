@@ -1,6 +1,7 @@
 :root {
     --burgunder: #AB3D4E;
     --background: #FFF;
+    --softpink: #F7F1F3;
     --text: Arial, helvetica, sans-serif;
 }
 
@@ -182,3 +183,64 @@ header {
     }
 
 }
+
+/* design av footer */
+
+footer{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    margin-top: 15rem;
+    gap: 3rem 5rem;
+    padding: 2rem 3rem 5rem;
+    border: 0;
+    background-color: var(--softpink);
+    color: rgb(0, 0, 0);
+
+    h3{
+        color: var(--burgunder);
+    }
+    
+    img{
+        width: 100px;
+    }
+    footer section{
+        flex: 1 1 200px;
+        max-width: 300px;
+    }
+
+    /* Gjenbruk av design fra ForsideHoved component */
+
+    .rose-design{
+        display: flex;
+        
+        width: 39px;
+        height: 39px;
+        flex-shrink: 0;
+    
+    }
+    
+    .image-design {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        width: 100%;
+        margin-bottom: 1rem;
+    
+        &::before,
+        &::after {
+            content: "";
+            flex: 1;
+            height: 1px;
+            background: #000;
+        }
+    
+        .rose-design {
+            width: 80px;
+            height: auto;
+            flex-shrink: 0;
+        }
+    }
+}
+
