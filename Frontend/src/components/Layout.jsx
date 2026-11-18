@@ -6,16 +6,29 @@ const Layout = ({ }) => {
     return (
         <>
             <header>
-                <h1> Velkommen til Husflidslag Østfold </h1>
+                <Link to="/" className="home-link">
+                    <img className="logo" src="../src/assets/bilde/rose.png" alt="rose" />
+                    <h1>
+                        Østfold Husflidslag
+                    </h1>
+                </Link>
+                <nav>
+                    <Link to="/Login" className='login-btn'>
+                        Logg inn
+                    </Link>
+                    <p>Meny</p>
+                    <Nav />
+                </nav>
             </header>
-            <nav>
-                <Nav />
-            </nav>
             <main>
+
                 {/* Outlet rendrer alle bane-elememnter (alt som skal være innenfor Route Layout i App.jsx) */}
                 <Outlet />
             </main>
-            <footer> Kontakt oss også videre</footer>
+
+            <footer>
+               
+            </footer>
 
         </>
     )

@@ -1,0 +1,147 @@
+
+/* Generellt design av knapper over kurs*/
+main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .filter{
+        display: flex;
+        justify-content: center;
+        margin-bottom: 200px;
+    }
+    .date {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        margin: 30px;
+}
+
+    .locator{
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        margin: 30px;
+    }
+
+    .category{
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        margin: 30px;
+    }
+}
+
+
+
+/*  Dropdown meny for dato */
+
+
+.date-container {
+    position: relative;
+
+}
+.date-img {
+    width: 24px;
+}
+
+.course-arrow {
+    transition: transform 0.2s;
+}
+
+
+.date-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 220px;
+    background-color: white;
+    padding: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    z-index: 21;
+}
+
+
+/* søkefelt */
+
+.search{
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.search img {
+    width: 24px;
+    height: 24px;
+}
+
+.search input {
+    flex: 1;
+}
+
+/* Kursoversikt */
+
+.choose-course{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 1.5rem;
+
+    border: 1px solid #ccc;
+    padding: 1.5rem;
+    border-radius: 8px;
+
+    max-width: 900px;
+    width: 100%;
+    margin: 1rem auto;
+}
+
+.course-link:hover .choose-course {
+    background-color: #f5e9eb;
+    cursor: pointer;
+}
+.choose-course ul {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+
+
+}
+
+.choose-course li {
+    margin: 0;
+    padding: 0;
+}
+
+.choose-course h3, 
+.choose-course p {
+    margin: 0;
+}
+
+.course-info{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    flex: 1;
+}
+
+
+.course-strikk{
+    width: 192px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+ 
+}
+
+.course-arrow {
+    width: 24px;
+    margin-left: auto;
+}
+
