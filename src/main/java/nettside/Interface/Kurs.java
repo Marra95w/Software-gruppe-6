@@ -1,4 +1,4 @@
-package Interface;
+package nettside.Interface;
 
 import java.time.LocalDateTime;
 
@@ -43,5 +43,9 @@ public interface Kurs {
     void setBeskrivelse(String beskrivelse);
 
     void setMaksDeltakere(int deltakere);
+
+    void setAdresse(String adresse);
+
+    void setKursavholderNavn(String kursavholderNavn);
 
 }

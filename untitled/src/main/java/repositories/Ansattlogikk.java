@@ -1,6 +1,6 @@
-package services;
+package nettside.Service;
 
-import DTO.AnsattDTO;
+import nettside.DTO.AnsattDTO;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;

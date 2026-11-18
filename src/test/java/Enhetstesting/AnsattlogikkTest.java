@@ -1,6 +1,8 @@
-import services.Ansattlogikk;
-import config.Databasekobling;
-import DTO.AnsattDTO;
+package Enhetstesting;
+
+import nettside.Database.DatabaseKobling;
+import nettside.DTO.AnsattDTO;
+import nettside.Service.Ansattregister;
 import org.junit.jupiter.api.Test;
 import java.sql.Connection;
 import java.sql.SQLException;
@@ -10,13 +12,13 @@ import static org.junit.jupiter.api.Assertions.*;
 class AnsattlogikkTest {
 
     // Oppretter et objekt av logikk-klassen som vi skal teste
-    private final Ansattlogikk logikk = new Ansattlogikk();
+    private final Ansattregister logikk = new Ansattregister();
 
     // Tester at vi klarer å legge til en ny ansatt i databasen
     @Test
     void testLeggTilAnsatt() {
         // Kobler til databasen med try-with-resources slik at den lukkes automatisk
-        try (Connection conn = Databasekobling.kobleTil()) {
+        try (Connection conn = DatabaseKobling.getConnection()) {
             // Sjekker at tilkoblingen ikke er null (at vi fikk kontakt)
             assertNotNull(conn);
 
@@ -37,7 +39,7 @@ class AnsattlogikkTest {
     // Tester at vi kan hente ut en liste med alle ansatte fra databasen
     @Test
     void testHentAlleAnsatte() {
-        try (Connection conn = Databasekobling.kobleTil()) {
+        try (Connection conn = DatabaseKobling.getConnection()) {
             assertNotNull(conn);
 
             // Henter listen over alle ansatte
@@ -53,7 +55,7 @@ class AnsattlogikkTest {
     // Tester sletting av en ansatt basert på ID
     @Test
     void testSlettAnsatt() {
-        try (Connection conn = Databasekobling.kobleTil()) {
+        try (Connection conn = DatabaseKobling.getConnection()) {
             assertNotNull(conn);
 
             // Prøver å slette en ID som sannsynligvis ikke finnes (99999)

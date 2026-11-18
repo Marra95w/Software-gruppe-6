@@ -1,6 +1,6 @@
-package Klasser;
+package nettside.Modell;
 
-import Interface.Kurs;
+import nettside.Interface.Kurs;
 
 import java.security.InvalidParameterException;
 import java.time.LocalDateTime;
@@ -17,6 +17,8 @@ public class husflidslag_kurs implements Kurs {
     private String beskrivelse;
     private boolean tilgjengelig;
     private int maksDeltagere;
+    private String adresse;
+    private String kursavholderNavn;
 
     public husflidslag_kurs(int id, String tittel, LocalDateTime startDatoTid, LocalDateTime sluttDatoTid,
             int kursavholder,
@@ -133,4 +135,16 @@ public class husflidslag_kurs implements Kurs {
         }
         this.maksDeltagere = deltakere;
     }
+
+    @Override
+    public void setAdresse(String adresse) {
+        this.adresse = adresse;
+    }
+
+    @Override
+    public void setKursavholderNavn(String kursavholderNavn) {
+        this.kursavholderNavn = kursavholderNavn;
+    }
+
+
 }

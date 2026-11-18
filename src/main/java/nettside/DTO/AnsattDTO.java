@@ -1,4 +1,4 @@
-package DTO;
+package nettside.DTO;
 
 public class AnsattDTO {
     // Feltvariabler som lagrer all informasjon om en ansatt
