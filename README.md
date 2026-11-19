@@ -27,7 +27,7 @@ Prosjektet kjøres i Visual Studio Code.
     3.	Pass på at det står frontend i terminalen 
     4.	Skriv følgende kommando i terminalen:
                 npm run dev
-    5.	Terminalen viser en lokal adresse under Local, feks http://localhost :****/.
+    5.	Terminalen viser en lokal adresse under Local, på http://localhost:5173
     6.	Trykk på lenken for å åpne nettsiden i nettleseren.
 
 Viktig informasjon 
