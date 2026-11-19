@@ -3,6 +3,7 @@ package Enhetstesting;
 import io.github.cdimascio.dotenv.Dotenv;
 import nettside.DTO.KursavholderDTO;
 import nettside.Service.KursavholderService;
+
 import org.junit.jupiter.api.*;
 import java.sql.Connection;
 import java.sql.DriverManager;
