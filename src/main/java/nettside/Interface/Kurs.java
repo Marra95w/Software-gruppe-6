@@ -23,10 +23,9 @@ public interface Kurs {
     String getSluttDatoTidString();
     String getKursavholderNavn();
 
-
     void setId(int id);
     void setTittel(String tittel);
-    void setStartDatoTid(LocalDateTime startDatoTid );
+    void setStartDatoTid(LocalDateTime startDatoTid);
     void setSluttDatoTid(LocalDateTime sluttDatoTid);
     void setKursavholder(int kursavholder);
     void setPrisMedlem(double prisMedlem);
@@ -35,6 +34,5 @@ public interface Kurs {
     void setMaksDeltakere(int deltakere);
     void setAdresse(String adresse);
     void setKursavholderNavn(String kursavholderNavn);
-
 
 }

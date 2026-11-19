@@ -27,9 +27,9 @@ public class Database_Kurs_Service {
     Dotenv dotenv = Dotenv.configure()
             .ignoreIfMissing()
             .ignoreIfMalformed().load();
-    String url = dotenv.get("DBA_URL2");
-    String brukernavn = dotenv.get("DBA_USERNAME2");
-    String passord = dotenv.get("DBA_PASSWORD2");
+    String url = dotenv.get("DBA_URL");
+    String brukernavn = dotenv.get("DBA_USERNAME");
+    String passord = dotenv.get("DBA_PASSWORD");
 
 
     //--------------------------------------------------------------------------------------------//

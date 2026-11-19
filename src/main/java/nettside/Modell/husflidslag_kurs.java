@@ -2,7 +2,6 @@ package nettside.Modell;
 
 import nettside.Interface.Kurs;
 
-import java.security.InvalidParameterException;
 import java.time.LocalDateTime;
 
 public class husflidslag_kurs implements Kurs {
@@ -119,7 +118,7 @@ public class husflidslag_kurs implements Kurs {
         this.beskrivelse = beskrivelse;
     }
 
-    public boolean isTilgjengelig() { // Endret fra erTilgjengelig
+    public boolean isTilgjengelig() {
         return tilgjengelig;
     }
 
