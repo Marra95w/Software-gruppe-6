@@ -2,7 +2,7 @@
 
 //Async function for å hente alle kurs i kurs_tabellen
 export async function hentAlleKurs() {
-    const response = await fetch("http://localhost:8080/id");
+    const response = await fetch("http://localhost:8080/id/hent_alle_kurs");
     if (!response.ok) {
         throw new Error("Kunne ikke hente kurs");
     }
