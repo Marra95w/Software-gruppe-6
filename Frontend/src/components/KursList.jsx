@@ -1,0 +1,69 @@
+import { useEffect, useState } from "react"
+import { hentAlleKurs } from "../Api/kursApi";
+import { Link } from "react-router-dom";
+import "../css/courses.css"
+import { formatDato, formatTid } from "./Dato";
+export default function KursList() {
+
+    const [kursList, setKursList] = useState([]);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
+
+
+
+    useEffect(() => {
+
+
+        // Henter alle kurs fra databasen, og setter dem i kursList state
+        const fetchData = async () => {
+
+            try {
+                const data = await hentAlleKurs();
+
+                setKursList(data);
+            } catch (err) {
+
+                setError(err.message);
+
+            } finally {
+
+                setLoading(false);
+            }
+        };
+        fetchData();
+    }, []);
+    //Mens de venter på svar fra APIet
+    if (loading) return <p> Vi henter kursene...</p>;
+    //Hvis det oppstår en feil
+    if (error) return <p> Error:{error} </p>;
+
+
+    return (
+        <section>
+            {/* Henter alle kurs fra databasen og mapper dem til komponenter */}
+            {kursList.map((kurs) => (
+                <Link className="course-link" to={`/Courses/${kurs.id}`} key={kurs.id}>
+                    <article className="choose-course">
+                        <img className="course-strikk" src="../src/assets/bilde/strikk.png" alt="Strikke" />
+                        <div className="course-info">
+                            <h3>{kurs.tittel}</h3>
+                            <p>Beskrivelse: {kurs.beskrivelse}</p>
+                            <p>Fra {formatDato(kurs.startDatoTid)} til {formatDato(kurs.sluttDatoTid)}</p>
+                            <p>Kl.{formatTid(kurs.startDatoTid)} til {formatTid(kurs.sluttDatoTid)}</p>
+                            <p>Hvor: {kurs.kursavholderNavn}</p>
+                            <p>Pris: {kurs.prisMedlem} kr</p>
+                            <p>Pris hvis du ikke er medlem: {kurs.prisIkkeMedlem} kr</p>
+
+
+                        </div>
+                        <img
+                            className="course-arrow"
+                            src="../src/assets/bilde/arrow-down.svg"
+                            alt="Pil"
+                        />
+                    </article>
+                </Link>
+            ))}
+        </section>
+    )
+};
