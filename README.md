@@ -33,4 +33,4 @@ Prosjektet kjøres i Visual Studio Code.
 Viktig informasjon 
 •	Backend må kjøres før frontend.
 •	Begge må kjøre for at nettleseren skal fungere som forventet. 
-•	Skolens internett/VPN må være tilkoblet for at Databasen skal kunne hente informasjon. 
+•	Skolens internett/VPN må være tilkoblet for at informasjon skal kunne hentes fra databsen. 
