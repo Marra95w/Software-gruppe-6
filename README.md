@@ -26,11 +26,13 @@ Prosjektet kjøres i Visual Studio Code.
     2.	Høyreklikk på mappen og velg Open in Integrated Terminal.
     3.	Pass på at det står frontend i terminalen 
     4.	Skriv følgende kommando i terminalen:
+                npm install
                 npm run dev
     5.	Terminalen viser en lokal adresse under Local, på http://localhost:5173
     6.	Trykk på lenken for å åpne nettsiden i nettleseren.
 
 Viktig informasjon 
 •	Backend må kjøres før frontend.
+•   Npm install må installeres før npm run dev
 •	Begge må kjøre for at nettleseren skal fungere som forventet. 
 •	Skolens internett/VPN må være tilkoblet for at informasjon skal kunne hentes fra databsen. 
